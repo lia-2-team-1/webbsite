@@ -33,18 +33,21 @@ export default function SponsorSection() {
     const [sponsors, setSponsors] = useState(initSponsors);
 
     return( 
-        <div className="inline-flex place-evenly"> {/** I want this */} 
+        <div className="w-full mx-auto flex place-content-center space-x-24 align-center"
+        > {/** I want this */} 
         {sponsors.map((sponsor, i)=> {
             return (
                 <> {/** to center these lil cards that this loop creates. */}
-                <a key={i} className="max-w-64 mx-auto mx-5 w-64"
+                <a key={i} className="max-w-64 w-64 h-32 my-auto p-3 
+                bg-stone-800 
+                border-2 rounded-md border-transparent"
                 href={`${sponsor.SponsorLink}`}
                 >
                 <img
                 src={`${sponsor.SponsorLogo}`}
                 className="mx-auto h-16"
                 />
-                <h4 className="text-lg text-center">
+                <h4 className="text-lg text-center mt-4 text-white ">
                 {sponsor.SponsorName}
                 </h4>
                 </a>
