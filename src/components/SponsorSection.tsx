@@ -22,34 +22,35 @@ export default function SponsorSection() {
         {
             SponsorName:"Mozilla",
             SponsorLink:"https://www.mozilla.org/",
-            SponsorLogo:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Mozilla_logo.svg/280px-Mozilla_logo.svg.png"
+            SponsorLogo:"https://upload.wikimedia.org/wikipedia/commons/d/d2/Mozilla_logo.svg"
         },
         {
             SponsorName:"Penguin bros",
             SponsorLink:"https://www.linuxfoundation.org/",
-            SponsorLogo:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Linux_Foundation_logo_2013.svg/220px-Linux_Foundation_logo_2013.svg.png"
+            SponsorLogo:"https://upload.wikimedia.org/wikipedia/commons/f/fd/Linux_Foundation_logo_2013.svg"
         }
     ];  
     const [sponsors, setSponsors] = useState(initSponsors);
 
-    return(
-        <>
-        <div className="max-w-32"
-        style={{display: 'flex', flex: '1 2 100px'}}>
+    return( 
+        <div className="inline-flex place-evenly"> {/** I want this */} 
         {sponsors.map((sponsor, i)=> {
             return (
-                <div key={i} className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center gap-x-4">   
+                <> {/** to center these lil cards that this loop creates. */}
+                <a key={i} className="max-w-64 mx-auto mx-5 w-64"
+                href={`${sponsor.SponsorLink}`}
+                >
                 <img
                 src={`${sponsor.SponsorLogo}`}
-                href={`${sponsor.SponsorLink}`}
-                className=""
-                // style={{maxWidth: '100px'}}
+                className="mx-auto h-16"
                 />
-                <h4 className="text-lg">
+                <h4 className="text-lg text-center">
                 {sponsor.SponsorName}
                 </h4>
-                </div>
+                </a>
+                </>
             )
         })}
-        </div>        </>)
+        </div>
+    )       
 } 
