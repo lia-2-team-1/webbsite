@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "./styles.css";
+import "./../index.css";
 
 interface Sponsor {
     /**
