@@ -1,6 +1,19 @@
 import { useState } from 'react';
 import "./../index.css";
-
+/** 
+* DONE:
+* semi-modularity
+* 
+* TODO: 
+* make logos fade out
+*  make logos scroll right-left on their own
+*  make logos loop when scrolling
+*  finalize design
+*
+*  difficulties:
+*  need the right sponsors & logos
+*
+ */
 interface Sponsor {
     /**
         * @param SponsorName--- Sponsor name
