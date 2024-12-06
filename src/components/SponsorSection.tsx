@@ -1,22 +1,34 @@
 import { useState } from 'react';
 import "./../index.css";
-/** 
-* DONE:
-* semi-modularity
-* 
-* TODO: 
-* make logos fade out
+import "./SponsorSection.css";
+/* 
+*  DONE:
+*  semi-modularity
+*  spacing.
+*  Added the right sponsors.
+*  Added a CTA
+*  
+*  TODON'T
+*  seamless loop. Doesn't work because of flex' space-around/-evenly/-etc properties changing gap size.
+*   *  I might look into this further later. For now I'm too angry. 
 *  make logos scroll right-left on their own
-*  make logos loop when scrolling
-*  finalize design
+*  make logos fade out
+*
+*  TODO: 
+*  Add missing button components.
+*  Fix text size, font, colour.
+*
+*  FUTURE TODO:
+*  breakpoints.
 *
 *  difficulties:
-*  need the right sponsors & logos
-*
- */
+*  Need button component
+*  Need global colour variables
+*  Need global text variables.
+*/
 interface Sponsor {
     /**
-        * @param SponsorName--- Sponsor name
+    * @param SponsorName --- Sponsor name
     * @param SponsorLink --- Sponsor link to webpage
     * @param SponsorLogo --- Sponsor logo url (.webp, .png or .svg)
     */
@@ -28,45 +40,90 @@ interface Sponsor {
 export default function SponsorSection() {
     const initSponsors: Sponsor[] = [ 
         {
-            SponsorName:"Quad9",
-            SponsorLink:"https://www.quad9.net/",
-            SponsorLogo:"https://docs.quad9.net/images/quad9_logo_light.svg",
+            SponsorName:"Sparbanken Sjuhärad",
+            SponsorLink:"https://www.sparbankensjuharad.se/",
+            SponsorLogo:"sparbanken.svg",
         },
         {
-            SponsorName:"Mozilla",
-            SponsorLink:"https://www.mozilla.org/",
-            SponsorLogo:"https://upload.wikimedia.org/wikipedia/commons/d/d2/Mozilla_logo.svg"
+            SponsorName:"+MARGRET",
+            SponsorLink:"https://margret.se/",
+            SponsorLogo:"plusmargret.png"
         },
         {
-            SponsorName:"Penguin bros",
-            SponsorLink:"https://www.linuxfoundation.org/",
-            SponsorLogo:"https://upload.wikimedia.org/wikipedia/commons/f/fd/Linux_Foundation_logo_2013.svg"
-        }
+            SponsorName:"Craft of Scandinavia",
+            SponsorLink:"https://www.craftofscandinavia.se/",
+            SponsorLogo:"craft-neg.png"
+        },
     ];  
     const [sponsors, setSponsors] = useState(initSponsors);
 
     return( 
-        <div className="w-full mx-auto flex place-content-center space-x-24 align-center"
-        > {/** I want this */} 
-        {sponsors.map((sponsor, i)=> {
-            return (
-                <> {/** to center these lil cards that this loop creates. */}
-                <a key={i} className="max-w-64 w-64 h-32 my-auto p-3 
-                bg-stone-800 
-                border-2 rounded-md border-transparent"
-                href={`${sponsor.SponsorLink}`}
-                >
-                <img
-                src={`${sponsor.SponsorLogo}`}
-                className="mx-auto h-16"
-                />
-                <h4 className="text-lg text-center mt-4 text-white ">
-                {sponsor.SponsorName}
-                </h4>
-                </a>
-                </>
-            )
-        })}
-        </div>
+       <div
+        id="parentselector"
+        className=" 
+        mx-auto 
+        py-5
+        "
+       >
+       <h2 className="
+        uppercase font-mono
+        text-center text-lg font-bold
+        ">
+        Våra sponsorer
+       </h2>
+           <div className="
+           flex flex-wrap
+           space-x-8 p-4
+           "> 
+           {sponsors.map((sponsor, i)=> {
+               return (
+                   <>
+
+                   <a key={i} className="
+                   relative
+                   w-64 h-32  
+                   flex-none
+                   "
+                   style={{margin: "auto"}}
+                   href={`${sponsor.SponsorLink}`}
+                   >
+                   <img 
+                   id="image"
+                   src={`${sponsor.SponsorLogo}`}
+                   className="absolute 
+                   left-1/2 -translate-x-1/2 
+                   top-1/3 -translate-y-1/3 
+                   -mt-2 px-2 mx-auto max-h-16
+                   blur-xl opacity-[.60]
+                   hover:opacity-100 transition-opacity
+                   "
+                   />
+                   <img 
+                   id="image"
+                   src={`${sponsor.SponsorLogo}`}
+                   className="absolute 
+                   left-1/2 -translate-x-1/2 
+                   top-1/3 -translate-y-1/3 
+                   -mt-2 px-2 mx-auto max-h-16
+                   pointer-events-none
+                   "
+                   />
+                   <h4 className="absolute
+                   left-1/2 -translate-x-1/2
+                   bottom-3 
+                   text-lg leading-5 
+                   font-mono font-bold uppercase 
+                   text-center text-nowrap text-white
+                   ">
+                   {sponsor.SponsorName}
+                   </h4>
+                   </a>
+
+               </>
+               )
+           })}
+       </div>
+      <a href="#" className="block text-center font-bold uppercase font-mono font-lg">bli sponsor</a>
+       </div>
     )       
 } 
