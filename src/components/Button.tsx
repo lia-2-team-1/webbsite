@@ -25,11 +25,16 @@ export default function Button({text, linkTo, onClick}: ButtonProps) {
         <a href={linkTo}
         onClick={onClick}
         className="
-            font-bold text-base uppercase
+            font-bold font-inter text-base uppercase
             py-2 px-6
             my-1 mx-3
             border-2 rounded-md border-transparent
-            hover:
+            bg-black color-sandybrown
+            hover:bg-[#3D3D3D] hover:color-springwood
+            focus:bg-[#3D3D3D] focus:color-springwood
+            active:bg-[#B0B0B0] active:color-black
+            disabled:bg-[#888888] disabled:color-black
+            transition-colors
         ">
         {text == null || "" ? "TEXT IS NULL"  : text}
         </a>
