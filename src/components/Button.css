@@ -1,0 +1,48 @@
+/** 
+ * default: 
+ *  bg - black
+ *  color - sand brown
+ *
+ *
+ *  
+ *
+ *
+ * */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@property --black {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #010101;
+}
+
+.own-Button {
+    background: var(--black);
+    color: var(--sand-brown);
+
+    padding: .75rem 3rem;
+    
+    border: 2px solid transparent;
+    border-radius: 6px;
+    
+    font-family: "Inter", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        background: #3D3D3D;
+        color: #FAF7F2; /** Primary white */
+    }
+    &:active {
+        background: #B0B0B0;
+        color: var(--black);
+    }
+    &:disabled {
+        background: #888888;
+        color: var(--black);
+    }
+}
