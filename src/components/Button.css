@@ -8,7 +8,6 @@
  *
  *
  * */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @property --black {
@@ -19,7 +18,7 @@
 
 .own-Button {
     background: var(--black);
-    color: var(--sand-brown);
+    color: var(--sandy-brown);
 
     padding: .75rem 3rem;
     
@@ -45,4 +44,5 @@
         background: #888888;
         color: var(--black);
     }
+    transition: all 0.25s ease-out;
 }
