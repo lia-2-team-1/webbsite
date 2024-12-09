@@ -25,7 +25,6 @@ export default function Button({text, linkTo, onClick}: ButtonProps) {
         <a href={linkTo}
         onClick={onClick}
         className="
-<<<<<<< HEAD
             font-bold font-inter text-base uppercase
             py-2 px-6
             my-1 mx-3
@@ -39,13 +38,6 @@ export default function Button({text, linkTo, onClick}: ButtonProps) {
             own-Button
             max-w-24
             max-h-8
-=======
-            font-bold text-base uppercase
-            py-2 px-6
-            my-1 mx-3
-            border-2 rounded-md border-transparent
-            hover:
->>>>>>> c15b6f5 (rewriting for tailwind classes)
         ">
         {text == null || "" ? "TEXT IS NULL"  : text}
         </a>
