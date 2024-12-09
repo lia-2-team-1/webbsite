@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 18px;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@property --sandy-brown {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #C7A46C;
+}
+
+@property --spring-wood {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #FAF7F2;
+}
+
+@property --coffee {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #AF7C47;
+}
+
+@property --sepia-skin {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #92633C;
+}
+
+@property --black {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #010101;
+}
+
+@property --rangoon-green {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #1A1A1A;
+}
+
+@property --light-grey {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #D9D9D9;
+}
+
+@property -- {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #;
+}
