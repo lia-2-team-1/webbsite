@@ -3,6 +3,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --sandy-brown: 199 164 108;
+    --spring-wood: 250 247 242;
+    --coffee: 175 124 71;
+    --sepia-skin: 146 99 60;
+    --black: 1 1 1;
+    --rangoon-green: 26 26 26;
+    --light-grey: 217 217 217;
+  } 
+}
+
 :root {
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.5;
