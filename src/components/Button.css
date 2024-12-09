@@ -1,27 +1,11 @@
-/** 
- * default: 
- *  bg - black
- *  color - sand brown
- *
- *
- *  
- *
- *
- * */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-@property --black {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #010101;
-}
-
 .own-Button {
     background: var(--black);
     color: var(--sandy-brown);
 
-    padding: .75rem 3rem;
-    
+    padding: .70rem 2.5rem;
+    margin: 0.15rem 0.3rem;
+
+
     border: 2px solid transparent;
     border-radius: 6px;
     
@@ -34,7 +18,7 @@
     &:hover,
     &:focus {
         background: #3D3D3D;
-        color: #FAF7F2; /** Primary white */
+        color: var(--spring-wood); /** Primary white */
     }
     &:active {
         background: #B0B0B0;
