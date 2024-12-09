@@ -24,11 +24,7 @@ export default function Button({text, linkTo, onClick}: ButtonProps) {
     return (
         <a href={linkTo}
         onClick={onClick}
-        className="
-            own-Button
-            max-w-24
-            max-h-8
-        ">
+        className="own-Button">
         {text == null || "" ? "TEXT IS NULL"  : text}
         </a>
     )
