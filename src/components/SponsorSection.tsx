@@ -88,7 +88,6 @@ export default function SponsorSection() {
                    href={`${sponsor.SponsorLink}`}
                    >
                    <img 
-                   id="image"
                    src={`${sponsor.SponsorLogo}`}
                    className="absolute 
                    left-1/2 -translate-x-1/2 
@@ -99,7 +98,6 @@ export default function SponsorSection() {
                    "
                    />
                    <img 
-                   id="image"
                    src={`${sponsor.SponsorLogo}`}
                    className="absolute 
                    left-1/2 -translate-x-1/2 
