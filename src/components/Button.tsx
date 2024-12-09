@@ -35,6 +35,9 @@ export default function Button({text, linkTo, onClick}: ButtonProps) {
             active:bg-[#B0B0B0] active:color-black
             disabled:bg-[#888888] disabled:color-black
             transition-colors
+            own-Button
+            max-w-24
+            max-h-8
         ">
         {text == null || "" ? "TEXT IS NULL"  : text}
         </a>
