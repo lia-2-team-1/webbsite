@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "./../index.css";
+import { Button } from './Button.tsx';
 import "./SponsorSection.css";
 /* 
 *  DONE:
@@ -57,7 +57,8 @@ export default function SponsorSection() {
     ];  
     const [sponsors, setSponsors] = useState(initSponsors);
 
-    return( 
+    return(
+<>
        <div
         id="parentselector"
         className=" 
@@ -121,7 +122,7 @@ export default function SponsorSection() {
                )
            })}
        </div>
-      <a href="#" className="block text-center font-bold uppercase font-mono font-lg">bli sponsor</a>
-       </div>
+        <Button text="bli sponsor" linkTo="#"></Button>
+</>
     )       
 } 
