@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from './Button.tsx';
+import Button from './Button.tsx';
 import "./SponsorSection.css";
 /* 
 *  DONE:
@@ -58,71 +58,70 @@ export default function SponsorSection() {
     const [sponsors, setSponsors] = useState(initSponsors);
 
     return(
-<>
-       <div
+        <>
+        <div
         id="parentselector"
         className=" 
         mx-auto 
         py-5
         "
-       >
-       <h2 className="
+        >
+        <h2 className="
         uppercase font-mono
         text-center text-lg font-bold
         ">
         Våra sponsorer
-       </h2>
-           <div className="
-           flex flex-wrap
-           space-x-8 p-4
-           "> 
-           {sponsors.map((sponsor, i)=> {
-               return (
-                   <>
-
-                   <a key={i} className="
-                   relative
-                   w-64 h-32  
-                   flex-none
-                   "
-                   style={{margin: "auto"}}
-                   href={`${sponsor.SponsorLink}`}
-                   >
-                   <img 
-                   src={`${sponsor.SponsorLogo}`}
-                   className="absolute 
-                   left-1/2 -translate-x-1/2 
-                   top-1/3 -translate-y-1/3 
-                   -mt-2 px-2 mx-auto max-h-16
-                   blur-xl opacity-[.60]
-                   hover:opacity-100 transition-opacity
-                   "
-                   />
-                   <img 
-                   src={`${sponsor.SponsorLogo}`}
-                   className="absolute 
-                   left-1/2 -translate-x-1/2 
-                   top-1/3 -translate-y-1/3 
-                   -mt-2 px-2 mx-auto max-h-16
-                   pointer-events-none
-                   "
-                   />
-                   <h4 className="absolute
-                   left-1/2 -translate-x-1/2
-                   bottom-3 
-                   text-lg leading-5 
-                   font-mono font-bold uppercase 
-                   text-center text-nowrap text-white
-                   ">
-                   {sponsor.SponsorName}
-                   </h4>
-                   </a>
-
-               </>
-               )
-           })}
-       </div>
+        </h2>
+        <div className="
+        flex flex-wrap
+        space-x-8 p-4
+        "> 
+        {sponsors.map((sponsor, i)=> {
+            return (
+                <>
+                <a key={i} className="
+                relative
+                w-64 h-32  
+                flex-none
+                "
+                style={{margin: "auto"}}
+                href={`${sponsor.SponsorLink}`}
+                >
+                <img 
+                src={`${sponsor.SponsorLogo}`}
+                className="absolute 
+                left-1/2 -translate-x-1/2 
+                top-1/3 -translate-y-1/3 
+                -mt-2 px-2 mx-auto max-h-16
+                blur-xl opacity-[.60]
+                hover:opacity-100 transition-opacity
+                "
+                />
+                <img 
+                src={`${sponsor.SponsorLogo}`}
+                className="absolute 
+                left-1/2 -translate-x-1/2 
+                top-1/3 -translate-y-1/3 
+                -mt-2 px-2 mx-auto max-h-16
+                pointer-events-none
+                "
+                />
+                <h4 className="absolute
+                left-1/2 -translate-x-1/2
+                bottom-3 
+                text-lg leading-5 
+                font-mono font-bold uppercase 
+                text-center text-nowrap text-white
+                ">
+                {sponsor.SponsorName}
+                </h4>
+                </a>
+                </>
+            )
+        })}
+        </div>
         <Button text="bli sponsor" linkTo="#"></Button>
-</>
+        </div>
+        </>
     )       
 } 
