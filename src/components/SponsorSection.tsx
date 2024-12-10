@@ -120,7 +120,7 @@ export default function SponsorSection() {
             )
         })}
         </div>
-        <Button className="mx-auto" text="bli sponsor" linkTo="#"></Button>
+        <Button text="bli sponsor" linkTo="#"></Button>
         </div>
         </>
     )       
