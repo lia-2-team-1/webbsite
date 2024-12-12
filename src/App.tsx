@@ -11,7 +11,6 @@ function App() {
     <>
     <div className="w-screen">
         <h1 className="text-center">Centered?</h1>
-        <Button text="Button" linkTo="" ></Button>
     </div>
       <div>
        <SponsorSection></SponsorSection>
