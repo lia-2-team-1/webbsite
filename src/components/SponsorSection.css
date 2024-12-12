@@ -2,12 +2,6 @@
     overflow: hidden;
     width: calc(100vw/2); 
 }
-
 div:has(>div#parentselector) {
     background-color: black;
-}
-#image::after {
-    content:'';
-    image: src("sparbanken.svg");
-    filter: blur(0.725rem);
 }
