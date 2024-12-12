@@ -1,6 +1,6 @@
 interface ButtonProps {
-    text: String;
-    linkTo: String;
+    text: string;
+    linkTo: string;
     onClick: Function;
 }
 
@@ -26,12 +26,14 @@ export default function Button({text, linkTo, onClick}: ButtonProps) {
             font-bold font-inter text-base uppercase
             py-2 px-10
             my-1 mx-3
-            border-2 rounded-md border-transparent
+            border-4 rounded-md border-transparent
             bg-sandybrown text-black 
             hover:bg-[#3D3D3D] hover:text-springwood
             focus:bg-[#3D3D3D] focus:text-springwood
+            focus:border-sandybrown
             active:bg-[#B0B0B0] active:text-black
             disabled:bg-[#888888] disabled:text-black
+
             visited:text-black
             transition-colors
             max-w-24
