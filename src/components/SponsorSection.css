@@ -1,0 +1,7 @@
+#parentselector{
+    overflow: hidden;
+    width: calc(100vw/2); 
+}
+div:has(>div#parentselector) {
+    background-color: black;
+}
