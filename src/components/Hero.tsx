@@ -3,17 +3,13 @@ import Button from "./Button";
 
 export const Hero = () => {
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full">
       <div
-        className="overflow-x-hidden min-h-screen bg-center bg-cover bg-no-repeat 
-        lg:bg-[url('/tif-hero.jpg')]
-        bg-[url('/hero-mobile.jpg')]
-        // " 
-        // style={{ backgroundImage: "url('/tif-hero.jpg')" }}
+        className="min-h-screen bg-cover bg-no-repeat lg:bg-[url('/tif-hero.jpg')] bg-[url('/hero-mobile.jpg')]"
       >
-        <div className="bg-black p-10 bg-opacity-70 flex flex-col lg:left-80 absolute lg:-bottom-14 items-center">
-            <Button onClick={''} linkTo={'#'} text={'DONERA'}></Button>
-            <Button onClick={''} linkTo={'#'} text={'GÅ MED'}></Button>
+        <div className="bg-black p-10 bg-opacity-70 flex flex-col lg:left-80 md:w-[40%] absolute -bottom-14 lg:items-center w-[80%] left-10 right-10 lg:w-[20%]">
+          <Button onClick={""} linkTo={"#"} text={"STÖTTA OSS"}></Button>
+          <Button onClick={""} linkTo={"#"} text={"BLI MEDLEM"}></Button>
         </div>
       </div>
     </div>
