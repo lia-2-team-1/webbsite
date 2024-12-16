@@ -10,7 +10,7 @@ function App() {
     <>
     <div className="w-screen">
         <h1 className="text-center">Centered?</h1>
-        <Button text="Button" linkTo="" ></Button>
+        <Button text="ASDAASDASDASDLKJASLDJKALSKJDLKJDASLJKASDLKJASLJKD" linkTo="" fSize="1" ></Button>
     </div>
     </>
   )
