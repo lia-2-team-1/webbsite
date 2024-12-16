@@ -17,8 +17,6 @@ interface ButtonProps {
 * @beta
 */
 export default function Button({text, linkTo, onClick}: ButtonProps) {
-
-
     return (
         <a href={linkTo}
         onClick={onClick}
