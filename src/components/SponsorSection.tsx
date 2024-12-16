@@ -92,7 +92,6 @@ export default function SponsorSection() {
                 <a key={i} className="
                 relative
                 w-64 h-32  
-                flex-none
                 "
                 style={{margin: "auto"}}
                 href={`${sponsor.SponsorLink}`}
