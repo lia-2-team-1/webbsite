@@ -2,6 +2,7 @@ interface ButtonProps {
     text: string;
     linkTo: string;
     onClick: Function;
+    fSize: string;
 }
 
 /* 
@@ -11,17 +12,18 @@ interface ButtonProps {
 * @param Text - Visual text of the button
 * @param LinkTo - Sets the href of the button
 * @param OnClick - the onClick function of the button
-*
+* @param fSize - the size of the font. sm/md/lg
 * @returns A button with above parameters.
 * 
 * @beta
 */
-export default function Button({text, linkTo, onClick}: ButtonProps) {
+export default function Button({text, linkTo, onClick, fSize}: ButtonProps) {
     return (
         <a href={linkTo}
         onClick={onClick}
         className="
-            font-bold font-inter text-base uppercase
+            font-bold font-inter uppercase
+            text-base
             py-2 px-10
             my-1 mx-3
             border-4 rounded-md border-transparent
@@ -36,8 +38,10 @@ export default function Button({text, linkTo, onClick}: ButtonProps) {
             transition-colors
             max-w-24
             max-h-8
-        ">
-        {text == null || "" ? "TEXT IS NULL"  : text}
+        "
+        style={{fontSize: fSize + 'rem'}}
+        >
+        {!text ? "TEXT IS NULL"  : text}
         </a>
     )
 }
