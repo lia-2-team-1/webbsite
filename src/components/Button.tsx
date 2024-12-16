@@ -24,7 +24,7 @@ export default function Button({text, linkTo, onClick, fSize}: ButtonProps) {
         className="
             font-bold font-inter uppercase
             text-nowrap
-            py-2 px-10
+            py-1 px-2
             my-1 mx-3
             border-4 rounded-md border-transparent
             bg-sandybrown text-black 
