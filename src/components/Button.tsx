@@ -23,7 +23,7 @@ export default function Button({text, linkTo, onClick, fSize}: ButtonProps) {
         onClick={onClick}
         className="
             font-bold font-inter uppercase
-            text-base
+            text-center
             py-2 px-10
             my-1 mx-3
             border-4 rounded-md border-transparent
@@ -33,7 +33,6 @@ export default function Button({text, linkTo, onClick, fSize}: ButtonProps) {
             focus:border-sandybrown
             active:bg-[#B0B0B0] active:text-black
             disabled:bg-[#888888] disabled:text-black
-
             visited:text-black
             transition-colors
             max-w-24
