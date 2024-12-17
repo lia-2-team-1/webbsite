@@ -35,6 +35,7 @@ export default function Button({text, linkTo, onClick, fSize}: ButtonProps) {
             disabled:bg-[#888888] disabled:text-black
             visited:text-black
             transition-colors
+
             max-w-24
             max-h-8
         "

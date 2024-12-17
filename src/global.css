@@ -51,8 +51,8 @@
     initial-value: #D9D9D9;
 }
 
-@property -- {
+/* @property -- {
     syntax: "<color>";
     inherits: false;
     initial-value: #;
-}
+} */
