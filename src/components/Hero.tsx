@@ -6,7 +6,7 @@ export const Hero = () => {
     <div className="w-full">
  <div className="min-h-screen flex items-center justify-center bg-cover bg-no-repeat lg:bg-[url('/tif-hero.jpg')] bg-[url('/hero-mobile.jpg')]">
   <div className="bg-black bg-opacity-55 w-3/4 py-5 flex mx-auto lg:w-[50%] lg:text-center">
-    <h1 className="text-3xl text-sandybrown font-bold text-left pl-3 lg:pl-10">
+    <h1 className="text-2xl lg:text-3xl text-sandybrown font-bold text-left pl-3 lg:pl-10">
       Trandareds IF - Tillsammans för fotboll, gemenskap och glädje
     </h1>
   </div>
