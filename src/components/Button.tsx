@@ -23,8 +23,8 @@ export default function Button({text, linkTo, onClick, fSize}: ButtonProps) {
         onClick={onClick}
         className="
             font-bold font-inter uppercase
-            text-center
-            py-2 px-10
+            text-nowrap
+            py-1 px-2
             my-1 mx-3
             border-4 rounded-md border-transparent
             bg-sandybrown text-black 
