@@ -37,10 +37,10 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                     border-4 rounded-md border-transparent
                     transition-colors text-center
 
-                    hover:bg-[#3D3D3D] hover:text-springwood hover:border-sandybrown
-                    focus:bg-[#3D3D3D] focus:text-springwood focus:border-sandybrown
-                    focus:outline-0 focus:outline-offset-3 focus:outline-sandybrown
-                    active:bg-[#B0B0B0] active:text-black
+                    hover:bg-coffee hover:text-black hover:border-transparent
+                    focus:bg-sandybrown focus:text-black focus:border-sandybrown
+                    outline-none focus:outline-4 focus:outline-offset-0 focus:outline-sepiaskin focus:border-transparent
+                    active:bg-sepiaskin active:text-white active:border-transparent
                     disabled:bg-[#888888] disabled:text-black
                     visited:text-black
                     w-${!width ? "fit" : width}
@@ -61,10 +61,10 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                     border-4 rounded-md border-transparent
                     transition-colors text-center
 
-                    hover:bg-[#3D3D3D] hover:text-springwood hover:border-sandybrown
-                    focus:bg-[#3D3D3D] focus:text-springwood focus:border-sandybrown
-                    focus:outline-0 focus:outline-offset-3 focus:outline-sandybrown
-                    active:bg-[#B0B0B0] active:text-black
+                    hover:bg-coffee hover:text-black hover:border-transparent
+                    focus:bg-sandybrown focus:text-black focus:border-coffee
+                    outline-none focus:outline-4 focus:outline-offset-0 focus:outline-sepiaskin focus:border-transparent
+                    active:bg-sepiaskin active:text-white active:border-transparent
                     disabled:bg-[#888888] disabled:text-black
                     visited:text-black
                     w-${!width ? "fit" : width}
