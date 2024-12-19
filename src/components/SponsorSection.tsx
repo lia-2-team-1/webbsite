@@ -131,7 +131,8 @@ export default function SponsorSection() {
         })}
         </div>
         <div className="text-center">
-        <Button text="bli sponsor" linkTo="#"></Button>
+        <Button text="bli sponsor" width="24"></Button>
+        <Button isLink="true" text="bli sponsor" width="4" ></Button>
         </div>
         </div>
         </>
