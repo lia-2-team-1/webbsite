@@ -27,7 +27,6 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
         
         if (isLink) {
             return (
-                <>
                 <a href={`${linkTo}`} className={`
                     inline-block
                     font-bold font-inter uppercase
@@ -43,12 +42,10 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                     active:bg-[#B0B0B0] active:text-black
                     disabled:bg-[#888888] disabled:text-black
                     visited:text-black
-                    w-
                     w-${!width ? "fit" : width}
                     `}>
                     {`${text}`}
                     </a>
-                </>
             )
         }
         else {
