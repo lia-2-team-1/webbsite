@@ -27,7 +27,8 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
         
         if (isLink) {
             return (
-                <a href={`${linkTo}`} className={`
+                <a href={`${linkTo}`} 
+                    className={`
                     inline-block
                     font-bold font-inter uppercase
                     py-1 px-2
@@ -51,6 +52,7 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
         else {
             return(
                     <button type="button"
+                    onClick={func}
                     className={`
                     font-bold font-inter uppercase
                     py-1 px-2
@@ -67,7 +69,6 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                     visited:text-black
                     w-${!width ? "fit" : width}
                     `}
-
                     >{`${text}`}</button>
             )
         }
