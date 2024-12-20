@@ -5,6 +5,8 @@ import SponsorSection from './components/SponsorSection.tsx'
 import './index.css'
 import Button from './components/Button.tsx' // *
 import Hero from './components/Hero.tsx'
+import Navbar from './components/Navbar.tsx'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -14,6 +16,7 @@ function App() {
         <h1 className="text-center">Centered?</h1>
     </div>
       <div>
+        <Navbar></Navbar>
         <Hero></Hero>
        <SponsorSection></SponsorSection>
       </div>
