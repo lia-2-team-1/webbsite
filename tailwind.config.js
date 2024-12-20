@@ -16,6 +16,8 @@ export default {
          black: "#010101",
          rangoongreen: "#1A1A1A",
          lightgrey: "#D9D9D9",
+         gold: '#C7A46C',
+         darkgray: "#333333"
         }
     },
   },
