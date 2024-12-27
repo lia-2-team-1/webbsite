@@ -17,19 +17,20 @@ const Navbar = () => {
 
   return (
     <nav className="bg-darkgray border-gray-200">
-      <div className="container mx-auto px-4 lg:px-6 xl:px-8">
+      <div className="container mx-auto px-4 lg:px-6 xl:px-20">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-          <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="logo.png" class="h-20" alt="TRANDAREDS IF LOGO" />
-        <span className="hidden xl:flex self-center text-xl font-semibold whitespace-nowrap dark:text-gold">TRANDAREDS IF</span>
-        </a>
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img
+                src="tif-logo.svg"
+                className="h-10 w-auto"
+                alt="TRANDAREDS IF LOGO"
+              />
+            </a>
           </div>
 
-          
           <NavLinks className="hidden lg:flex items-center justify-center space-x-10 absolute left-1/2 transform -translate-x-1/2 font-inter text-xl" />
 
-         
           <div className="hidden lg:flex items-center space-x-6 ml-auto font-inter">
             <Button onClick={""} linkTo={"#"} text={"Logga in"} />
             <button
@@ -38,44 +39,50 @@ const Navbar = () => {
               title={darkMode ? "Ljusläge" : "Mörkläge"}
             >
               <img
-                src={darkMode ? "/mode.png" : "/mode.png"}
+                src={darkMode ? "/tif-sun.svg" : "/tif-sun.svg"}
                 alt={darkMode ? "Ljusläge" : "Mörkläge"}
-                className="w-full h-full"
+                className="w-30 h-auto"
               />
             </button>
           </div>
 
-          
           <div className="lg:hidden flex items-center space-x-4">
-          <button
-          onClick={toggleDarkMode}
-          className="w-20 h-12 flex items-center justify-center mix-blend-lighten"
-          title={darkMode ? "Ljusläge" : "Mörkläge"}
-          >
-          <img
-          src={darkMode ? "/mode.png" : "/mode.png"}
-          alt={darkMode ? "Ljusläge" : "Mörkläge"}
-          className="w-full h-full"
-          />
-         </button>
-
-            <button
+            <div
               onClick={toggleMenu}
               className="text-gold focus:outline-none hover:bg-transparent mix-blend-lighten"
             >
               <img
-                src="/icons8-menu-50.png"
+                src="/tif-burger-light.svg"
                 alt="Hamburgermeny"
-                className="h-8 w-8"
+                className="h-10 w-auto justify-self-start hover:justify-self-end"
               />
-            </button>
+            </div>
           </div>
         </div>
 
         <div className={`xl:hidden ${isOpen ? "block" : "hidden"} mt-2`}>
-          <div className="flex flex-col items-center">
-            <NavLinks className="flex flex-col items-center space-y-4 uppercase" />
-            <Button onClick={""} linkTo={"#"} text={"Logga in"} className="text-xl px-4 py-2" />
+          <div className="flex flex-row justify-evenly">
+            <NavLinks className="flex flex-col mb-5 space-y-4 uppercase" />
+            <div className="">
+              <button
+                onClick={toggleDarkMode}
+                className="w-20 h-12 flex items-center justify-center mix-blend-lighten m-auto mb-5"
+                title={darkMode ? "Ljusläge" : "Mörkläge"}
+              >
+                <img
+                  src={darkMode ? "/tif-sun.svg" : "/tif-sun.svg"}
+                  alt={darkMode ? "Ljusläge" : "Mörkläge"}
+                  className="w-30 h-30"
+                />
+              </button>
+
+              <Button
+                onClick={""}
+                linkTo={"#"}
+                text={"Logga in"}
+                className="text-xl px-4 py-2"
+              />
+            </div>
           </div>
         </div>
       </div>
