@@ -9,7 +9,7 @@ export default function Link({target, text}: LinkParams)
         <>
             <a href={`${target}`}
                className="
-                tailwind here
+               block px-4 py-2 text-gold hover:bg-gray-200 uppercase
                "
             >
                 {`${text}`}
