@@ -7,6 +7,7 @@ export default {
       extend: {
         fontFamily: {
         'inter': ['Inter', 'sans-serif'],
+        'segoeui': ['Segoe UI', 'Arial', 'sans-serif'],
         },
         colors: {
          sandybrown: "#C7A46C",
