@@ -5,6 +5,7 @@ import SponsorSection from './components/SponsorSection.tsx'
 import './index.css'
 import Button from './components/Button.tsx' // *
 import Hero from './components/Hero.tsx'
+import AboutUs from './components/AboutUs.tsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -15,7 +16,9 @@ function App() {
     </div>
       <div>
         <Hero></Hero>
+        <AboutUs></AboutUs>
        <SponsorSection></SponsorSection>
+
       </div>
     </>
   )
