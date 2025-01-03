@@ -16,14 +16,14 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
         <div className="
             w-screen
             bg-[#333333]
-            flex flex-col sm:flex-row
+            flex flex-col md:flex-row
             place-content-center
-            mx-auto p-3 sm:gap-x-5
+            mx-auto p-3 md:gap-x-5
         ">
             <div className="
                 block
                 max-w-md 
-                mx-auto sm:mx-0
+                mx-auto md:mx-0
                 font-segoeui
                 text-sandybrown
             ">
@@ -37,7 +37,7 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
                 w-max
                 mx-auto
                 hidden 
-                sm:block sm:pt-2
+                md:block md:pt-2
                 ">
                 <Button isLink={true} text="Läs mer!"></Button>
                 </div>
@@ -48,7 +48,7 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
                 max-w-md
                 mx-auto
                 py-2
-                sm:mx-0
+                md:mx-0
              "
             /> 
             <div className="
