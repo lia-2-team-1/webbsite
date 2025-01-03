@@ -9,7 +9,7 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
     const initProps: AboutUsProps[] = {
         header:  "Trandareds IF",
         p: "Lorem Mauris vitae ex varius, pharetra eros sit amet, dignissim justo. Quisque sollicitudin facilisis nunc, eu ultricies dui commodo sed. Suspendisse vel sollicitudin velit. Sed purus neque, pretium vulputate ultricies vitae, scelerisque eu erat. Duis ultricies metus nunc, eget imperdiet ligula bibendum et. Sed quis felis magna. Morbi maximus sapien id convallis gravida. Aenean at justo vestibulum, iaculis mi quis, malesuada sapien. Integer ut ligula enim. Integer id turpis eu sem luctus consequat. Nunc semper lectus sed tincidunt fermentum. ",
-        src: "", 
+        src: "https://placehold.co/600x400",
     }
     return(
         <>
@@ -21,15 +21,17 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
             <div className="
                 block
                 max-w-md 
+                mr-2
             ">
                 <h2 className="
                     tailwind here
                 ">{initProps.header}</h2>
                 <p className="
-                    tailwind here
+                    font
                 ">{initProps.p}</p>
                 <div className="
-                    
+                w-max
+                mx-auto
                 ">
                 <Button isLink={true} text="Om Oss"></Button>
                 </div>
@@ -38,6 +40,7 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
              src={`${initProps.src}`}
              className="
                 max-w-md
+                ml-2
              "
             /> 
         </div>
