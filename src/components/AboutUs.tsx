@@ -23,6 +23,7 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
             <div className="
                 block
                 max-w-md 
+                mx-auto
                 font-segoeui
                 text-sandybrown
             ">
@@ -45,6 +46,7 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
              src={`${initProps.src}`}
              className="
                 max-w-md
+                mx-auto
                 py-2
              "
             /> 
