@@ -18,12 +18,12 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
             bg-[#333333]
             flex flex-col sm:flex-row
             place-content-center
-            mx-auto p-3 sm:gap-2
+            mx-auto p-3 sm:gap-x-5
         ">
             <div className="
                 block
                 max-w-md 
-                mx-auto
+                mx-auto sm:mx-0
                 font-segoeui
                 text-sandybrown
             ">
@@ -48,6 +48,7 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
                 max-w-md
                 mx-auto
                 py-2
+                sm:mx-0
              "
             /> 
             <div className="
