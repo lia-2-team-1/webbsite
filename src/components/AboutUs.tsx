@@ -24,10 +24,12 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
                 mr-2
             ">
                 <h2 className="
-                    tailwind here
+                    font-segoeui
+                    text-sandybrown text-bold
                 ">{initProps.header}</h2>
                 <p className="
-                    font
+                    font-segoeui
+                    text-base text-sandybrown
                 ">{initProps.p}</p>
                 <div className="
                 w-max
