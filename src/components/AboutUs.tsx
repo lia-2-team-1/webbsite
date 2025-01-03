@@ -14,37 +14,47 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
     return(
         <>
         <div className="
-            flex
-            mx-auto 
+            w-screen
+            bg-[#333333]
+            flex flex-col sm:flex-row
             place-content-center
+            mx-auto p-3 sm:gap-2
         ">
             <div className="
                 block
                 max-w-md 
-                mr-2
+                font-segoeui
+                text-sandybrown
             ">
                 <h2 className="
-                    font-segoeui
-                    text-sandybrown text-bold
+                    text-xl 
                 ">{initProps.header}</h2>
                 <p className="
-                    font-segoeui
-                    text-base text-sandybrown
+                    text-base 
                 ">{initProps.p}</p>
                 <div className="
                 w-max
                 mx-auto
+                hidden 
+                sm:block sm:pt-2
                 ">
-                <Button isLink={true} text="Om Oss"></Button>
+                <Button isLink={true} text="Läs mer!"></Button>
                 </div>
             </div>
             <img 
              src={`${initProps.src}`}
              className="
                 max-w-md
-                ml-2
+                py-2
              "
             /> 
+            <div className="
+                w-max
+                mx-auto
+                sm:hidden
+            ">
+                <Button isLink={true} text="Läs mer!"></Button>
+            </div>
         </div>
         </>
     )   
