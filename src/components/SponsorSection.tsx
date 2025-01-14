@@ -40,9 +40,9 @@ interface Sponsor {
 export default function SponsorSection() {
     const initSponsors: Sponsor[] = [ 
         {
-            SponsorName:"Sparbanken Sjuhärad",
-            SponsorLink:"https://www.sparbankensjuharad.se/",
-            SponsorLogo:"sparbanken.svg",
+            SponsorName:"Intersport",
+            SponsorLink:"https://www.intersport.se/",
+            SponsorLogo:"intersport.WEBP",
         },
         {
             SponsorName:"+MARGRET",
@@ -53,6 +53,16 @@ export default function SponsorSection() {
             SponsorName:"Craft of Scandinavia",
             SponsorLink:"https://www.craftofscandinavia.se/",
             SponsorLogo:"craft-neg.png"
+        },
+        {
+            SponsorName:"FB Cargo",
+            SponsorLink:"https://www.fb-cargo.se/",
+            SponsorLogo:"fbcargo.png"
+        },
+        {
+            SponsorName:"Baker Logistics",
+            SponsorLink:"https://bakerlogistics.se/",
+            SponsorLogo:"baker-logistics-neg.png"
         },
     ];  
     const [sponsors, setSponsors] = useState(initSponsors);
@@ -82,7 +92,6 @@ export default function SponsorSection() {
                 <a key={i} className="
                 relative
                 w-64 h-32  
-                flex-none
                 "
                 style={{margin: "auto"}}
                 href={`${sponsor.SponsorLink}`}
@@ -121,7 +130,8 @@ export default function SponsorSection() {
         })}
         </div>
         <div className="text-center">
-        <Button text="bli sponsor" linkTo="#"></Button>
+        <Button text="bli sponsor" ></Button>
+        <Button isLink="true" text="bli sponsor" ></Button>
         </div>
         </div>
         </>
