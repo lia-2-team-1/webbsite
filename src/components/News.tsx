@@ -1,63 +1,78 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import InstaGrid from "./InstaGrid.tsx";
+import Button from "./Button.tsx";
 
 export interface InstaType {
   id: string;
   caption: string;
   mediaType: string;
   mediaUrl: string;
-  thumbnailUrl: string;
 }
 
 export const News = () => {
   const [fetchPosts, setFetchPosts] = useState<InstaType[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-  const apiUrl = process.env.VITE_API_INSTA_URL;
-  // const apiUrl = "https://jsonplaceholder.typicode.com/photos";
+  const apiUrl = import.meta.env.VITE_API_INSTA_URL;
+
+  const fetchData = async () => {
+    setLoading(true);
+    console.log("API URL:", apiUrl);
+
+    try {
+      console.log("Fetching data from", apiUrl);
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log("Fetched data:", result);
+
+      if (Array.isArray(result.data)) {
+        const posts = result.data.map((post: any) => ({
+          id: post.id,
+          caption: post.caption || "No caption",
+          mediaType: post.media_type,
+          mediaUrl:
+            post.media_url || post.image_versions2?.candidates[0]?.url || "",
+        }));
+
+        setFetchPosts(posts.slice(0, 4));
+      } else {
+        throw new Error("Data is not an array");
+      }
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "An unknown error occurred"
+      );
+      console.error("Error fetching data:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      console.log("API URL:", import.meta.env.VITE_API_INSTA_URL);
-
-      try {
-        console.log("Fetching data from", apiUrl);
-        await new Promise((resolve) => setTimeout(resolve, 1200));
-        if (!apiUrl) {
-          throw new Error("API URL is not defined");
-        }
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        console.log(data);
-        setFetchPosts(data.slice(0, 3));
-      } catch (err) {
-        setError(
-          err instanceof Error ? err.message : "An unknown error occurred"
-        );
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchData();
   }, [apiUrl]);
 
   return (
-    <div className="  ">
-      <h2 className="uppercase font-mono text-center text-2xl font-bold text-sandybrown">
+    <div className="pt-5 pb-5 mx-auto ">
+      <h2 className="uppercase pb-2 font-mono text-center text-2xl font-bold text-sandybrown">
         Nyheter
       </h2>
+      <div className="">
       {loading ? (
-        <div className="text-center py-5">Loading...</div>
+        <div className="text-center py-5">Laddar...</div>
       ) : error ? (
-        <p className="text-red-600">Error..</p>
+        <p className="text-red-600">Error: {error}</p>
       ) : (
         <InstaGrid posts={fetchPosts} />
       )}
+      </div>
+      <div className="flex justify-center pb-5 pt-5 mx-auto">
+        <Button isLink={true} linkTo={"#"} text={"FLER NYHETER"}></Button>
+      </div>
     </div>
   );
 };
