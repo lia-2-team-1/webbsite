@@ -17,14 +17,19 @@ const Navbar = () => {
 
   return (
     <nav className="bg-darkgray border-gray-200 sticky top-0 z-50">
-    <div className="container mx-auto px-4 lg:px-6 xl:px-8">
-      <div className="flex items-center justify-between h-20">
-        <div className="flex-shrink-0">
-        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="logo.webp" className="h-24" alt="TRANDAREDS IF LOGO" />
-      <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-gold">TRANDAREDS IF</span>
-      </a>
-        </div>
+      <div className="container mx-auto px-4 lg:px-6 xl:px-8">
+        <div className="flex items-center justify-between h-20">
+          <div className="flex-shrink-0">
+            <a
+              href="#"
+              className="flex items-center space-x-3 rtl:space-x-reverse"
+            >
+              <img src="logo.webp" className="h-20" alt="TRANDAREDS IF LOGO" />
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-gold hidden lg:block">
+                TRANDAREDS IF
+              </span>
+            </a>
+          </div>
 
           <NavLinks className="hidden lg:flex items-center justify-center space-x-10 absolute left-1/2 transform -translate-x-1/2 font-inter text-xl" />
 
