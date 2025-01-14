@@ -8,7 +8,7 @@ interface AboutUsProps {
 export default function AboutUs({header, p, src}: AboutUsProps) {
     const initProps: AboutUsProps[] = {
         header:  "Trandareds IF",
-        p: "Lorem Mauris vitae ex varius, pharetra eros sit amet, dignissim justo. Quisque sollicitudin facilisis nunc, eu ultricies dui commodo sed. Suspendisse vel sollicitudin velit. Sed purus neque, pretium vulputate ultricies vitae, scelerisque eu erat. Duis ultricies metus nunc, eget imperdiet ligula bibendum et. Sed quis felis magna. Morbi maximus sapien id convallis gravida. Aenean at justo vestibulum, iaculis mi quis, malesuada sapien. Integer ut ligula enim. Integer id turpis eu sem luctus consequat. Nunc semper lectus sed tincidunt fermentum. ",
+        p: "I hjärtat av Borås blomstrar en nyskapad förening som inte bara siktar på att utmärka sig på planen, utan också strävar efter att vara en positiv kraft i samhället. Trandareds IF ska inte bara vara en idrottsförening, utan en plattform för engagemang, gemenskap och lokalt samhällsansvar.",
         src: "https://placehold.co/600x400",
     }
     return(
