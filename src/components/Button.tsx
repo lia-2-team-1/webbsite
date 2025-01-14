@@ -1,41 +1,75 @@
+
+
 interface ButtonProps {
-  text: String;
-  linkTo: String;
-  onClick: Function;
+    text: string;
+    width?: string;
+    isLink: boolean;
+    linkTo?: string;
+    func?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
-/*
- * @remarks
- * A function to create an Anchor element styled as a button, with certain properties set.
- *
- * @param Text - Visual text of the button
- * @param LinkTo - Sets the href of the button
- * @param OnClick - the onClick function of the button
- *
- * @returns A button with above parameters.
- *
- * @beta
- */
-export default function Button({ text, linkTo, onClick }: ButtonProps) {
-  return (
-    <a
-      href={linkTo}
-      onClick={onClick}
-      className="
-            font-bold font-inter text-base uppercase
-            py-2 px-10
-            my-1 mx-3
-            border-2 rounded-md border-transparent
-            bg-sandybrown text-black 
-            hover:bg-[#3D3D3D] hover:text-springwood
-            focus:bg-[#3D3D3D] focus:text-springwood
-            active:bg-[#B0B0B0] active:text-black
-            disabled:bg-[#888888] disabled:text-black
-            visited:text-black
-            transition-colors
-        "
-    >
-      {text == null || "" ? "TEXT IS NULL" : text}
-    </a>
-  );
+
+/* 
+* @remarks
+* A function to create an Anchor element styled as a button, with certain properties set.
+* 
+* @param text --- Displayed text.
+* @param width? --- Width in Tailwind increments. Defaults to "fit".
+* @param isLink --- Does this link to another page? (true/false)
+* @param linkTo --- Target page. (Optional)
+* @param func --- Function to do on click.
+*
+* @returns A Button or Anchor with above parameters.
+* 
+* @beta
+*/
+export default function Button({text, isLink, linkTo, func, width}: ButtonProps) {
+        
+        if (isLink) {
+            return (
+                <a href={`${linkTo}`} 
+                    className={`
+                    inline-block
+                    font-bold font-inter uppercase
+                    py-1 px-2
+                    my-1 mx-3
+                    bg-sandybrown text-black
+                    border-4 rounded-md border-transparent
+                    transition-colors text-center
+
+                    hover:bg-coffee hover:text-black hover:border-transparent
+                    focus:bg-sandybrown focus:text-black focus:border-sandybrown
+                    outline-none focus:outline-4 focus:outline-offset-0 focus:outline-sepiaskin focus:border-transparent
+                    active:bg-sepiaskin active:text-white active:border-transparent
+                    disabled:bg-[#888888] disabled:text-black
+                    visited:text-black
+                    w-${!width ? "fit" : width}
+                    `}>
+                    {`${text}`}
+                    </a>
+            )
+        }
+        else {
+            return(
+                    <button type="button"
+                    onClick={func}
+                    className={`
+                    font-bold font-inter uppercase
+                    py-1 px-2
+                    my-1 mx-3
+                    bg-sandybrown text-black
+                    border-4 rounded-md border-transparent
+                    transition-colors text-center
+
+                    hover:bg-coffee hover:text-black hover:border-transparent
+                    focus:bg-sandybrown focus:text-black focus:border-coffee
+                    outline-none focus:outline-4 focus:outline-offset-0 focus:outline-sepiaskin focus:border-transparent
+                    active:bg-sepiaskin active:text-white active:border-transparent
+                    disabled:bg-[#888888] disabled:text-black
+                    visited:text-black
+                    w-${!width ? "fit" : width}
+                    `}
+                    >{`${text}`}</button>
+            )
+        }
 }
