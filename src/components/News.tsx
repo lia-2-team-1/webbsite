@@ -17,17 +17,13 @@ export const News = () => {
 
   const fetchData = async () => {
     setLoading(true);
-    console.log("API URL:", apiUrl);
-
     try {
-      console.log("Fetching data from", apiUrl);
       const response = await fetch(apiUrl);
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
       const result = await response.json();
-      console.log("Fetched data:", result);
 
       if (Array.isArray(result.data)) {
         const posts = result.data.map((post: any) => ({
@@ -57,21 +53,21 @@ export const News = () => {
   }, [apiUrl]);
 
   return (
-    <div className="pt-5 pb-5 mx-auto ">
+    <div className="pt-5 pb-5 mx-auto md:w-[90%] ">
       <h2 className="uppercase pb-2 font-mono text-center text-2xl font-bold text-sandybrown">
         Nyheter
       </h2>
       <div className="">
-      {loading ? (
-        <div className="text-center py-5">Laddar...</div>
-      ) : error ? (
-        <p className="text-red-600">Error: {error}</p>
-      ) : (
-        <InstaGrid posts={fetchPosts} />
-      )}
+        {loading ? (
+          <div className="text-center py-5">Laddar...</div>
+        ) : error ? (
+          <p className="text-red-600">Error: {error}</p>
+        ) : (
+          <InstaGrid posts={fetchPosts} />
+        )}
       </div>
       <div className="flex justify-center pb-5 pt-5 mx-auto">
-        <Button isLink={true} linkTo={"#"} text={"FLER NYHETER"}></Button>
+        <Button isLink={true} linkTo={"#"} text={"FLER NYHETER"} />
       </div>
     </div>
   );
