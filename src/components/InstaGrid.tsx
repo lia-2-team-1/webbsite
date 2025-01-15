@@ -13,7 +13,7 @@ export default function InstaGrid({ posts }: InstaGridPops) {
           insta.caption.split(" ").slice(0, 3).join(" ") +
           (insta.caption.split(" ").length > 3 ? ".." : "");
         const instagramLink = `https://www.instagram.com/p/${insta.id}/`;
-        
+
         return (
           <div
             key={insta.id}

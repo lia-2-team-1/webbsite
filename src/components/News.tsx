@@ -55,7 +55,7 @@ export const News = () => {
   return (
     <div className="pt-5 pb-5 mx-auto md:w-[90%] ">
       <h2 className="uppercase pb-2 font-mono text-center text-2xl font-bold text-sandybrown">
-        Nyheter
+        Senaste hos klubben
       </h2>
       <div className="">
         {loading ? (
