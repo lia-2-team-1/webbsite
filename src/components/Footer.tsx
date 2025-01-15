@@ -5,11 +5,16 @@ interface FooterProps {
 export default function Footer({}: FooterProps) {
     return(
         <>
-            <footer className="">
-                <div className="
+            <footer className="
+            ">
+                <div className=" 
                     flex
-                    place-content-center
-                    gap-10
+                    flex-col
+                    text-center 
+                    md:flex-row
+                    md:gap-10
+                    md:text-start
+                    md:place-content-center
                 ">
                     <div className="flex flex-col">
                         <h5>HITTA HIT</h5>
