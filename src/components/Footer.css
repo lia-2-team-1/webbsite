@@ -2,8 +2,9 @@ a {
     /* font */
     @apply font-segoeui; 
     /* text*/
-    @apply text-coffee;
+    @apply text-coffee hover:text-sandybrown;
     /* decoration */
     @apply underline; 
-    /*  */
+    /* transition */
+    @apply transition-colors;
 }

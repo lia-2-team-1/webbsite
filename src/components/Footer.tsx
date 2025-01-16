@@ -6,6 +6,7 @@ export default function Footer({}: FooterProps) {
     return(
         <>
             <footer className="
+                bg-black
             ">
                 <div className=" 
                     flex
@@ -15,6 +16,7 @@ export default function Footer({}: FooterProps) {
                     md:gap-10
                     md:text-start
                     md:place-content-center
+                    md:mb-4
                 ">
                     <div className="flex flex-col">
                         <h5
@@ -60,6 +62,7 @@ export default function Footer({}: FooterProps) {
                             font-bold
                         ">FÖLJ OSS</h5>
                         <img />
+                        logo here
                     </div>
                     <div className="flex flex-col">
                         <h5
@@ -72,11 +75,13 @@ export default function Footer({}: FooterProps) {
                         <a href="">Vilkor</a>
                     </div>
                 </div>
-                <hr/>
-                <div>
+                <hr className="w-4/5 mx-auto border-sandybrown"/>
+                <div className="mt-5 md:w-4/5 md:mx-auto">
                     logo
+                    <p className="text-center">
+                        © Trandareds IF, 2024-2025
+                    </p>
                 </div>
-                    copyright
             </footer>                
         </>
     )
