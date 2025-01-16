@@ -4,10 +4,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import SponsorSection from './components/SponsorSection.tsx'
 import './index.css'
-import Button from './components/Button.tsx' // *
+import Button from './components/Button.tsx'
 import Hero from './components/Hero.tsx'
+import Footer from './components/Footer.tsx'
 import AboutUs from './components/AboutUs.tsx'
 import Navbar from "./components/Navbar.tsx";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,8 +23,10 @@ function App() {
         <AboutUs/>
        <SponsorSection />
       </div>
+    <Footer/>
     </>
   );
+
 }
 
 export default App;

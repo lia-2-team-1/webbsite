@@ -13,8 +13,12 @@ export default {
          springwood: "#FAF7F2", 
          coffee: "#AF7C47",
          sepiaskin: "#92633C",
+         merino: "#faf7f2",
+         wheat: "f5e2b8",
+         brandy: "#e1c79e",
+         codgray: "#1a1a1a",
          black: "#010101",
-         rangoongreen: "#1A1A1A",
+         mineshaft: "#333333",
          lightgrey: "#D9D9D9",
          gold: '#C7A46C',
          darkgray: "#333333"
