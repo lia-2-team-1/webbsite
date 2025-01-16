@@ -6,6 +6,8 @@ import './index.css'
 import Button from './components/Button.tsx' // *
 import Hero from './components/Hero.tsx'
 import Footer from './components/Footer.tsx'
+import AboutUs from './components/AboutUs.tsx'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,7 +18,9 @@ function App() {
     </div>
       <div>
         <Hero></Hero>
+        <AboutUs></AboutUs>
        <SponsorSection></SponsorSection>
+
       </div>
     <Footer></Footer> 
     </>
