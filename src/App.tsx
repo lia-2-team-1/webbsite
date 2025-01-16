@@ -7,6 +7,7 @@ import Button from "./components/Button.tsx"; // *
 import Hero from "./components/Hero.tsx";
 import Navbar from "./components/Navbar.tsx";
 import News from "./components/News.tsx";
+import AboutUs from './components/AboutUs.tsx'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,6 +20,7 @@ function App() {
       <div>
         <Navbar />
         <Hero />
+        <AboutUs />
         <News />
         <SponsorSection />
       </div>
