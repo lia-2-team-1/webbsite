@@ -1,0 +1,9 @@
+a {
+    /* font */
+    @apply font-segoeui; 
+    /* text*/
+    @apply text-coffee;
+    /* decoration */
+    @apply underline; 
+    /*  */
+}

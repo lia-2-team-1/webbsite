@@ -1,5 +1,5 @@
+import "./Footer.css";
 interface FooterProps {
-
 }
 
 export default function Footer({}: FooterProps) {
@@ -17,36 +17,65 @@ export default function Footer({}: FooterProps) {
                     md:place-content-center
                 ">
                     <div className="flex flex-col">
-                        <h5>HITTA HIT</h5>
-                        <p>Fotbollsgatan 25</p>
-                        <p>123 45 Sportstad</p>
+                        <h5
+                        className="
+                            text-sandybrown
+                            font-bold
+                            font-segoeui
+                        ">HITTA HIT</h5>
+                        <p className="text-sandybrown">Fotbollsgatan 25</p>
+                        <p className="text-sandybrown">123 45 Sportstad</p>
                         <a href="#">Karta</a>
                     </div>
                     <div className="flex flex-col">
-                        <h5>NAVIGERA</h5>
-                        <a>Hem</a>
-                        <a>Schema</a>
-                        <a>Om Oss</a>
-                        <a>Matcher</a>
-                        <a>Nyheter</a>
-                        <a>Tider</a>
+                        <h5 
+                        className="
+                            text-sandybrown
+                            font-bold
+                            font-segoeui
+                        ">NAVIGERA</h5>
+                        <a href="">Hem</a>
+                        <a href="">Schema</a>
+                        <a href="">Om Oss</a>
+                        <a href="">Matcher</a>
+                        <a href="">Nyheter</a>
+                        <a href="">Tider</a>
                     </div>
                     <div className="flex flex-col">
-                        <h5>SPONSORER</h5>
-                        <a>Craft of Scandinavia</a>
-                        <a>Baker Logistics</a>
-                        <a>FB Cargo</a>
-                        <a>PLUS Margret</a>
+                        <h5 
+                        className="
+                        
+                            text-sandybrown
+                            font-bold
+                            font-segoeui
+                        "
+                        >SPONSORER</h5>
+                        <a href="">Craft of Scandinavia</a>
+                        <a href="">Baker Logistics</a>
+                        <a href="">FB Cargo</a>
+                        <a href="">PLUS Margret</a>
                     </div>
                     <div className="flex flex-col">
-                        <h5>FÖLJ OSS</h5>
+                        <h5
+                        className="
+                        
+                            text-sandybrown
+                            font-bold
+                            font-segoeui
+                        ">FÖLJ OSS</h5>
                         <img />
                     </div>
                     <div className="flex flex-col">
-                        <h5>POLICIES</h5>
-                        <a>Kakor</a>
-                        <a>Integritet</a>
-                        <a>Vilkor</a>
+                        <h5
+                            className="
+
+                            text-sandybrown
+                            font-bold
+                            font-segoeui
+                            ">POLICIES</h5>
+                        <a href="">Kakor</a>
+                        <a href="">Integritet</a>
+                        <a href="">Vilkor</a>
                     </div>
                 </div>
                 <hr/>
