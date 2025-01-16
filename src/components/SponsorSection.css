@@ -3,5 +3,9 @@
     width: calc(100vw/2); 
 }
 div:has(>div#parentselector) {
+<<<<<<< HEAD
     background-color: black;
+=======
+    background-color: #333333;
+>>>>>>> main
 }
