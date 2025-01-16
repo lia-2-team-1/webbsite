@@ -85,7 +85,7 @@ export default function Footer({}: FooterProps) {
                 <hr className="w-4/5 mx-auto border-sandybrown"/>
                 <div className="mt-5 md:w-4/5 md:mx-auto">
                     logo
-                    <p className="text-center text-sandybrown">
+                    <p className="text-center text-sandybrown pb-1">
                         © 2024-2025 Trandareds IF. Alla rättigheter förbehållna.
                     </p>
                 </div>
