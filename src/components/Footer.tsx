@@ -80,7 +80,7 @@ export default function Footer({}: FooterProps) {
                 <div className="mt-5 md:w-4/5 md:mx-auto">
                     logo
                     <p className="text-center">
-                        © Trandareds IF, 2024-2025
+                        © 2024-2025 Trandareds IF. Alla rättigheter förbehållna.
                     </p>
                 </div>
             </footer>                
