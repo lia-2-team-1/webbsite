@@ -20,6 +20,8 @@ export default {
          black: "#010101",
          mineshaft: "#333333",
          lightgrey: "#D9D9D9",
+         gold: '#C7A46C',
+         darkgray: "#333333"
         }
     },
   },
