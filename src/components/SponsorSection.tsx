@@ -77,7 +77,7 @@ export default function SponsorSection() {
         "
         >
         <h2 className="
-        uppercase font-mono
+        uppercase 
         text-center text-lg font-bold
         ">
         Våra sponsorer
