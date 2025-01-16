@@ -1,10 +1,12 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import SponsorSection from "./components/SponsorSection.tsx";
-import "./index.css";
-import Button from "./components/Button.tsx"; // *
-import Hero from "./components/Hero.tsx";
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import SponsorSection from './components/SponsorSection.tsx'
+import './index.css'
+import Button from './components/Button.tsx' // *
+import Hero from './components/Hero.tsx'
+import AboutUs from './components/AboutUs.tsx'
 import Navbar from "./components/Navbar.tsx";
 
 function App() {
@@ -14,9 +16,10 @@ function App() {
     <>
       <div className="w-screen"></div>
       <div>
-        <Navbar></Navbar>
-        <Hero></Hero>
-        <SponsorSection></SponsorSection>
+        <Navbar/>
+        <Hero/>
+        <AboutUs/>
+       <SponsorSection />
       </div>
     </>
   );
