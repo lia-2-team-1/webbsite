@@ -8,16 +8,22 @@ export default function Footer({}: FooterProps) {
             <footer className="
                 bg-mineshaft
                 pt-2
+                
             ">
                 <div className=" 
                     flex
                     flex-col
                     text-center 
+                    gap-5
+                    py-10
+                    md:gap-0
                     md:flex-row
-                    md:gap-10
+                    md:justify-between
                     md:text-start
                     md:place-content-center
                     md:mb-4
+                    md:w-4/5
+                    md:mx-auto
                 ">
                     <div className="flex flex-col">
                         <h5
@@ -79,7 +85,7 @@ export default function Footer({}: FooterProps) {
                 <hr className="w-4/5 mx-auto border-sandybrown"/>
                 <div className="mt-5 md:w-4/5 md:mx-auto">
                     logo
-                    <p className="text-center">
+                    <p className="text-center text-sandybrown">
                         © 2024-2025 Trandareds IF. Alla rättigheter förbehållna.
                     </p>
                 </div>
