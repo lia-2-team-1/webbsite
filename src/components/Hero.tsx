@@ -14,21 +14,12 @@ export const Hero = () => {
           </h1>
 
           <p className="text-sandybrown text-center font-medium">
-<<<<<<< HEAD
-            Trandareds IF - Tillsammans för fotboll, gemenskap och glädje
-          </p>
-        </div>
-        <div className="w-[80%] md:w-[40%] lg:w-[20%] bg-black bg-opacity-70 p-10 flex flex-col lg:items-center absolute lg:left-80 -bottom-14 left-10 right-10">
-          <Button isLink={true} linkTo={"#"} text={"STÖTTA OSS"} />
-          <Button isLink={true} linkTo="#" text="BLI MEDLEM" />
-=======
             Trandareds IF - Engagemang, gemenskap och framtid
           </p>
         </div>
         <div className="w-[80%] md:w-[40%] lg:w-[20%] bg-black bg-opacity-70 p-10 flex flex-col lg:items-center absolute lg:left-80 -bottom-14 left-10 right-10">
           <Button isLink={true} linkTo={"#"} text={"STÖTTA OSS"}></Button>
           <Button isLink={true} linkTo="#" text="BLI MEDLEM"></Button>
->>>>>>> main
         </div>
       </div>
     </div>
