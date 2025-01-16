@@ -21,7 +21,6 @@ export default function Footer({}: FooterProps) {
                         className="
                             text-sandybrown
                             font-bold
-                            font-segoeui
                         ">HITTA HIT</h5>
                         <p className="text-sandybrown">Fotbollsgatan 25</p>
                         <p className="text-sandybrown">123 45 Sportstad</p>
@@ -32,7 +31,6 @@ export default function Footer({}: FooterProps) {
                         className="
                             text-sandybrown
                             font-bold
-                            font-segoeui
                         ">NAVIGERA</h5>
                         <a href="">Hem</a>
                         <a href="">Schema</a>
@@ -47,7 +45,6 @@ export default function Footer({}: FooterProps) {
                         
                             text-sandybrown
                             font-bold
-                            font-segoeui
                         "
                         >SPONSORER</h5>
                         <a href="">Craft of Scandinavia</a>
@@ -61,17 +58,14 @@ export default function Footer({}: FooterProps) {
                         
                             text-sandybrown
                             font-bold
-                            font-segoeui
                         ">FÖLJ OSS</h5>
                         <img />
                     </div>
                     <div className="flex flex-col">
                         <h5
                             className="
-
                             text-sandybrown
                             font-bold
-                            font-segoeui
                             ">POLICIES</h5>
                         <a href="">Kakor</a>
                         <a href="">Integritet</a>

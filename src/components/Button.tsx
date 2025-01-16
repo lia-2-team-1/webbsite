@@ -30,7 +30,7 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                 <a href={`${linkTo}`} 
                     className={`
                     inline-block
-                    font-bold font-inter uppercase
+                    font-bold uppercase
                     py-1 px-2
                     my-1 mx-3
                     bg-sandybrown text-black
@@ -54,7 +54,7 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                     <button type="button"
                     onClick={func}
                     className={`
-                    font-bold font-inter uppercase
+                    font-bold uppercase
                     py-1 px-2
                     my-1 mx-3
                     bg-sandybrown text-black
