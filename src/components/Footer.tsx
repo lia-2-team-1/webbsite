@@ -6,7 +6,8 @@ export default function Footer({}: FooterProps) {
     return(
         <>
             <footer className="
-                bg-black
+                bg-mineshaft
+                pt-2
             ">
                 <div className=" 
                     flex
