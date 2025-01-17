@@ -27,20 +27,15 @@ export const News = () => {
       }
 
       const result = await response.json();
+      const posts = result.data.map((post: Post) => ({
+        id: post.id,
+        caption: post.caption || "No caption",
+        mediaType: post.media_type,
+        mediaUrl:
+          post.media_url || post.image_versions2?.candidates?.[0]?.url || "",
+      }));
 
-      if (Array.isArray(result.data)) {
-        const posts = result.data.map((post: Post) => ({
-          id: post.id,
-          caption: post.caption || "No caption",
-          mediaType: post.media_type,
-          mediaUrl:
-            post.media_url || post.image_versions2?.candidates?.[0]?.url || "",
-        }));
-
-        setFetchPosts(posts.slice(0, 4));
-      } else {
-        throw new Error("Data is not an array");
-      }
+      setFetchPosts(posts.slice(0, 4));
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unknown error occurred"
@@ -56,11 +51,11 @@ export const News = () => {
   }, [apiUrl]);
 
   return (
-    <div className="pt-5 pb-5 mx-auto md:w-[90%] ">
+    <div className="pt-5 pb-5 mx-auto md:w-4/5">
       <h2 className="uppercase pb-2 font-mono text-center text-2xl font-bold text-sandybrown">
         Senaste hos klubben
       </h2>
-      <div className="">
+      <div>
         {loading ? (
           <div className="text-center py-5">Laddar...</div>
         ) : error ? (
