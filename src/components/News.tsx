@@ -2,15 +2,18 @@ import React, { useState, useEffect } from "react";
 import InstaGrid from "./InstaGrid.tsx";
 import Button from "./Button.tsx";
 
-export interface InstaType {
+export interface Post {
   id: string;
-  caption: string;
-  mediaType: string;
-  mediaUrl: string;
+  caption?: string;
+  media_type: string;
+  media_url?: string;
+  image_versions2?: {
+    candidates: { url: string }[];
+  };
 }
 
 export const News = () => {
-  const [fetchPosts, setFetchPosts] = useState<InstaType[]>([]);
+  const [fetchPosts, setFetchPosts] = useState<Post[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const apiUrl = import.meta.env.VITE_API_INSTA_URL;
@@ -26,12 +29,12 @@ export const News = () => {
       const result = await response.json();
 
       if (Array.isArray(result.data)) {
-        const posts = result.data.map((post: any) => ({
+        const posts = result.data.map((post: Post) => ({
           id: post.id,
           caption: post.caption || "No caption",
           mediaType: post.media_type,
           mediaUrl:
-            post.media_url || post.image_versions2?.candidates[0]?.url || "",
+            post.media_url || post.image_versions2?.candidates?.[0]?.url || "",
         }));
 
         setFetchPosts(posts.slice(0, 4));
