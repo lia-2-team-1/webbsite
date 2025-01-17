@@ -11,6 +11,13 @@ export default function AboutUs({header, src}: AboutUsProps) {
     }
     return(
         <>
+                <h2 className="
+                    text-xl 
+                    text-center
+                    text-sandybrown
+                    font-bold 
+                    mt-3
+                ">{initProps.header}</h2>
         <div className="
             w-screen
             bg-mineshaft
@@ -22,8 +29,8 @@ export default function AboutUs({header, src}: AboutUsProps) {
              src={`${initProps.src}`}
              className="
                 max-w-md
-                mx-auto
-                
+                lg:max-w-lg
+                mx-auto 
                 md:mx-0
              "
             /> 
@@ -31,17 +38,12 @@ export default function AboutUs({header, src}: AboutUsProps) {
                 text-sandybrown
                 flex flex-col 
                 max-w-md 
+                lg:max-w-lg
                 mt-4
                 mx-auto md:mx-0
                 md:py-auto
                 md:mt-0
             ">
-                <h2 className="
-                    text-xl 
-                    text-center
-                    font-bold 
-                    mb-3
-                ">{initProps.header}</h2>
                 <p className="
                     text-base 
                     md:my-auto
