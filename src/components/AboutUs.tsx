@@ -16,10 +16,19 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
         <div className="
             w-screen
             bg-[#333333]
-            flex flex-col md:flex-row
+            flex flex-col md:flex-row-reverse
             place-content-center
             mx-auto p-3 md:gap-x-5
         ">
+            <img 
+             src={`${initProps.src}`}
+             className="
+                max-w-md
+                mx-auto
+                py-2
+                md:mx-0
+             "
+            /> 
             <div className="
                 block
                 max-w-md 
@@ -36,27 +45,10 @@ export default function AboutUs({header, p, src}: AboutUsProps) {
                 <div className="
                 w-max
                 mx-auto
-                hidden 
                 md:block md:pt-2
                 ">
                 <Button isLink={true} text="Läs mer!"></Button>
                 </div>
-            </div>
-            <img 
-             src={`${initProps.src}`}
-             className="
-                max-w-md
-                mx-auto
-                py-2
-                md:mx-0
-             "
-            /> 
-            <div className="
-                w-max
-                mx-auto
-                sm:hidden
-            ">
-                <Button isLink={true} text="Läs mer!"></Button>
             </div>
         </div>
         </>
