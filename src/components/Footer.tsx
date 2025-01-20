@@ -68,8 +68,9 @@ export default function Footer({}: FooterProps) {
                             text-sandybrown
                             font-bold
                         ">FÖLJ OSS</h5>
-                        <img />
-                        logo here
+                        <a href="https://www.google.com">
+                        <img src="/public/instagram.svg" className="w-1/2"/>
+                        </a>
                     </div>
                     <div className="flex flex-col">
                         <h5
@@ -84,7 +85,10 @@ export default function Footer({}: FooterProps) {
                 </div>
                 <hr className="w-4/5 mx-auto border-sandybrown"/>
                 <div className="mt-5 md:w-4/5 md:mx-auto">
-                    logo
+                    <div className="flex flex-row">
+                    <img src="/public/logo.webp" className="md:w-1/6"/>
+                    <p className="my-auto text-sandybrown">Tillsammans bygger <br /> vi framtidens fotboll!</p>
+                    </div>
                     <p className="text-center text-sandybrown pb-1">
                         © 2024-2025 Trandareds IF. Alla rättigheter förbehållna.
                     </p>
