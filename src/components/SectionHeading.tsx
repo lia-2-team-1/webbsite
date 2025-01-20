@@ -7,11 +7,7 @@ interface SectionHeadingProps {
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({ text, className }) => {
   return (
-    <h2
-      className={`text-center lg:text-2xl text-xl font-bold text-sandybrown ${
-        className ? className : ""
-      }`}
-    >
+    <h2 className="text-center lg:text-3xl text-2xl font-bold text-sandybrown">
       {text}
     </h2>
   );
