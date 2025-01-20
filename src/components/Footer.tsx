@@ -69,7 +69,7 @@ export default function Footer({}: FooterProps) {
                             font-bold
                         ">FÖLJ OSS</h5>
                         <a href="https://www.google.com">
-                        <img src="/public/instagram.svg" className="w-1/2"/>
+                        <img src="/public/instagram.svg" className="w-[10%] mx-auto md:w-1/2"/>
                         </a>
                     </div>
                     <div className="flex flex-col">
@@ -86,7 +86,7 @@ export default function Footer({}: FooterProps) {
                 <hr className="w-4/5 mx-auto border-sandybrown"/>
                 <div className="mt-5 md:w-4/5 md:mx-auto">
                     <div className="flex flex-row">
-                    <img src="/public/logo.webp" className="md:w-1/6"/>
+                    <img src="/public/logo.webp" className="w-1/5 md:w-1/6"/>
                     <p className="my-auto text-sandybrown">Tillsammans bygger <br /> vi framtidens fotboll!</p>
                     </div>
                     <p className="text-center text-sandybrown pb-1">
