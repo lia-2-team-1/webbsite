@@ -1,63 +1,67 @@
 import Button from './Button.tsx';
 interface AboutUsProps {
     header: string;
-    p: string;
     src: string;
 }
 
-export default function AboutUs({header, p, src}: AboutUsProps) {
+export default function AboutUs({header, src}: AboutUsProps) {
     const initProps: AboutUsProps[] = {
         header:  "Trandareds IF",
-        p: "I hjärtat av Borås blomstrar en nyskapad förening som inte bara siktar på att utmärka sig på planen, utan också strävar efter att vara en positiv kraft i samhället. Trandareds IF ska inte bara vara en idrottsförening, utan en plattform för engagemang, gemenskap och lokalt samhällsansvar.",
         src: "https://placehold.co/600x400",
     }
     return(
         <>
+        <h2 className="
+        text-xl 
+        text-center
+        text-sandybrown
+        font-bold 
+        mt-3
+        ">{initProps.header}</h2>
         <div className="
-            w-screen
-            bg-[#333333]
-            flex flex-col md:flex-row
-            place-content-center
-            mx-auto p-3 md:gap-x-5
+        max-w-screen
+        bg-mineshaft
+        flex flex-col md:flex-row-reverse
+        place-content-center
+        mx-auto p-3 md:gap-x-5
         ">
+        <img 
+        src={`${initProps.src}`}
+        className="
+        max-w-md
+        md:w-xl md:max-w-screen
+        mx-auto 
+        md:mx-0
+        "
+        /> 
+        <div className="
+        text-sandybrown
+        flex flex-col 
+        max-w-md 
+        md:w-xl md:max-w-screen
+        mt-4
+        mx-auto md:mx-0
+        md:py-auto
+        md:mt-0
+        ">
+        <p className="
+        text-base 
+        md:my-auto
+        md:pr-6
+        ">
+        I hjärtat av Borås blomstrar en nyskapad förening som inte bara siktar på att utmärka sig på planen, utan också strävar efter att vara en positiv kraft i samhället. Trandareds IF ska inte bara vara en idrottsförening, utan en plattform för engagemang, gemenskap och lokalt samhällsansvar. 
+                </p>
+            <p className="text-base mt-4 md:my-auto md:pr-6">
+        Välkommen till Trandareds IF, där vi inte bara spelar fotboll — vi förändrar liv.
+                </p>
             <div className="
-                block
-                max-w-md 
-                mx-auto md:mx-0
-                font-segoeui
-                text-sandybrown
-            ">
-                <h2 className="
-                    text-xl 
-                ">{initProps.header}</h2>
-                <p className="
-                    text-base 
-                ">{initProps.p}</p>
-                <div className="
-                w-max
-                mx-auto
-                hidden 
-                md:block md:pt-2
-                ">
-                <Button isLink={true} text="Läs mer!"></Button>
-                </div>
-            </div>
-            <img 
-             src={`${initProps.src}`}
-             className="
-                max-w-md
-                mx-auto
-                py-2
-                md:mx-0
-             "
-            /> 
-            <div className="
-                w-max
-                mx-auto
-                sm:hidden
-            ">
-                <Button isLink={true} text="Läs mer!"></Button>
-            </div>
+        w-full
+        flex flex-col
+        items-center
+        ">
+        <Button  isLink={true} text="Läs mer!"></Button>
+        </div>
+        </div>
         </div>
         </>
     )   

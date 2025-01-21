@@ -77,7 +77,7 @@ export default function SponsorSection() {
         "
         >
         <h2 className="
-        uppercase 
+        uppercase font-mono
         text-center text-lg font-bold
         ">
         Våra sponsorer
@@ -131,6 +131,7 @@ export default function SponsorSection() {
         </div>
         <div className="text-center">
         <Button text="bli sponsor" ></Button>
+        <Button isLink="true" text="bli sponsor" ></Button>
         </div>
         </div>
         </>

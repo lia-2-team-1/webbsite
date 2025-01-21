@@ -7,23 +7,22 @@ import Footer from './components/Footer.tsx';
 import AboutUs from './components/AboutUs.tsx';
 import Navbar from "./components/Navbar.tsx";
 import LightDark from "./components/LightDark.tsx" ;
-
-
+import News from "./components/News.tsx";
 function App() {
   const [count, setCount] = React.useState(0);
 
   return (
     <>
-      <div>
-        <Navbar/>
-        <Hero/>
-        <AboutUs/>
-       <SponsorSection />
+      <div className="w-screen">
+        <Navbar />
+        <Hero />
+        <AboutUs />
+        <News />
+        <SponsorSection />
+        <Footer/>
       </div>
-    <Footer/>
     </>
   );
-
 }
 
 export default App;
