@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button.tsx";
 import NavLinks from "./NavLinks.tsx";
-
+import LightDark from "./LightDark.tsx";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
@@ -35,17 +35,7 @@ const Navbar = () => {
 
           <div className="hidden lg:flex items-center space-x-6 ml-auto font-inter">
             <Button onClick={""} linkTo={"#"} text={"Logga in"} />
-            <button
-              onClick={toggleDarkMode}
-              className="w-20 h-12 flex items-center justify-center mix-blend-lighten"
-              title={darkMode ? "Ljusläge" : "Mörkläge"}
-            >
-              <img
-                src={darkMode ? "/tif-sun.svg" : "/tif-sun.svg"}
-                alt={darkMode ? "Ljusläge" : "Mörkläge"}
-                className="w-30 h-auto"
-              />
-            </button>
+            <LightDark /> 
           </div>
 
           <div className="lg:hidden flex items-center space-x-4">
@@ -66,18 +56,7 @@ const Navbar = () => {
           <div className="flex flex-row justify-evenly">
             <NavLinks className="flex flex-col mb-5 space-y-4 uppercase" />
             <div className="">
-              <button
-                onClick={toggleDarkMode}
-                className="w-20 h-12 flex items-center justify-center mix-blend-lighten m-auto mb-5"
-                title={darkMode ? "Ljusläge" : "Mörkläge"}
-              >
-                <img
-                  src={darkMode ? "/tif-sun.svg" : "/tif-sun.svg"}
-                  alt={darkMode ? "Ljusläge" : "Mörkläge"}
-                  className="w-30 h-30"
-                />
-              </button>
-
+                <LightDark ></LightDark>
               <Button
                 onClick={""}
                 linkTo={"#"}
