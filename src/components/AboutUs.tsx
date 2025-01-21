@@ -14,13 +14,14 @@ export default function AboutUs({header, src}: AboutUsProps) {
         <h2 className="
         text-xl 
         text-center
-        text-sandybrown
+        text-mineshaft dark:text-sandybrown
+        bg-brandy dark:bg-mineshaft
         font-bold 
-        mt-3
+        pt-3
         ">{initProps.header}</h2>
         <div className="
         max-w-screen
-        bg-mineshaft
+        bg-brandy dark:bg-mineshaft
         flex flex-col md:flex-row-reverse
         place-content-center
         mx-auto p-3 md:gap-x-5
@@ -35,7 +36,7 @@ export default function AboutUs({header, src}: AboutUsProps) {
         "
         /> 
         <div className="
-        text-sandybrown
+        text-mineshaft dark:text-sandybrown
         flex flex-col 
         max-w-md 
         md:w-xl md:max-w-screen
