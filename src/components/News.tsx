@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import InstaGrid from "./InstaGrid.tsx";
 import Button from "./Button.tsx";
+import SectionHeading from "./SectionHeading.tsx";
 
 export interface Post {
   id: string;
@@ -52,9 +53,7 @@ export const News = () => {
 
   return (
     <div className="pt-5 pb-5 mx-auto md:w-4/5">
-      <h2 className="uppercase pb-2 font-mono text-center text-2xl font-bold text-sandybrown">
-        Senaste hos klubben
-      </h2>
+      <SectionHeading text="Senaste hos klubben" />
       <div>
         {loading ? (
           <div className="text-center py-5">Laddar...</div>
