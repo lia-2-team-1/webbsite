@@ -10,12 +10,12 @@ export default function LightDark() {
     }
     return (
         <>
-            <button className="w-20 h-20 p-2" onClick={()=> darkModeHandler()}>
+            <button className="w-20 h-20 p-2 dark:bg-mineshaft bg-brandy" onClick={()=> darkModeHandler()}>
                 {
                     dark && <Sun className="w-full" stroke="stroke-sandybrown"/>
                 }
                 {
-                    !dark && <Moon className="w-full" stroke="stroke-slate" fill="fill-slate" /> 
+                    !dark && <Moon className="w-full" stroke="stroke-black" fill="fill-black" /> 
                 }
             </button>
         </>
