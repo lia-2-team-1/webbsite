@@ -1,8 +1,11 @@
-import Button from './Button.tsx';
+import Button from "./Button.tsx";
+import SectionHeading from "./SectionHeading.tsx";
+
 interface AboutUsProps {
-    header: string;
-    src: string;
+  header: string;
+  src: string;
 }
+
 
 export default function AboutUs({header, src}: AboutUsProps) {
     const initProps: AboutUsProps[] = {
@@ -25,10 +28,11 @@ export default function AboutUs({header, src}: AboutUsProps) {
         flex flex-col md:flex-row-reverse
         place-content-center
         mx-auto p-3 md:gap-x-5
-        ">
-        <img 
-        src={`${initProps.src}`}
-        className="
+        "
+      >
+        <img
+          src={`${initProps.src}`}
+          className="
         max-w-md
         md:w-xl md:max-w-screen
         mx-auto 
@@ -44,26 +48,36 @@ export default function AboutUs({header, src}: AboutUsProps) {
         mx-auto md:mx-0
         md:py-auto
         md:mt-0
-        ">
-        <p className="
+        "
+        >
+          <p
+            className="
         text-base 
         md:my-auto
         md:pr-6
-        ">
-        I hjärtat av Borås blomstrar en nyskapad förening som inte bara siktar på att utmärka sig på planen, utan också strävar efter att vara en positiv kraft i samhället. Trandareds IF ska inte bara vara en idrottsförening, utan en plattform för engagemang, gemenskap och lokalt samhällsansvar. 
-                </p>
-            <p className="text-base mt-4 md:my-auto md:pr-6">
-        Välkommen till Trandareds IF, där vi inte bara spelar fotboll — vi förändrar liv.
-                </p>
-            <div className="
+        "
+          >
+            I hjärtat av Borås blomstrar en nyskapad förening som inte bara
+            siktar på att utmärka sig på planen, utan också strävar efter att
+            vara en positiv kraft i samhället. Trandareds IF ska inte bara vara
+            en idrottsförening, utan en plattform för engagemang, gemenskap och
+            lokalt samhällsansvar.
+          </p>
+          <p className="text-base mt-4 md:my-auto md:pr-6">
+            Välkommen till Trandareds IF, där vi inte bara spelar fotboll — vi
+            förändrar liv.
+          </p>
+          <div
+            className="
         w-full
         flex flex-col
         items-center
-        ">
-        <Button  isLink={true} text="Läs mer!"></Button>
+        "
+          >
+            <Button isLink={true} text="Läs mer!"></Button>
+          </div>
         </div>
-        </div>
-        </div>
-        </>
-    )   
+      </div>
+    </>
+  );
 }

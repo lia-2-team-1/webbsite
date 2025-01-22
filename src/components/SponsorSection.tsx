@@ -26,45 +26,45 @@ import Button from './Button.tsx';
 *  Need global text variables.
 */
 interface Sponsor {
-    /**
-    * @param SponsorName --- Sponsor name
-    * @param SponsorLink --- Sponsor link to webpage
-    * @param SponsorLogo --- Sponsor logo url (.webp, .png or .svg)
-    */
-    SponsorName: string;
-    SponsorLink: string;
-    SponsorLogo: string;
+  /**
+   * @param SponsorName --- Sponsor name
+   * @param SponsorLink --- Sponsor link to webpage
+   * @param SponsorLogo --- Sponsor logo url (.webp, .png or .svg)
+   */
+  SponsorName: string;
+  SponsorLink: string;
+  SponsorLogo: string;
 }
 
 export default function SponsorSection() {
-    const initSponsors: Sponsor[] = [ 
-        {
-            SponsorName:"Intersport",
-            SponsorLink:"https://www.intersport.se/",
-            SponsorLogo:"intersport.WEBP",
-        },
-        {
-            SponsorName:"+MARGRET",
-            SponsorLink:"https://margret.se/",
-            SponsorLogo:"plusmargret.png"
-        },
-        {
-            SponsorName:"Craft of Scandinavia",
-            SponsorLink:"https://www.craftofscandinavia.se/",
-            SponsorLogo:"craft-neg.png"
-        },
-        {
-            SponsorName:"FB Cargo",
-            SponsorLink:"https://www.fb-cargo.se/",
-            SponsorLogo:"fbcargo.png"
-        },
-        {
-            SponsorName:"Baker Logistics",
-            SponsorLink:"https://bakerlogistics.se/",
-            SponsorLogo:"baker-logistics-neg.png"
-        },
-    ];  
-    const [sponsors, setSponsors] = useState(initSponsors);
+  const initSponsors: Sponsor[] = [
+    {
+      SponsorName: "Intersport",
+      SponsorLink: "https://www.intersport.se/",
+      SponsorLogo: "intersport.WEBP",
+    },
+    {
+      SponsorName: "+MARGRET",
+      SponsorLink: "https://margret.se/",
+      SponsorLogo: "plusmargret.png",
+    },
+    {
+      SponsorName: "Craft of Scandinavia",
+      SponsorLink: "https://www.craftofscandinavia.se/",
+      SponsorLogo: "craft-neg.png",
+    },
+    {
+      SponsorName: "FB Cargo",
+      SponsorLink: "https://www.fb-cargo.se/",
+      SponsorLogo: "fbcargo.png",
+    },
+    {
+      SponsorName: "Baker Logistics",
+      SponsorLink: "https://bakerlogistics.se/",
+      SponsorLogo: "baker-logistics-neg.png",
+    },
+  ];
+  const [sponsors, setSponsors] = useState(initSponsors);
 
     return(
         <>
@@ -84,20 +84,23 @@ export default function SponsorSection() {
         <div className="
         flex flex-wrap
         space-x-8 p-4
-        "> 
-        {sponsors.map((sponsor, i)=> {
+        "
+        >
+          {sponsors.map((sponsor, i) => {
             return (
-                <>
-                <a key={i} className="
+              <>
+                <a
+                  key={i}
+                  className="
                 relative
                 w-64 h-32  
                 "
-                style={{margin: "auto"}}
-                href={`${sponsor.SponsorLink}`}
+                  style={{ margin: "auto" }}
+                  href={`${sponsor.SponsorLink}`}
                 >
-                <img 
-                src={`${sponsor.SponsorLogo}`}
-                className="absolute 
+                  <img
+                    src={`${sponsor.SponsorLogo}`}
+                    className="absolute 
                 left-1/2 -translate-x-1/2 
                 top-1/3 -translate-y-1/3 
                 -mt-2 px-2 mx-auto max-h-16
@@ -105,18 +108,19 @@ export default function SponsorSection() {
                 hover:opacity-100 transition-opacity
                 hidden dark:block
                 "
-                />
-                <img 
-                src={`${sponsor.SponsorLogo}`}
-                className="absolute 
+                  />
+                  <img
+                    src={`${sponsor.SponsorLogo}`}
+                    className="absolute 
                 left-1/2 -translate-x-1/2 
                 top-1/3 -translate-y-1/3 
                 -mt-2 px-2 mx-auto max-h-16
                 pointer-events-none
                 drop-shadow-img dark:drop-shadow-none
                 "
-                />
-                <h4 className="absolute
+                  />
+                  <h4
+                    className="absolute
                 left-1/2 -translate-x-1/2
                 bottom-3 
                 text-lg leading-5 
@@ -126,13 +130,13 @@ export default function SponsorSection() {
                 {sponsor.SponsorName}
                 </h4>
                 </a>
-                </>
-            )
-        })}
+              </>
+            );
+          })}
         </div>
         <div className="text-center">
-        <Button text="bli sponsor" ></Button>
-        <Button isLink="true" text="bli sponsor" ></Button>
+          <Button text="bli sponsor"></Button>
+          <Button isLink="true" text="bli sponsor"></Button>
         </div>
         </div>
         </div>

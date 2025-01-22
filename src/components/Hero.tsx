@@ -14,7 +14,7 @@ export const Hero = () => {
           </h1>
 
           <p className="text-sandybrown text-center font-medium">
-            Trandareds IF - Engagemang, gemenskap och framtid
+            Engagemang, gemenskap och framtid
           </p>
         </div>
         <div className="w-[80%] md:w-[40%] lg:w-[20%] bg-black bg-opacity-70 p-10 flex flex-col lg:items-center absolute lg:left-80 -bottom-14 left-10 right-10">

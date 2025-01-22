@@ -19,7 +19,14 @@ export default function InstaGrid({ posts }: InstaGridProps) {
 
   return (
     <div>
-      <div className="lg:w-[1200px] md:w-[90%] justify-center flex flex-col flex-wrap md:flex-row gap-5 py-5 mx-auto">
+      <div
+        className=" 
+      md:place-content-between 
+      md:items-stretch
+      md:gap-y-4
+      w-full
+      justify-center flex flex-col flex-wrap md:flex-row my-5"
+      >
         {posts.map((insta: InstaType) => {
           const mediaUrl = insta.mediaUrl || "./public/tif-hero.jpg";
           const shortCaption =
@@ -29,19 +36,24 @@ export default function InstaGrid({ posts }: InstaGridProps) {
           return (
             <div
               key={insta.id}
-              className="relative w-full lg:w-1/5 md:w-1/2 p-1 mx-auto"
+              className="w-full md:w-1/2 lg:w-1/4"
               onClick={() => handlePostClick(insta)}
             >
               <figure className="relative w-full">
-                <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 cursor-pointer"></div>
+                <div
+                  className="
+                w-4/5 mx-auto
+                absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black to-transparent cursor-pointer"
+                >
+                  <h3 className="absolute bottom-0 left-0 right-0 transform text-sandybrown text-lg font-bold z-2 text-center ">
+                    {shortCaption}
+                  </h3>
+                </div>
                 <img
                   src={mediaUrl}
                   alt={insta.caption}
-                  className="h-auto w-[80%] mx-auto md:w-full"
+                  className="w-4/5 mx-auto"
                 />
-                <h3 className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-sandybrown text-lg font-bold z-20 p-2 text-center w-full">
-                  {shortCaption}
-                </h3>
               </figure>
             </div>
           );
