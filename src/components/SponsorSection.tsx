@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Button from './Button.tsx';
-import "./SponsorSection.css";
 /* 
 *  DONE:
 *  semi-modularity
@@ -69,8 +68,8 @@ export default function SponsorSection() {
 
     return(
         <>
+        <div className="bg-brandy dark:bg-mineshaft">
         <div
-        id="parentselector"
         className=" 
         mx-auto 
         py-5
@@ -78,7 +77,7 @@ export default function SponsorSection() {
         >
         <h2 className="
         uppercase font-mono
-        text-center text-lg font-bold
+        text-center text-lg font-bold text-mineshaft dark:text-sandybrown
         ">
         Våra sponsorer
         </h2>
@@ -104,6 +103,7 @@ export default function SponsorSection() {
                 -mt-2 px-2 mx-auto max-h-16
                 blur-xl opacity-[.60]
                 hover:opacity-100 transition-opacity
+                hidden dark:block
                 "
                 />
                 <img 
@@ -113,6 +113,7 @@ export default function SponsorSection() {
                 top-1/3 -translate-y-1/3 
                 -mt-2 px-2 mx-auto max-h-16
                 pointer-events-none
+                drop-shadow-img dark:drop-shadow-none
                 "
                 />
                 <h4 className="absolute
@@ -120,7 +121,7 @@ export default function SponsorSection() {
                 bottom-3 
                 text-lg leading-5 
                 font-mono font-bold uppercase 
-                text-center text-nowrap text-white
+                text-center text-nowrap text-mineshaft dark:text-sandybrown
                 ">
                 {sponsor.SponsorName}
                 </h4>
@@ -134,6 +135,8 @@ export default function SponsorSection() {
         <Button isLink="true" text="bli sponsor" ></Button>
         </div>
         </div>
+        </div>
+        
         </>
     )       
 } 
