@@ -1,32 +1,30 @@
-import { useState } from "react";
-import Button from "./Button.tsx";
-import "./SponsorSection.css";
-import SectionHeading from "./SectionHeading.tsx";
-/*
- *  DONE:
- *  semi-modularity
- *  spacing.
- *  Added the right sponsors.
- *  Added a CTA
- *
- *  TODON'T
- *  seamless loop. Doesn't work because of flex' space-around/-evenly/-etc properties changing gap size.
- *   *  I might look into this further later. For now I'm too angry.
- *  make logos scroll right-left on their own
- *  make logos fade out
- *
- *  TODO:
- *  Add missing button components.
- *  Fix text size, font, colour.
- *
- *  FUTURE TODO:
- *  breakpoints.
- *
- *  difficulties:
- *  Need button component
- *  Need global colour variables
- *  Need global text variables.
- */
+import { useState } from 'react';
+import Button from './Button.tsx';
+/* 
+*  DONE:
+*  semi-modularity
+*  spacing.
+*  Added the right sponsors.
+*  Added a CTA
+*  
+*  TODON'T
+*  seamless loop. Doesn't work because of flex' space-around/-evenly/-etc properties changing gap size.
+*   *  I might look into this further later. For now I'm too angry. 
+*  make logos scroll right-left on their own
+*  make logos fade out
+*
+*  TODO: 
+*  Add missing button components.
+*  Fix text size, font, colour.
+*
+*  FUTURE TODO:
+*  breakpoints.
+*
+*  difficulties:
+*  Need button component
+*  Need global colour variables
+*  Need global text variables.
+*/
 interface Sponsor {
   /**
    * @param SponsorName --- Sponsor name
@@ -68,18 +66,22 @@ export default function SponsorSection() {
   ];
   const [sponsors, setSponsors] = useState(initSponsors);
 
-  return (
-    <>
-      <div
-        id="parentselector"
+    return(
+        <>
+        <div className="bg-brandy dark:bg-mineshaft">
+        <div
         className=" 
         mx-auto 
         py-5
         "
-      >
-        <SectionHeading text="Med stöd av" />
-        <div
-          className="
+        >
+        <h2 className="
+        uppercase font-mono
+        text-center text-lg font-bold text-mineshaft dark:text-sandybrown
+        ">
+        Våra sponsorer
+        </h2>
+        <div className="
         flex flex-wrap
         space-x-8 p-4
         "
@@ -104,6 +106,7 @@ export default function SponsorSection() {
                 -mt-2 px-2 mx-auto max-h-16
                 blur-xl opacity-[.60]
                 hover:opacity-100 transition-opacity
+                hidden dark:block
                 "
                   />
                   <img
@@ -113,6 +116,7 @@ export default function SponsorSection() {
                 top-1/3 -translate-y-1/3 
                 -mt-2 px-2 mx-auto max-h-16
                 pointer-events-none
+                drop-shadow-img dark:drop-shadow-none
                 "
                   />
                   <h4
@@ -121,11 +125,10 @@ export default function SponsorSection() {
                 bottom-3 
                 text-lg leading-5 
                 font-mono font-bold uppercase 
-                text-center text-nowrap text-white
-                "
-                  >
-                    {sponsor.SponsorName}
-                  </h4>
+                text-center text-nowrap text-mineshaft dark:text-sandybrown
+                ">
+                {sponsor.SponsorName}
+                </h4>
                 </a>
               </>
             );
@@ -135,7 +138,9 @@ export default function SponsorSection() {
           <Button text="bli sponsor"></Button>
           <Button isLink="true" text="bli sponsor"></Button>
         </div>
-      </div>
-    </>
-  );
-}
+        </div>
+        </div>
+        
+        </>
+    )       
+} 

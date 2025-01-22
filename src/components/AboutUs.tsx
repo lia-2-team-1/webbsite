@@ -6,18 +6,25 @@ interface AboutUsProps {
   src: string;
 }
 
-export default function AboutUs({ header, src }: AboutUsProps) {
-  const initProps: AboutUsProps[] = {
-    header: "Trandareds IF",
-    src: "https://placehold.co/600x400",
-  };
-  return (
-    <>
-      <SectionHeading text={initProps.header} />
-      <div
-        className="
+
+export default function AboutUs({header, src}: AboutUsProps) {
+    const initProps: AboutUsProps[] = {
+        header:  "Trandareds IF",
+        src: "https://placehold.co/600x400",
+    }
+    return(
+        <>
+        <h2 className="
+        text-xl 
+        text-center
+        text-mineshaft dark:text-sandybrown
+        bg-brandy dark:bg-mineshaft
+        font-bold 
+        pt-3
+        ">{initProps.header}</h2>
+        <div className="
         max-w-screen
-        bg-mineshaft
+        bg-brandy dark:bg-mineshaft
         flex flex-col md:flex-row-reverse
         place-content-center
         mx-auto p-3 md:gap-x-5
@@ -31,10 +38,9 @@ export default function AboutUs({ header, src }: AboutUsProps) {
         mx-auto 
         md:mx-0
         "
-        />
-        <div
-          className="
-        text-sandybrown
+        /> 
+        <div className="
+        text-mineshaft dark:text-sandybrown
         flex flex-col 
         max-w-md 
         md:w-xl md:max-w-screen

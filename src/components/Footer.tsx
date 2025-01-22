@@ -6,9 +6,8 @@ export default function Footer({}: FooterProps) {
     return(
         <>
             <footer className="
-                bg-mineshaft
+                bg-brandy dark:bg-mineshaft
                 pt-2
-                
             ">
                 <div className=" 
                     flex
@@ -28,17 +27,17 @@ export default function Footer({}: FooterProps) {
                     <div className="flex flex-col">
                         <h5
                         className="
-                            text-sandybrown
+                            text-mineshaft dark:text-sandybrown
                             font-bold
                         ">HITTA HIT</h5>
-                        <p className="text-sandybrown">Fotbollsgatan 25</p>
-                        <p className="text-sandybrown">123 45 Sportstad</p>
+                        <p className="text-mineshaft dark:text-sandybrown">Fotbollsgatan 25</p>
+                        <p className="text-mineshaft dark:text-sandybrown">123 45 Sportstad</p>
                         <a href="#">Karta</a>
                     </div>
                     <div className="flex flex-col">
                         <h5 
                         className="
-                            text-sandybrown
+                            text-mineshaft dark:text-sandybrown
                             font-bold
                         ">NAVIGERA</h5>
                         <a href="">Hem</a>
@@ -51,8 +50,7 @@ export default function Footer({}: FooterProps) {
                     <div className="flex flex-col">
                         <h5 
                         className="
-                        
-                            text-sandybrown
+                            text-mineshaft dark:text-sandybrown
                             font-bold
                         "
                         >SPONSORER</h5>
@@ -64,17 +62,17 @@ export default function Footer({}: FooterProps) {
                     <div className="flex flex-col">
                         <h5
                         className="
-                        
-                            text-sandybrown
+                            text-mineshaft dark:text-sandybrown
                             font-bold
                         ">FÖLJ OSS</h5>
-                        <img />
-                        logo here
+                        <a href="https://www.google.com">
+                        <img src="/public/instagram.svg" className="w-[10%] md:w-1/2 mx-auto md:mx-0"/>
+                        </a>
                     </div>
                     <div className="flex flex-col">
                         <h5
                             className="
-                            text-sandybrown
+                            text-mineshaft dark:text-sandybrown
                             font-bold
                             ">POLICIES</h5>
                         <a href="">Kakor</a>
@@ -82,10 +80,13 @@ export default function Footer({}: FooterProps) {
                         <a href="">Vilkor</a>
                     </div>
                 </div>
-                <hr className="w-4/5 mx-auto border-sandybrown"/>
+                <hr className="w-4/5 mx-auto border-mineshaft dark:border-sandybrown"/>
                 <div className="mt-5 md:w-4/5 md:mx-auto">
-                    logo
-                    <p className="text-center text-sandybrown pb-1">
+                    <div className="flex flex-row">
+                    <img src="/public/logo.webp" className="w-1/5 md:w-1/6"/>
+                    <p className="my-auto text-mineshaft dark:text-sandybrown">Tillsammans bygger <br /> vi framtidens fotboll!</p>
+                    </div>
+                    <p className="text-center text-mineshaft dark:text-sandybrown pb-1">
                         © 2024-2025 Trandareds IF. Alla rättigheter förbehållna.
                     </p>
                 </div>
