@@ -58,7 +58,17 @@ export const News = () => {
         {loading ? (
           <div className="text-center py-5">Laddar...</div>
         ) : error ? (
-          <p className="text-red-600">Error: {error}</p>
+          <div className="text-center py-5">
+            <img
+              src="./public/tif-hero.jpg"
+              alt="Fallback bild"
+              className="w-1/2 mx-auto"
+            />
+            <p className="text-sandybrown mt-4">
+              Kunde inte ladda nyheterna just nu.
+            </p>
+            <p className="text-sandybrown">Försök igen senare!</p>
+          </div>
         ) : (
           <InstaGrid posts={fetchPosts} />
         )}
