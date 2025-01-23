@@ -69,7 +69,7 @@ export default function Footer({}: FooterProps) {
                             font-bold
                         ">FÖLJ OSS</h5>
                         <a href="https://www.google.com">
-                        <img src="/public/instagram.svg" className="w-[10%] md:w-1/2 mx-auto md:mx-0"/>
+                        <img src="/public/Instagram_Glyph_Gradient" className="w-[10%] md:w-1/2 mx-auto md:mx-0"/>
                         </a>
                     </div>
                     <div className="flex flex-col">
