@@ -30,7 +30,7 @@ export const News = () => {
       const result = await response.json();
       const posts = result.data.map((post: Post) => ({
         id: post.id,
-        caption: post.caption || "No caption",
+        caption: post.caption || "Ingen beskrivning..",
         mediaType: post.media_type,
         mediaUrl:
           post.media_url || post.image_versions2?.candidates?.[0]?.url || "",
