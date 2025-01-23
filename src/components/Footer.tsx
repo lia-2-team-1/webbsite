@@ -8,7 +8,6 @@ export default function Footer({}: FooterProps) {
             <footer className="
                 bg-brandy dark:bg-mineshaft
                 pt-2
-                
             ">
                 <div className=" 
                     flex
@@ -51,7 +50,6 @@ export default function Footer({}: FooterProps) {
                     <div className="flex flex-col">
                         <h5 
                         className="
-                        
                             text-mineshaft dark:text-sandybrown
                             font-bold
                         "
@@ -64,7 +62,6 @@ export default function Footer({}: FooterProps) {
                     <div className="flex flex-col">
                         <h5
                         className="
-                        
                             text-mineshaft dark:text-sandybrown
                             font-bold
                         ">FÖLJ OSS</h5>

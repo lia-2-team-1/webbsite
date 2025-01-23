@@ -33,17 +33,14 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                     font-bold uppercase font-inter
                     py-1 px-2
                     my-1 mx-3
-                    bg-sandybrown text-black
                     border-4 rounded-md border-transparent
                     transition-colors text-center
                     no-underline
 
-                    hover:bg-coffee hover:text-black hover:border-transparent
-                    focus:bg-sandybrown focus:text-black focus:border-sandybrown
-                    outline-none focus:outline-4 focus:outline-offset-0 focus:outline-sepiaskin focus:border-transparent
-                    active:bg-sepiaskin active:text-white active:border-transparent
-                    disabled:bg-[#888888] disabled:text-black
-                    visited:text-black
+                    bg-mineshaft text-sandybrown hover:bg-codgray active:bg-[#575757] active:text-mineshaft focus:bg-codgray focus:text-sandybrown focus:outline-sandybrown visited:text-sandybrown 
+                    dark:bg-sandybrown dark:text-mineshaft dark:hover:bg-coffee dark:active:bg-sepiaskin dark:active:text-brandy dark:focus:text-mineshaft dark:focus:outline-white dark:visited:text-mineshaft 
+                    focus:outline-3 focus:outline-offset-0 outline-none
+                    disabled:bg-[#888888] disabled:text-black 
                     w-${!width ? "fit" : width}
                     `}>
                     {`${text}`}
@@ -58,16 +55,13 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                     font-bold uppercase font-inter
                     py-1 px-2
                     my-1 mx-3
-                    bg-sandybrown text-black
                     border-4 rounded-md border-transparent
                     transition-colors text-center
 
-                    hover:bg-coffee hover:text-black hover:border-transparent
-                    focus:bg-sandybrown focus:text-black focus:border-coffee
-                    outline-none focus:outline-4 focus:outline-offset-0 focus:outline-sepiaskin focus:border-transparent
-                    active:bg-sepiaskin active:text-white active:border-transparent
-                    disabled:bg-[#888888] disabled:text-black
-                    visited:text-black
+                    bg-mineshaft text-sandybrown hover:bg-codgray active:bg-[#575757] active:text-mineshaft focus:bg-codgray focus:text-sandybrown focus:outline-sandybrown visited:text-sandybrown 
+                    dark:bg-sandybrown dark:text-mineshaft dark:hover:bg-coffee dark:active:bg-sepiaskin dark:active:text-brandy dark:focus:text-mineshaft dark:focus:outline-white dark:visited:text-mineshaft 
+                    focus:outline-3 focus:outline-offset-0 outline-none
+                    disabled:bg-[#888888] disabled:text-black 
                     w-${!width ? "fit" : width}
                     `}
                     >{`${text}`}</button>

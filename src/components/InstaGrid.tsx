@@ -1,0 +1,68 @@
+import React, { useState } from "react";
+import { InstaType } from "./News";
+import InstaPopup from "./InstaPopup";
+
+interface InstaGridProps {
+  posts: InstaType[];
+}
+
+export default function InstaGrid({ posts }: InstaGridProps) {
+  const [selectedPost, setSelectedPost] = useState<InstaType | null>(null);
+
+  const handlePostClick = (post: InstaType) => {
+    setSelectedPost(post);
+  };
+
+  const handleClosePopup = () => {
+    setSelectedPost(null);
+  };
+
+  return (
+    <div>
+      <div
+        className=" 
+      md:place-content-between 
+      md:items-stretch
+      md:gap-y-4
+      w-full
+      justify-center flex flex-col flex-wrap md:flex-row my-5"
+      >
+        {posts.map((insta: InstaType) => {
+          const mediaUrl = insta.mediaUrl || "./public/tif-hero.jpg";
+          const shortCaption =
+            insta.caption.split(" ").slice(0, 3).join(" ") +
+            (insta.caption.split(" ").length > 3 ? ".." : "");
+
+          return (
+            <div
+              key={insta.id}
+              className="w-full md:w-1/2 lg:w-1/4"
+              onClick={() => handlePostClick(insta)}
+            >
+              <figure className="relative w-full">
+                <div
+                  className="
+                w-4/5 mx-auto
+                absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black to-transparent cursor-pointer"
+                >
+                  <h3 className="absolute bottom-0 left-0 right-0 transform text-sandybrown text-lg font-bold z-2 text-center ">
+                    {shortCaption}
+                  </h3>
+                </div>
+                <img
+                  src={mediaUrl}
+                  alt={insta.caption}
+                  className="w-4/5 mx-auto"
+                />
+              </figure>
+            </div>
+          );
+        })}
+      </div>
+
+      {selectedPost && (
+        <InstaPopup post={selectedPost} onClose={handleClosePopup} />
+      )}
+    </div>
+  );
+}
