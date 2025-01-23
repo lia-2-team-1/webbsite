@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { InstaType } from "./News";
+import { Post } from "./News";
 import InstaPopup from "./InstaPopup";
 
 interface InstaGridProps {
-  posts: InstaType[];
+  posts: Post[];
 }
 
 export default function InstaGrid({ posts }: InstaGridProps) {
-  const [selectedPost, setSelectedPost] = useState<InstaType | null>(null);
+  const [selectedPost, setSelectedPost] = useState<Post | null>(null);
 
-  const handlePostClick = (post: InstaType) => {
+  const handlePostClick = (post: Post) => {
     setSelectedPost(post);
   };
 
@@ -27,8 +27,8 @@ export default function InstaGrid({ posts }: InstaGridProps) {
       w-full
       justify-center flex flex-col flex-wrap md:flex-row my-5"
       >
-        {posts.map((insta: InstaType) => {
-          const mediaUrl = insta.mediaUrl || "./public/tif-hero.jpg";
+        {posts.map((insta: Post) => {
+          const mediaUrl = insta.mediaUrl || "./tif-hero.jpg";
           const shortCaption =
             insta.caption.split(" ").slice(0, 3).join(" ") +
             (insta.caption.split(" ").length > 3 ? ".." : "");

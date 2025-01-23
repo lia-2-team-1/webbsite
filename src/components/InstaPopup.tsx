@@ -1,8 +1,8 @@
 import React from "react";
-import { InstaType } from "./News";
+import { Post } from "./News";
 
 interface InstaPopupProps {
-  post: InstaType;
+  post: Post;
   onClose: () => void;
 }
 
