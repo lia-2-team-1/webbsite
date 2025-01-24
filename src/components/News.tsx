@@ -21,7 +21,7 @@ export const News = () => {
 
   const fallbackPosts: Post[] = Array(4).fill({
     id: "fallback",
-    caption: "Fallback-bild",
+    caption: "Trandareds IF",
     media_type: "image",
     media_url: "./public/tif-hero.jpg",
   });
