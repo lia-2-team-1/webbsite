@@ -1,15 +1,17 @@
 import "./Footer.css";
-interface FooterProps {
-}
+interface FooterProps {}
 
 export default function Footer({}: FooterProps) {
-    return(
-        <>
-            <footer className="
+  return (
+    <>
+      <footer
+        className="
                 bg-brandy dark:bg-mineshaft
                 pt-2
-            ">
-                <div className=" 
+            "
+      >
+        <div
+          className=" 
                     flex
                     flex-col
                     text-center 
@@ -23,74 +25,99 @@ export default function Footer({}: FooterProps) {
                     md:mb-4
                     md:w-4/5
                     md:mx-auto
-                ">
-                    <div className="flex flex-col">
-                        <h5
-                        className="
-                            text-mineshaft dark:text-sandybrown
-                            font-bold
-                        ">HITTA HIT</h5>
-                        <p className="text-mineshaft dark:text-sandybrown">Fotbollsgatan 25</p>
-                        <p className="text-mineshaft dark:text-sandybrown">123 45 Sportstad</p>
-                        <a href="#">Karta</a>
-                    </div>
-                    <div className="flex flex-col">
-                        <h5 
-                        className="
-                            text-mineshaft dark:text-sandybrown
-                            font-bold
-                        ">NAVIGERA</h5>
-                        <a href="">Hem</a>
-                        <a href="">Schema</a>
-                        <a href="">Om Oss</a>
-                        <a href="">Matcher</a>
-                        <a href="">Nyheter</a>
-                        <a href="">Tider</a>
-                    </div>
-                    <div className="flex flex-col">
-                        <h5 
-                        className="
+                "
+        >
+          <div className="flex flex-col">
+            <h5
+              className="
                             text-mineshaft dark:text-sandybrown
                             font-bold
                         "
-                        >SPONSORER</h5>
-                        <a href="">Craft of Scandinavia</a>
-                        <a href="">Baker Logistics</a>
-                        <a href="">FB Cargo</a>
-                        <a href="">PLUS Margret</a>
-                    </div>
-                    <div className="flex flex-col">
-                        <h5
-                        className="
+            >
+              HITTA HIT
+            </h5>
+            <p className="text-mineshaft dark:text-sandybrown">
+              Fotbollsgatan 25
+            </p>
+            <p className="text-mineshaft dark:text-sandybrown">
+              123 45 Sportstad
+            </p>
+            <a href="#">Karta</a>
+          </div>
+          <div className="flex flex-col">
+            <h5
+              className="
                             text-mineshaft dark:text-sandybrown
                             font-bold
-                        ">FÖLJ OSS</h5>
-                        <a href="https://www.google.com">
-                        <img src="/public/Instagram_Glyph_Gradient" className="w-[10%] md:w-1/2 mx-auto md:mx-0"/>
-                        </a>
-                    </div>
-                    <div className="flex flex-col">
-                        <h5
-                            className="
+                        "
+            >
+              NAVIGERA
+            </h5>
+            <a href="">Hem</a>
+            <a href="">Schema</a>
+            <a href="">Om Oss</a>
+            <a href="">Matcher</a>
+            <a href="">Nyheter</a>
+            <a href="">Tider</a>
+          </div>
+          <div className="flex flex-col">
+            <h5
+              className="
                             text-mineshaft dark:text-sandybrown
                             font-bold
-                            ">POLICIES</h5>
-                        <a href="">Kakor</a>
-                        <a href="">Integritet</a>
-                        <a href="">Vilkor</a>
-                    </div>
-                </div>
-                <hr className="w-4/5 mx-auto border-mineshaft dark:border-sandybrown"/>
-                <div className="mt-5 md:w-4/5 md:mx-auto">
-                    <div className="flex flex-row">
-                    <img src="/public/logo.webp" className="w-1/5 md:w-1/6"/>
-                    <p className="my-auto text-mineshaft dark:text-sandybrown">Tillsammans bygger <br /> vi framtidens fotboll!</p>
-                    </div>
-                    <p className="text-center text-mineshaft dark:text-sandybrown pb-1">
-                        © 2024-2025 Trandareds IF. Alla rättigheter förbehållna.
-                    </p>
-                </div>
-            </footer>                
-        </>
-    )
+                        "
+            >
+              SPONSORER
+            </h5>
+            <a href="">Craft of Scandinavia</a>
+            <a href="">Baker Logistics</a>
+            <a href="">FB Cargo</a>
+            <a href="">PLUS Margret</a>
+          </div>
+          <div className="flex flex-col">
+            <h5
+              className="
+                            text-mineshaft dark:text-sandybrown
+                            font-bold
+                        "
+            >
+              FÖLJ OSS
+            </h5>
+            <a href="https://www.google.com">
+              <img
+                src="/public/Instagram_Glyph_Gradient.PNG"
+                alt="Instagram"
+                className="w-14 h-auto pt-1 mx-auto lg:mx-0"
+              />
+            </a>
+          </div>
+          <div className="flex flex-col">
+            <h5
+              className="
+                            text-mineshaft dark:text-sandybrown
+                            font-bold
+                            "
+            >
+              POLICIES
+            </h5>
+            <a href="">Kakor</a>
+            <a href="">Integritet</a>
+            <a href="">Vilkor</a>
+          </div>
+        </div>
+        <hr className="w-4/5 mx-auto border-mineshaft dark:border-sandybrown" />
+        <div className="mt-5 md:w-4/5 md:mx-auto">
+          <div className="flex flex-row">
+            <img src="/public/logo.webp" alt="Logo" className="w-1/5 md:w-1/6" />
+            <p className="my-auto text-mineshaft dark:text-sandybrown">
+              Tillsammans bygger <br /> vi framtidens fotboll!
+            </p>
+          </div>
+          <p className="text-center text-mineshaft dark:text-sandybrown pb-1">
+            © 2024-2025 Trandareds IF. Alla rättigheter förbehållna.
+          </p>
+        </div>
+      </footer>
+    </>
+  );
 }
