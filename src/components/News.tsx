@@ -19,6 +19,13 @@ export const News = () => {
   const [loading, setLoading] = useState(true);
   const apiUrl = import.meta.env.VITE_API_INSTA_URL;
 
+  const fallbackPosts: Post[] = Array(4).fill({
+    id: "fallback",
+    caption: "Fallback-bild",
+    media_type: "image",
+    media_url: "./public/tif-hero.jpg",
+  });
+
   const fetchData = async () => {
     setLoading(true);
     try {
@@ -59,11 +66,7 @@ export const News = () => {
           <div className="text-center py-5">Laddar...</div>
         ) : error ? (
           <div className="text-center py-5">
-            <img
-              src="./public/tif-hero.jpg"
-              alt="Fallback bild"
-              className="w-1/2 mx-auto"
-            />
+            <InstaGrid posts={fallbackPosts} />
             <p className="text-sandybrown mt-4">
               Kunde inte ladda nyheterna just nu.
             </p>
