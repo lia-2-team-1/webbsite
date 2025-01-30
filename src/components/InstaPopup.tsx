@@ -7,6 +7,10 @@ interface InstaPopupProps {
 }
 
 const InstaPopup: React.FC<InstaPopupProps> = ({ post, onClose }) => {
+  const fallbackImage = "./public/tif-hero.jpg";
+
+  const imageUrl = post.mediaUrl || fallbackImage;
+
   return (
     <div
       className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center"
@@ -22,12 +26,8 @@ const InstaPopup: React.FC<InstaPopupProps> = ({ post, onClose }) => {
         >
           &times;
         </button>
-        <img
-          src={post.mediaUrl}
-          alt={post.caption}
-          className="w-full rounded-lg"
-        />
-        <p className="mt-4 text-black">{post.caption}</p>
+        <img src={imageUrl} alt={post.caption} className="w-full rounded-lg" />
+        <p className="mt-4 text-black font-semibold">{post.caption}</p>
       </div>
     </div>
   );
