@@ -10,9 +10,6 @@ function App() {
   return (
     <>
       <div className="w-screen">
-        <h1 className="text-center">Centered?</h1>
-      </div>
-      <div>
         <Navbar />
         <Hero />
         <AboutUs />
