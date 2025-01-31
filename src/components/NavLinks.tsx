@@ -16,7 +16,7 @@ const NavLinks = ({ className }) => {
         <a
           key={index}
           href={link.href}
-          className="text-gold active:underline font-semibold"
+          className="text-codgray dark:text-sandybrown active:underline font-semibold"
         >
           {link.text}
         </a>
