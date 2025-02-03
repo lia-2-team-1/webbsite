@@ -6,6 +6,7 @@ interface ButtonProps {
     isLink: boolean;
     linkTo?: string;
     func?: (e: React.MouseEvent<HTMLElement>) => void;
+    className?: string;
 }
 
 
@@ -23,7 +24,7 @@ interface ButtonProps {
 * 
 * @beta
 */
-export default function Button({text, isLink, linkTo, func, width}: ButtonProps) {
+export default function Button({text, isLink, linkTo, func, width, className}: ButtonProps) {
         
         if (isLink) {
             return (
@@ -42,6 +43,7 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                     focus:outline-3 focus:outline-offset-0 outline-none
                     disabled:bg-[#888888] disabled:text-black 
                     w-${!width ? "fit" : width}
+                    ${className}
                     `}>
                     {`${text}`}
                     </a>
@@ -63,6 +65,7 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                     focus:outline-3 focus:outline-offset-0 outline-none
                     disabled:bg-[#888888] disabled:text-black 
                     w-${!width ? "fit" : width}
+                    ${className}
                     `}
                     >{`${text}`}</button>
             )
