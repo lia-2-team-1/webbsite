@@ -59,6 +59,8 @@ export const News = () => {
   }, [apiUrl]);
 
   return (
+      <div className="w-full bg-wheat dark:bg-codgray">
+
     <div className="pt-5 pb-5 mx-auto md:w-4/5">
       <SectionHeading text="Senaste hos klubben" />
       <div>
@@ -67,10 +69,10 @@ export const News = () => {
         ) : error ? (
           <div className="text-center py-5">
             <InstaGrid posts={fallbackPosts} />
-            <p className="text-sandybrown mt-4">
+            <p className="text-codgray dark:text-sandybrown mt-4">
               Kunde inte ladda nyheterna just nu.
             </p>
-            <p className="text-sandybrown">Försök igen senare!</p>
+            <p className="text-codgray dark:text-sandybrown">Försök igen senare!</p>
           </div>
         ) : (
           <InstaGrid posts={fetchPosts} />
@@ -80,6 +82,7 @@ export const News = () => {
         <Button isLink={true} linkTo={"#"} text={"FLER NYHETER"} />
       </div>
     </div>
+      </div>
   );
 };
 

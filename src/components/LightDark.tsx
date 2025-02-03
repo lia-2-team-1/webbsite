@@ -1,7 +1,10 @@
 import React from "react";
 import Sun from "./Sun.tsx";
 import Moon from "./Moon.tsx";
-export default function LightDark() {
+interface LightDarkProps {
+    className: string;
+}
+export default function LightDark({className}) {
 
     const [dark, setDark] = React.useState(false);
     const darkModeHandler = () => {
@@ -10,7 +13,7 @@ export default function LightDark() {
     }
     return (
         <>
-            <button className="w-20 h-20 p-2 dark:bg-mineshaft bg-brandy" onClick={()=> darkModeHandler()}>
+            <button className={`w-20 h-20 p-2 dark:bg-mineshaft bg-sandybrown max-h-20 ${className}`} onClick={()=> darkModeHandler()}>
                 {
                     dark && <Sun className="w-full" stroke="stroke-sandybrown"/>
                 }
