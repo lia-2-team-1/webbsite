@@ -26,16 +26,13 @@ const Navbar = () => {
                     justify-between
                     transition-all delay-150 duration-250 ease-out
                     ">
-            <a
+                    <a
               href="#"
-              className="flex items-center"
+              className="flex items-center hover:underline text-mineshaft dark:text-sandybrown"
             >
               <img src="logo.webp" className="w-20" alt="TRANDAREDS IF LOGO" />
-              </a> 
-          <a className="text-center my-auto mr-auto">
-              <h2 className="text-codgray  dark:text-sandybrown font-bold md:font-semibold whitespace-nowrap mr-[5px]"> TRANDAREDS IF | </h2>
+              <h2 className="text-codgray dark:text-sandybrown font-bold md:font-semibold lg:whitespace-nowrap">TRANDAREDS IF</h2>
           </a>
-
             <NavLinks className={`
                 bg-sandybrown dark:bg-darkgray
                 flex flex-col space-y-2 p-2 pt-4
@@ -44,8 +41,16 @@ const Navbar = () => {
                 transition-all delay-150 duration-350 ease-in-out
                 rounded-bl-lg
 
-                md:transform-none md:translate-y-[0%] md:-translate-y-[0%] md:flex md:flex-row md:space-x-[1rem] md:space-y-0
-                md:static md:p-0 md:place-items-center md:bg-transparent dark:md:bg-transparent md:w-screen 
+                md:transform md:translate-y-[0%] md:-translate-y-[0%]  
+                md:flex md:flex-row 
+                md:space-x-[1.5%] md:space-y-0
+                md:p-0
+                md:items-center 
+                md:justify-center
+                md:bg-transparent dark:md:bg-transparent
+                md:absolute md:left-0 md:right-0 md:mx-auto
+                md:h-[80px]
+                
             `}/>
             <div onClick={toggleMenu}> 
               <Burger className="block absolute right-0 h-20 p-2 md:hidden z-50 dark:bg-mineshaft bg-sandybrown" stroke="stroke-codgray dark:stroke-sandybrown" /> 
