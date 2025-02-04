@@ -36,7 +36,7 @@ export const Hero = () => {
                 flex flex-col
                 p-4
                 pb-6
-                w-full md:w-2/5
+                w-full md:w-2/5 xl:w-1/5
                 bg-sandybrown dark:bg-darkgray bg-opacity-75 dark:bg-opacity-75 
                 text-nowrap
                 rounded-tr-lg rounded-tl-lg

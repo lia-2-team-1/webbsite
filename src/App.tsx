@@ -1,5 +1,5 @@
-import SponsorSection from "./components/SponsorSection.tsx";
 import "./index.css";
+import SponsorSection from "./components/SponsorSection.tsx";
 import Hero from "./components/Hero.tsx";
 import Navbar from "./components/Navbar.tsx";
 import News from "./components/News.tsx";
