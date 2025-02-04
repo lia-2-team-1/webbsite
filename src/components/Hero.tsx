@@ -7,13 +7,13 @@ export const Hero = () => {
       <div className="min-h-screen flex items-center justify-center bg-cover bg-no-repeat lg:bg-[url('/tif-hero.jpg')] bg-[url('/tif-hero-mobile.jpg')]">
         <div className="bg-black bg-opacity-55 w-3/4 py-5 flex mx-auto lg:w-[35%] lg:text-center flex-col">
           <h1
-            className="text-center text-4xl lg:text-6xl text-sandybrown font-bold 
+            className="text-center text-4xl md:text-5xl lg:text-6xl text-sandybrown font-bold 
           px-1.5 lg:px-5"
           >
             Trandareds IF
           </h1>
 
-          <p className="text-sandybrown text-center font-medium">
+          <p className="text-sandybrown text-center font-medium text-sm md:text-base lg:text-xl">
             Engagemang, gemenskap och framtid
           </p>
         </div>
