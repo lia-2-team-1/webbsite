@@ -10,7 +10,6 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    console.log("click")
   };
 
     const [dark, setDark] = React.useState(false);
