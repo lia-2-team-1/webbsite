@@ -10,7 +10,7 @@ export const Hero = () => {
         <div className="
             flex-col
             py-5  my-auto 
-            w-3/4 md:w-3/5 
+            w-3/4 md:w-3/5 lg:w-2/5 
             bg-sandybrown dark:bg-darkgray dark:bg-opacity-75 bg-opacity-75
             md:text-center
             text-nowrap
