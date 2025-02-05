@@ -17,7 +17,7 @@ const InstaPopup: React.FC<InstaPopupProps> = ({ post, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="bg-sandybrown rounded-lg p-5 max-w-[500px] w-full relative"
+        className="bg-sandybrown dark:bg-codgray rounded-lg p-5 max-w-[500px] w-full relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -27,7 +27,9 @@ const InstaPopup: React.FC<InstaPopupProps> = ({ post, onClose }) => {
           &times;
         </button>
         <img src={imageUrl} alt={post.caption} className="w-full rounded-lg" />
-        <p className="mt-4 text-black font-semibold">{post.caption}</p>
+        <p className="mt-4 dark:text-sandybrown text-black font-semibold text-base md:text-lg ">
+          {post.caption}
+        </p>
       </div>
     </div>
   );
