@@ -1,7 +1,7 @@
 import React from "react";
 import LightDark from "./LightDark.tsx";
 import Button from "./Button.tsx";
-const NavLinks = ({ className }) => {
+const NavLinks = ({ className }: string) => {
   const links = [
     { href: "#", text: "Hem" },
     { href: "#", text: "Om oss" },
