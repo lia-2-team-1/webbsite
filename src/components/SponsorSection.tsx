@@ -1,30 +1,32 @@
-import { useState } from 'react';
-import Button from './Button.tsx';
-/* 
-*  DONE:
-*  semi-modularity
-*  spacing.
-*  Added the right sponsors.
-*  Added a CTA
-*  
-*  TODON'T
-*  seamless loop. Doesn't work because of flex' space-around/-evenly/-etc properties changing gap size.
-*   *  I might look into this further later. For now I'm too angry. 
-*  make logos scroll right-left on their own
-*  make logos fade out
-*
-*  TODO: 
-*  Add missing button components.
-*  Fix text size, font, colour.
-*
-*  FUTURE TODO:
-*  breakpoints.
-*
-*  difficulties:
-*  Need button component
-*  Need global colour variables
-*  Need global text variables.
-*/
+import { useState } from "react";
+import Button from "./Button.tsx";
+import SectionHeading from "./SectionHeading.tsx";
+
+/*
+ *  DONE:
+ *  semi-modularity
+ *  spacing.
+ *  Added the right sponsors.
+ *  Added a CTA
+ *
+ *  TODON'T
+ *  seamless loop. Doesn't work because of flex' space-around/-evenly/-etc properties changing gap size.
+ *   *  I might look into this further later. For now I'm too angry.
+ *  make logos scroll right-left on their own
+ *  make logos fade out
+ *
+ *  TODO:
+ *  Add missing button components.
+ *  Fix text size, font, colour.
+ *
+ *  FUTURE TODO:
+ *  breakpoints.
+ *
+ *  difficulties:
+ *  Need button component
+ *  Need global colour variables
+ *  Need global text variables.
+ */
 interface Sponsor {
   /**
    * @param SponsorName --- Sponsor name
@@ -66,41 +68,37 @@ export default function SponsorSection() {
   ];
   const [sponsors, setSponsors] = useState(initSponsors);
 
-    return(
-        <>
-        <div className="bg-brandy dark:bg-mineshaft">
+  return (
+    <>
+      <div className="bg-brandy dark:bg-mineshaft">
         <div
-        className=" 
+          className=" 
         mx-auto 
         py-5
         "
         >
-        <h2 className="
-        uppercase font-mono
-        text-center text-lg font-bold text-mineshaft dark:text-sandybrown
-        ">
-        Våra sponsorer
-        </h2>
-        <div className="
+          <SectionHeading text="Med stöd av" />
+          <div
+            className="
         flex flex-wrap
         space-x-8 p-4
         "
-        >
-          {sponsors.map((sponsor, i) => {
-            return (
-              <>
-                <a
-                  key={i}
-                  className="
+          >
+            {sponsors.map((sponsor, i) => {
+              return (
+                <>
+                  <a
+                    key={i}
+                    className="
                 relative
                 w-64 h-32  
                 "
-                  style={{ margin: "auto" }}
-                  href={`${sponsor.SponsorLink}`}
-                >
-                  <img
-                    src={`${sponsor.SponsorLogo}`}
-                    className="absolute 
+                    style={{ margin: "auto" }}
+                    href={`${sponsor.SponsorLink}`}
+                  >
+                    <img
+                      src={`${sponsor.SponsorLogo}`}
+                      className="absolute 
                 left-1/2 -translate-x-1/2 
                 top-1/3 -translate-y-1/3 
                 -mt-2 px-2 mx-auto max-h-16
@@ -108,39 +106,39 @@ export default function SponsorSection() {
                 hover:opacity-100 transition-opacity
                 hidden dark:block
                 "
-                  />
-                  <img
-                    src={`${sponsor.SponsorLogo}`}
-                    className="absolute 
+                    />
+                    <img
+                      src={`${sponsor.SponsorLogo}`}
+                      className="absolute 
                 left-1/2 -translate-x-1/2 
                 top-1/3 -translate-y-1/3 
                 -mt-2 px-2 mx-auto max-h-16
                 pointer-events-none
                 drop-shadow-img dark:drop-shadow-none
                 "
-                  />
-                  <h4
-                    className="absolute
+                    />
+                    <h4
+                      className="absolute
                 left-1/2 -translate-x-1/2
                 bottom-3 
                 text-lg leading-5 
                 font-mono font-bold uppercase 
                 text-center text-nowrap text-mineshaft dark:text-sandybrown
-                ">
-                {sponsor.SponsorName}
-                </h4>
-                </a>
-              </>
-            );
-          })}
+                "
+                    >
+                      {sponsor.SponsorName}
+                    </h4>
+                  </a>
+                </>
+              );
+            })}
+          </div>
+          <div className="text-center">
+            <Button text="bli sponsor"></Button>
+            <Button isLink="true" text="bli sponsor"></Button>
+          </div>
         </div>
-        <div className="text-center">
-          <Button text="bli sponsor"></Button>
-          <Button isLink="true" text="bli sponsor"></Button>
-        </div>
-        </div>
-        </div>
-        
-        </>
-    )       
-} 
+      </div>
+    </>
+  );
+}
