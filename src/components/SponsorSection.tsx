@@ -121,7 +121,7 @@ export default function SponsorSection() {
                       className="absolute
                 left-1/2 -translate-x-1/2
                 bottom-3 
-                text-lg leading-5 
+                text-lg md:text-xl leading-5 
                 font-mono font-bold uppercase 
                 text-center text-nowrap text-mineshaft dark:text-sandybrown
                 "
@@ -134,8 +134,8 @@ export default function SponsorSection() {
             })}
           </div>
           <div className="text-center">
-            <Button text="bli sponsor"></Button>
-            <Button isLink="true" text="bli sponsor"></Button>
+            <Button isLink="true" text="bli sponsor" />
+            <Button isLink="true" text="bli sponsor" />
           </div>
         </div>
       </div>
