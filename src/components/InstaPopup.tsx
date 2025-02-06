@@ -17,7 +17,7 @@ const InstaPopup: React.FC<InstaPopupProps> = ({ post, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="bg-sandybrown dark:bg-codgray rounded-lg p-5 max-w-[500px] w-full relative"
+        className="bg-sandybrown dark:bg-mineshaft rounded-lg p-5 max-w-[500px] w-full relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
