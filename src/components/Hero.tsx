@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "./Button";
 
 export const Hero = () => {
@@ -18,12 +17,16 @@ export const Hero = () => {
         ">
 
           <h1
+
             className="text-center text-4xl lg:text-6xl text-mineshaft dark:text-sandybrown font-bold 
+
           px-1.5 lg:px-5"
           >
             Trandareds IF
           </h1>
+
           <p className="text-mineshaft dark:text-sandybrown text-center font-medium">
+
             Engagemang, gemenskap och framtid
           </p>
         </div>

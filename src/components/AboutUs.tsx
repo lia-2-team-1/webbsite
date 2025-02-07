@@ -6,54 +6,60 @@ interface AboutUsProps {
   src: string;
 }
 
-
-export default function AboutUs({header, src}: AboutUsProps) {
-    const initProps: AboutUsProps[] = {
-        header:  "Trandareds IF",
-        src: "https://placehold.co/600x400",
-    }
-    return(
-        <>
-        <h2 className="
+export default function AboutUs({ header, src }: AboutUsProps) {
+  const initProps: AboutUsProps[] = {
+    header: "Trandareds IF",
+    src: "https://placehold.co/600x400",
+  };
+  return (
+    <>
+      <h2
+        className="
         text-xl 
         text-center
         text-mineshaft dark:text-sandybrown
         bg-brandy dark:bg-mineshaft
         font-bold 
         pt-3
-        ">{initProps.header}</h2>
-        <div className="
-        max-w-screen
-        bg-brandy dark:bg-mineshaft
-        flex flex-col md:flex-row-reverse
-        place-content-center
-        mx-auto p-3 md:gap-x-5
+        "
+      >
+        {initProps.header}
+      </h2>
+      <div
+        className="
+          max-w-screen  
+          bg-brandy dark:bg-mineshaft  
+          flex flex-col md:flex-row-reverse  
+          place-content-center  
+          mx-auto  
+          p-3 md:p-5  
+          gap-x-0 md:gap-x-5  
         "
       >
         <img
           src={`${initProps.src}`}
           className="
-        md:w-xl md:max-w-screen
-        mx-auto 
-        md:mx-0
+
+          md:w-xl md:max-w-screen  
+          mx-auto md:mx-0  
         "
-        /> 
-        <div className="
-        text-mineshaft dark:text-sandybrown
-        flex flex-col 
-        max-w-md 
-        md:w-xl md:max-w-screen
-        mt-4
-        mx-auto md:mx-0
-        md:py-auto
-        md:mt-0
+        />
+        <div
+          className="
+        text-mineshaft dark:text-sandybrown  
+          flex flex-col  
+          max-w-md  
+          md:w-xl md:max-w-screen  
+          mt-4 md:mt-0  
+          mx-auto md:mx-0  
         "
         >
           <p
             className="
-        text-base 
-        md:my-auto
-        md:pr-6
+            text-base 
+            md:my-auto
+            md:pr-6
+            lg:text-lg
         "
           >
             I hjärtat av Borås blomstrar en nyskapad förening som inte bara
@@ -62,7 +68,7 @@ export default function AboutUs({header, src}: AboutUsProps) {
             en idrottsförening, utan en plattform för engagemang, gemenskap och
             lokalt samhällsansvar.
           </p>
-          <p className="text-base mt-4 md:my-auto md:pr-6">
+          <p className="text-base mt-4 md:my-auto md:pr-6 lg:text-lg">
             Välkommen till Trandareds IF, där vi inte bara spelar fotboll — vi
             förändrar liv.
           </p>
