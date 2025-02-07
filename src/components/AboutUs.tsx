@@ -2,29 +2,24 @@ import Button from "./Button.tsx";
 import SectionHeading from "./SectionHeading.tsx";
 
 interface AboutUsProps {
-  header: string;
   src: string;
 }
 
-export default function AboutUs({ header, src }: AboutUsProps) {
+export default function AboutUs({ src }: AboutUsProps) {
   const initProps: AboutUsProps[] = {
-    header: "Trandareds IF",
     src: "https://placehold.co/600x400",
   };
   return (
     <>
-      <h2
+      <div
         className="
-        text-xl 
-        text-center
-        text-mineshaft dark:text-sandybrown
-        bg-brandy dark:bg-mineshaft
-        font-bold 
-        pt-3
-        "
+          max-w-screen  
+          bg-brandy dark:bg-mineshaft  
+          place-content-center  
+          mx-auto "
       >
-        {initProps.header}
-      </h2>
+        <SectionHeading text="Trandareds IF" />
+      </div>
       <div
         className="
           max-w-screen  

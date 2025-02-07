@@ -2,7 +2,6 @@ import React from "react";
 
 interface SectionHeadingProps {
   text: string;
-  className?: string;
 }
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({ text }) => {
