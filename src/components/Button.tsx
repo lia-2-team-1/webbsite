@@ -1,5 +1,3 @@
-
-
 interface ButtonProps {
     text: string;
     width?: string;
@@ -9,21 +7,6 @@ interface ButtonProps {
     className?: string;
 }
 
-
-/* 
-* @remarks
-* A function to create an Anchor element styled as a button, with certain properties set.
-* 
-* @param text --- Displayed text.
-* @param width? --- Width in Tailwind increments. Defaults to "fit".
-* @param isLink --- Does this link to another page? (true/false)
-* @param linkTo --- Target page. (Optional)
-* @param func --- Function to do on click.
-*
-* @returns A Button or Anchor with above parameters.
-* 
-* @beta
-*/
 export default function Button({text, isLink, linkTo, func, width, className}: ButtonProps) {
         
         if (isLink) {
