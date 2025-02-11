@@ -1,29 +1,13 @@
-
-
 interface ButtonProps {
     text: string;
     width?: string;
     isLink: boolean;
     linkTo?: string;
     func?: (e: React.MouseEvent<HTMLElement>) => void;
+    className?: string;
 }
 
-
-/* 
-* @remarks
-* A function to create an Anchor element styled as a button, with certain properties set.
-* 
-* @param text --- Displayed text.
-* @param width? --- Width in Tailwind increments. Defaults to "fit".
-* @param isLink --- Does this link to another page? (true/false)
-* @param linkTo --- Target page. (Optional)
-* @param func --- Function to do on click.
-*
-* @returns A Button or Anchor with above parameters.
-* 
-* @beta
-*/
-export default function Button({text, isLink, linkTo, func, width}: ButtonProps) {
+export default function Button({text, isLink, linkTo, func, width, className}: ButtonProps) {
         
         if (isLink) {
             return (
@@ -42,6 +26,7 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                     focus:outline-3 focus:outline-offset-0 outline-none
                     disabled:bg-[#888888] disabled:text-black 
                     w-${!width ? "fit" : width}
+                    ${className}
                     `}>
                     {`${text}`}
                     </a>
@@ -63,6 +48,7 @@ export default function Button({text, isLink, linkTo, func, width}: ButtonProps)
                     focus:outline-3 focus:outline-offset-0 outline-none
                     disabled:bg-[#888888] disabled:text-black 
                     w-${!width ? "fit" : width}
+                    ${className}
                     `}
                     >{`${text}`}</button>
             )

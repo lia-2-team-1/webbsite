@@ -34,7 +34,7 @@ export default function AboutUs({ src }: AboutUsProps) {
         <img
           src={`${initProps.src}`}
           className="
-          max-w-md  
+
           md:w-xl md:max-w-screen  
           mx-auto md:mx-0  
         "
