@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar.tsx";
 import News from "./components/News.tsx";
 import AboutUs from "./components/AboutUs.tsx";
 import Footer from "./components/Footer.tsx";
+import Match from "./components/Match.tsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <AboutUs />
         <News />
         <SponsorSection />
+        <Match />
         <Footer />
       </div>
     </>
