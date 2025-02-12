@@ -34,7 +34,7 @@ const Navbar = () => {
           </a>
             <NavLinks className={`
                 bg-sandybrown dark:bg-darkgray
-                flex flex-col space-y-2 p-2 pt-4
+                flex flex-col space-y-4 p-4 pt-4
                 absolute right-0 z-30
                 transform ${isOpen ? "translate-y-[20%]" : "translate-y-[-100%]"}
                 transition-all delay-150 duration-350 ease-in-out

@@ -21,6 +21,7 @@ const NavLinks = ({ className }: string) => {
           href={link.href}
           className="
           transition-[color] delay-150 duration-250 ease-out
+          text-lg
           text-codgray dark:text-sandybrown active:underline md:font-semibold md:text-nowrap hover:border-r-2 dark:border-sandybrown border-codgray 
           md:hover:border-r-0 md:hover:border-b-2"
         >
