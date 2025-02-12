@@ -15,7 +15,7 @@ export default {
          coffee: "#AF7C47",
          sepiaskin: "#92633C",
          merino: "#faf7f2",
-         wheat: "f5e2b8",
+         wheat: "#f5e2b8",
          brandy: "#e1c79e",
          codgray: "#1a1a1a",
          black: "#010101",
