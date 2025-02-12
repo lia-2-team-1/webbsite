@@ -75,6 +75,7 @@ export default function SponsorSection() {
           className=" 
         mx-auto 
         py-5
+        w-4/5
         "
         >
           <SectionHeading text="Med stöd av" />
@@ -134,7 +135,6 @@ export default function SponsorSection() {
             })}
           </div>
           <div className="text-center">
-            <Button isLink="true" text="bli sponsor" />
             <Button isLink="true" text="bli sponsor" />
           </div>
         </div>
