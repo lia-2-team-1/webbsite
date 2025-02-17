@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import SponsorSection from "./components/SponsorSection.tsx";
 import Hero from "./components/Hero.tsx";
@@ -12,11 +13,14 @@ function App() {
     <>
       <div className="w-screen">
         <Navbar />
-        <Hero />
-        <AboutUs />
-        <News />
-        <SponsorSection />
-        <Match />
+        <Routes>
+          <Route path="/" element="" />
+          <Hero />
+          <AboutUs />
+          <News />
+          <SponsorSection />
+          <Match />
+        </Routes>
         <Footer />
       </div>
     </>
