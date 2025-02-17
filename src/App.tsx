@@ -1,12 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
-import SponsorSection from "./components/SponsorSection.tsx";
-import Hero from "./components/Hero.tsx";
 import Navbar from "./components/Navbar.tsx";
-import News from "./components/News.tsx";
-import AboutUs from "./components/AboutUs.tsx";
 import Footer from "./components/Footer.tsx";
-import Match from "./components/Match.tsx";
 
 function App() {
   return (
@@ -14,12 +9,10 @@ function App() {
       <div className="w-screen">
         <Navbar />
         <Routes>
-          <Route path="/" element="" />
-          <Hero />
-          <AboutUs />
-          <News />
-          <SponsorSection />
-          <Match />
+          <Route path="/" element="{<HomePage />}" />
+          <Route path="/about" element="{<AboutPage />}" />
+          <Route path="/news" element="{<NewsPage />}" />
+          <Route path="/match" element="{<MatchPage />}" />
         </Routes>
         <Footer />
       </div>
