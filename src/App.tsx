@@ -1,24 +1,29 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
-import SponsorSection from "./components/SponsorSection.tsx";
-import Hero from "./components/Hero.tsx";
-import Navbar from "./components/Navbar.tsx";
-import News from "./components/News.tsx";
-import AboutUs from "./components/AboutUs.tsx";
-import Footer from "./components/Footer.tsx";
-import Match from "./components/Match.tsx";
+import Navbar from "./components/Navbar";
+import HomePage from "./components/pages/HomePage";
+import AboutPage from "./components/pages/AboutPage";
+import ContactPage from "./components/pages/ContactPage";
+import MatchPage from "./components/pages/MatchPage";
+import NewsPage from "./components/pages/NewsPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
-      <div className="w-screen">
-        <Navbar />
-        <Hero />
-        <AboutUs />
-        <News />
-        <SponsorSection />
-        <Match />
-        <Footer />
-      </div>
+      <Router>
+        <div className="w-screen">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/matches" element={<MatchPage />} />
+            <Route path="/news" element={<NewsPage />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
     </>
   );
 }
