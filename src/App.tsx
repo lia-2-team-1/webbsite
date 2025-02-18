@@ -15,7 +15,7 @@ function App() {
         <div className="w-screen">
           <Navbar />
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route index path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/matches" element={<MatchPage />} />
