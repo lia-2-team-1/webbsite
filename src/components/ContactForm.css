@@ -1,0 +1,10 @@
+label {
+    @apply text-mineshaft dark:text-sandybrown
+
+}
+
+input, textarea {
+    @apply rounded-md border-2 border-wheat dark:border-sandybrown px-1
+}
+
+
