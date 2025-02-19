@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface ButtonProps {
     text: string;
     width?: string;
