@@ -1,20 +1,25 @@
-import { Link } from "react-router-dom";
-
 interface ButtonProps {
-    text: string;
-    width?: string;
-    isLink: boolean;
-    linkTo?: string;
-    func?: (e: React.MouseEvent<HTMLElement>) => void;
-    className?: string;
+  text: string;
+  width?: string;
+  isLink: boolean;
+  linkTo?: string;
+  func?: (e: React.MouseEvent<HTMLElement>) => void;
+  className?: string;
 }
 
-export default function Button({text, isLink, linkTo, func, width, className}: ButtonProps) {
-        
-        if (isLink) {
-            return (
-                <a href={`${linkTo}`} 
-                    className={`
+export default function Button({
+  text,
+  isLink,
+  linkTo,
+  func,
+  width,
+  className,
+}: ButtonProps) {
+  if (isLink) {
+    return (
+      <a
+        href={`${linkTo}`}
+        className={`
                     inline-block
                     font-bold uppercase font-inter
                     py-1 px-2
@@ -29,16 +34,17 @@ export default function Button({text, isLink, linkTo, func, width, className}: B
                     disabled:bg-[#888888] disabled:text-black 
                     w-${!width ? "fit" : width}
                     ${className}
-                    `}>
-                    {`${text}`}
-                    </a>
-            )
-        }
-        else {
-            return(
-                    <button type="button"
-                    onClick={func}
-                    className={`
+                    `}
+      >
+        {`${text}`}
+      </a>
+    );
+  } else {
+    return (
+      <button
+        type="button"
+        onClick={func}
+        className={`
                     font-bold uppercase font-inter
                     py-1 px-2
                     my-1 mx-3
@@ -52,7 +58,7 @@ export default function Button({text, isLink, linkTo, func, width, className}: B
                     w-${!width ? "fit" : width}
                     ${className}
                     `}
-                    >{`${text}`}</button>
-            )
-        }
+      >{`${text}`}</button>
+    );
+  }
 }
