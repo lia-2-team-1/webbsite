@@ -59,30 +59,31 @@ export const News = () => {
   }, [apiUrl]);
 
   return (
-      <div className="w-full bg-wheat dark:bg-codgray">
-
-    <div className="pt-5 pb-5 mx-auto md:w-4/5">
-      <SectionHeading text="Senaste hos klubben" />
-      <div>
-        {loading ? (
-          <div className="text-center py-5">Laddar...</div>
-        ) : error ? (
-          <div className="text-center py-5">
-            <InstaGrid posts={fallbackPosts} />
-            <p className="text-codgray dark:text-sandybrown mt-4">
-              Kunde inte ladda nyheterna just nu.
-            </p>
-            <p className="text-codgray dark:text-sandybrown">Försök igen senare!</p>
-          </div>
-        ) : (
-          <InstaGrid posts={fetchPosts} />
-        )}
-      </div>
-      <div className="flex justify-center pb-5 pt-5 mx-auto">
-        <Button isLink={true} linkTo={"#"} text={"FLER NYHETER"} />
+    <div className="w-full bg-wheat dark:bg-codgray">
+      <div className="pt-5 pb-5 mx-auto md:w-4/5">
+        <SectionHeading text="Senaste hos klubben" />
+        <div>
+          {loading ? (
+            <div className="text-center py-5">Laddar...</div>
+          ) : error ? (
+            <div className="text-center py-5">
+              <InstaGrid posts={fallbackPosts} />
+              <p className="text-codgray dark:text-sandybrown mt-4">
+                Kunde inte ladda nyheterna just nu.
+              </p>
+              <p className="text-codgray dark:text-sandybrown">
+                Försök igen senare!
+              </p>
+            </div>
+          ) : (
+            <InstaGrid posts={fetchPosts} />
+          )}
+        </div>
+        <div className="flex justify-center pb-5 pt-5 mx-auto">
+          <Button isLink={true} linkTo={"news"} text={"FLER NYHETER"} />
+        </div>
       </div>
     </div>
-      </div>
   );
 };
 

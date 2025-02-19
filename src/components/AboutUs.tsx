@@ -74,7 +74,7 @@ export default function AboutUs({ src }: AboutUsProps) {
         items-center
         "
           >
-            <Button isLink={true} text="Läs mer!"></Button>
+            <Button isLink={true} linkTo="/about" text="Läs mer!"></Button>
           </div>
         </div>
       </div>
