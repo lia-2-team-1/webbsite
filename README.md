@@ -19,4 +19,6 @@ We are using ReactJS + TypeScript & TailwindCSS
 
 - Express
 - Resend
-  To start backend, cd to /backend and run command: _npm run dev_
+  To start backend:
+  1. Run _npm install -g nodemon_
+  2. cd into /backend and run command: _nodemon src/server.ts_

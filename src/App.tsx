@@ -7,7 +7,6 @@ import ContactPage from './components/pages/ContactPage';
 import MatchPage from './components/pages/MatchPage';
 import NewsPage from './components/pages/NewsPage';
 import Footer from './components/Footer';
-import { EmailTest } from './components/EmailTest';
 
 function App() {
   return (
