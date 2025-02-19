@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
   return {
     define: {
       "process.env.SOME_KEY": JSON.stringify(env.SOME_KEY),
+      "process.env.REACT_APP_RESEND_KEY": JSON.stringify(env.REACT_APP_RESEND_KEY),
     },
     plugins: [react()],
     css: {

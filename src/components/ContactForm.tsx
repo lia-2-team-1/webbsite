@@ -1,5 +1,14 @@
-import './ContactForm.css'
+import './ContactForm.css';
+
+import { Resend } from 'resend';
+import { Mail } from './Mail.tsx';
+
 export default function ContactForm() {
+    const resendKey = process.env.REACT_APP_RESEND_KEY;
+    async function handleSend() {
+            const resend = new Resend(resendKey);
+            send({from:"automagic@lappelduvide.net", to: "seattledraws@gmail.com", subject: "bla", react: <h1>fuck</h1>});
+        }
     return(
         <div className="
            bg-brandy dark:bg-black
@@ -11,7 +20,7 @@ export default function ContactForm() {
         gap-y-2 mx-auto py-3
     
         ">
-            <label for="radio-group">Kontaktanledning:</label>
+            <label htmlFor="radio-group">Kontaktanledning:</label>
             <div className="flex gap-x-2">
                 <label>
                 <input name="radio-group" type="radio" value="sponsor"/>
@@ -22,19 +31,19 @@ export default function ContactForm() {
                 &nbsp; Annat/Övrigt
                 </label>
             </div>
-            <label for="form-email">
+            <label htmlFor="form-email">
             E-Mail:
             </label>
             <input name="form-email" type="text" />
-            <label for="form-header">
+            <label htmlFor="form-header">
             Rubrik:
             </label>
             <input name="form-header" type="text" />
-            <label for="form-textarea">
+            <label htmlFor="form-textarea">
             Fråga:
             </label>
             <textarea name="form-textarea" rows="4" cols="40" />
-            <button type="submit" value="Skicka" 
+            <button type="button" value="Skicka" 
                 className=" 
                     font-bold uppercase font-inter
                     py-1 px-2
@@ -47,8 +56,11 @@ export default function ContactForm() {
                     disabled:bg-[#888888] disabled:text-black 
 
                 "
-            >Skicka</button>
+            onClick={handleSend}>Skicka</button>
         </form>
         </div>
     )
 }
+
+
+
