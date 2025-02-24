@@ -4,7 +4,6 @@ import MatchCard from "./MatchCard.tsx";
 import LoadingAndErrorMatch from "./LoadingandErrorMatch.tsx";
 import SectionHeading from "./SectionHeading.tsx";
 
-
 export interface Match {
   gameId: number;
   homeTeamName: string;
@@ -58,13 +57,15 @@ const Match = () => {
           awayTeamImageUrl: match.awayTeamImageUrl,
         }));
 
-        const sortedMatches = matches.sort((a, b) =>
-          new Date(b.time).getTime() - new Date(a.time).getTime()
+        const sortedMatches = matches.sort(
+          (a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()
         );
 
         setMatches(sortedMatches.slice(0, 4));
       } catch (err) {
-        setError(err instanceof Error ? err.message : "Ett okänt fel inträffade");
+        setError(
+          err instanceof Error ? err.message : "Ett okänt fel inträffade"
+        );
       } finally {
         setLoading(false);
       }
@@ -86,7 +87,7 @@ const Match = () => {
           </div>
         )}
         <div className="flex justify-center pb-5 pt-5 mx-auto">
-          <Button isLink={true} linkTo={"#"} text={"FLER MATCHER"} />
+          <Button isLink={true} linkTo={"/matches"} text={"FLER MATCHER"} />
         </div>
       </div>
     </div>

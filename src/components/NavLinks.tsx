@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const NavLinks: React.FC<NavLinksProps> = ({ className }) => {
   const links = [
     { path: "/", text: "Hem" },
+    { path: "/news", text: "Nyheter" },
+    { path: "/matches", text: "Matcher" },
     { path: "/about", text: "Om oss" },
     { path: "/contact", text: "Kontakt" },
-    { path: "/matches", text: "Matcher" },
-    { path: "/news", text: "Nyheter" },
   ];
 
   return (
