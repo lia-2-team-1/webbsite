@@ -1,0 +1,68 @@
+{
+  "games": [
+    {
+      "gameId": 1,
+      "homeTeamName": "Team A",
+      "awayTeamName": "Team B",
+      "homeTeamImageUrl": "/public/logo.png",
+      "awayTeamImageUrl": "/public/logo.png",
+      "timeAsDateTime": "2025-03-15T18:30:00Z",
+      "time": "18:30",
+      "competitionName": "Champions League",
+      "venueName": "Stadium A",
+      "venueLocality": "City A",
+      "venueAddress": "123 Main Street",
+      "isPostponed": false,
+      "isCancelled": false,
+      "isAbandoned": false
+    },
+    {
+      "gameId": 2,
+      "homeTeamName": "Team C",
+      "awayTeamName": "Team D",
+      "homeTeamImageUrl": "/public/logo.png",
+      "awayTeamImageUrl": "/public/logo.png",
+      "timeAsDateTime": "2025-04-10T20:00:00Z",
+      "time": "20:00",
+      "competitionName": "Europa League",
+      "venueName": "Stadium B",
+      "venueLocality": "City B",
+      "venueAddress": "456 Elm Street",
+      "isPostponed": true,
+      "isCancelled": false,
+      "isAbandoned": false
+    },
+    {
+      "gameId": 3,
+      "homeTeamName": "Team E",
+      "awayTeamName": "Team F",
+      "homeTeamImageUrl": "/public/logo.png",
+      "awayTeamImageUrl": "/public/logo.png",
+      "timeAsDateTime": "2025-05-05T15:45:00Z",
+      "time": "15:45",
+      "competitionName": "Domestic Cup",
+      "venueName": "Stadium C",
+      "venueLocality": "City C",
+      "venueAddress": "789 Oak Avenue",
+      "isPostponed": false,
+      "isCancelled": true,
+      "isAbandoned": false
+    },
+    {
+      "gameId": 4,
+      "homeTeamName": "Team G",
+      "awayTeamName": "Team H",
+      "homeTeamImageUrl": "https://example.com/images/team-g.png",
+      "awayTeamImageUrl": "/public/logo.png",
+      "timeAsDateTime": "2024-06-01T13:15:00Z",
+      "time": "13:15",
+      "competitionName": "Friendly",
+      "venueName": "Stadium D",
+      "venueLocality": "City D",
+      "venueAddress": "321 Maple Road",
+      "isPostponed": false,
+      "isCancelled": false,
+      "isAbandoned": true
+    }
+  ]
+}

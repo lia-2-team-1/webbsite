@@ -19,6 +19,7 @@ export interface FutureMatches {
   isCancelled: boolean;
   isAbandoned: boolean;
 }
+
 const FutureMatches = () => {
   const [matches, setMatches] = useState<FutureMatches[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -31,20 +32,27 @@ const FutureMatches = () => {
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const response = await fetch(
-          `https://forening-api.svenskfotboll.se/club/upcoming-games?from=${fromDate}&to=${toDate}&w=3&take=1000&includeCanceled=true`,
-          {
-            method: "GET",
-            headers: {
-              ApiKey: import.meta.env.VITE_FOGIS_API_KEY || "",
-            },
-          }
-        );
+        const response = await fetch("./testdata.json", {
+          method: "GET",
+        });
+        //   https://forening-api.svenskfotboll.se/club/upcoming-games?from=${fromDate}&to=${toDate}&w=3&take=1000&includeCanceled=true,
+        //   {
+        //     method: "GET",
+        //     headers: {
+        //       ApiKey: import.meta.env.VITE_FOGIS_API_KEY || "",
+        //     },
+        //   }
+        // );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        setMatches(data.games.slice(0, 4));
+        // Filtrera ut matcher som ligger i framtiden
+        const futureGames = data.games.filter(
+          (game: FutureMatches) =>
+            new Date(game.timeAsDateTime) >= new Date(today)
+        );
+        setMatches(futureGames.slice(0, 4));
       } catch (err: any) {
         setError(err.message);
       } finally {
@@ -53,7 +61,7 @@ const FutureMatches = () => {
     };
 
     fetchMatches();
-  }, [fromDate, toDate]);
+  }, [today, fromDate, toDate]);
 
   return (
     <div className="bg-brandy dark:bg-mineshaft text-black dark:text-sandybrown grid grid-cols-1 gap-5">
@@ -67,7 +75,7 @@ const FutureMatches = () => {
                 className="border-darkgrey border-2 m-auto rounded-lg w-4/5 lg:w-2/5 bg-wheat shadow-md hover:bg-brandy transition duration-300 dark:bg-mineshaft dark:hover:bg-gray-700"
                 key={match.gameId}
               >
-                <div className="flex-col p-5 m-auto" key={match.gameId}>
+                <div className="flex-col p-5 m-auto">
                   <div className="flex justify-between items-center">
                     <img
                       src={match.homeTeamImageUrl}
@@ -87,6 +95,9 @@ const FutureMatches = () => {
                   <div className="text-center">
                     <p>
                       <strong>Tid:</strong> {match.time}
+                    </p>
+                    <p>
+                      <strong>Datum:</strong> {match.timeAsDateTime}
                     </p>
                     <p>
                       <strong>Serie:</strong> {match.competitionName}
