@@ -52,7 +52,7 @@
       "gameId": 4,
       "homeTeamName": "Team G",
       "awayTeamName": "Team H",
-      "homeTeamImageUrl": "https://example.com/images/team-g.png",
+      "homeTeamImageUrl": "/public/logo.png",
       "awayTeamImageUrl": "/public/logo.png",
       "timeAsDateTime": "2025-06-01T13:15:00Z",
       "time": "13:15",
