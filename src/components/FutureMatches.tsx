@@ -12,7 +12,6 @@ export interface FutureMatches {
   timeAsDateTime: string;
   time: string;
   competitionName: string;
-  result: string;
   venueName: string;
   venueLocality: string;
   venueAddress: string;
@@ -26,7 +25,7 @@ const FutureMatches = () => {
   const [loading, setLoading] = useState(true);
 
   const today = new Date().toISOString().split("T")[0];
-  const fromDate = "2022-01-01";
+  const fromDate = today;
   const toDate = "2030-12-31";
 
   useEffect(() => {
@@ -57,31 +56,66 @@ const FutureMatches = () => {
   }, [fromDate, toDate]);
 
   return (
-    <div className="bg-brandy dark:bg-mineshaft">
+    <div className="bg-brandy dark:bg-mineshaft text-black dark:text-sandybrown grid grid-cols-1 gap-5">
       <SectionHeading text="Kommande matcher" />
       <LoadingAndErrorMatch loading={loading} error={error} />
       {!loading && !error && (
         <>
           {matches.length > 0 ? (
             matches.map((match) => (
-              <div className="flex justify-center" key={match.gameId}>
-                <div
-                  className="bg-wheat dark:bg-black flex text-black dark:text-sandybrown flex-col m-5 w-80 justify-center items-center p-5"
-                  key={match.gameId}
-                >
-                  <h3>
-                    {match.homeTeamName} - {match.awayTeamName}
-                  </h3>
-                  <p>{match.time}</p>
-                  <p>{match.competitionName}</p>
-                  <p>
-                    {match.venueName}, {match.venueLocality}
-                  </p>
+              <div
+                className="border-darkgrey border-2 m-auto rounded-lg w-4/5 lg:w-2/5 bg-wheat shadow-md hover:bg-brandy transition duration-300 dark:bg-mineshaft dark:hover:bg-gray-700"
+                key={match.gameId}
+              >
+                <div className="flex-col p-5 m-auto" key={match.gameId}>
+                  <div className="flex justify-between items-center">
+                    <img
+                      src={match.homeTeamImageUrl}
+                      alt={match.homeTeamName}
+                      className="w-20 h-16"
+                    />
+                    <img
+                      src={match.awayTeamImageUrl}
+                      alt={match.awayTeamName}
+                      className="w-20 h-16"
+                    />
+                  </div>
+                  <div className="flex justify-between items-center text-base md:text-lg lg:text-xl font-semibold">
+                    <h3>{match.homeTeamName}</h3>
+                    <h3>{match.awayTeamName}</h3>
+                  </div>
+                  <div className="text-center">
+                    <p>
+                      <strong>Tid:</strong> {match.time}
+                    </p>
+                    <p>
+                      <strong>Serie:</strong> {match.competitionName}
+                    </p>
+                    <p>
+                      <strong>Var:</strong> {match.venueName},{" "}
+                      {match.venueLocality}
+                    </p>
+                    {match.isCancelled && (
+                      <p>
+                        <strong>Inställd:</strong> Ja
+                      </p>
+                    )}
+                    {match.isPostponed && (
+                      <p>
+                        <strong>Förskjuten:</strong> Ja
+                      </p>
+                    )}
+                    {match.isAbandoned && (
+                      <p>
+                        <strong>Match avbruten:</strong> Ja
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             ))
           ) : (
-            <p>Inga matcher funna</p>
+            <p className="text-center">Säsongen är inte igång just nu</p>
           )}
           <div className="flex justify-center pb-10">
             <Button isLink={false} text="LADDA FLER" />
