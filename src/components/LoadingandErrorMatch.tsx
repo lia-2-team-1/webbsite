@@ -5,9 +5,16 @@ interface LoadingAndErrorProps {
   error: string | null;
 }
 
-const LoadingAndErrorMatch: React.FC<LoadingAndErrorProps> = ({ loading, error }) => {
+const LoadingAndErrorMatch: React.FC<LoadingAndErrorProps> = ({
+  loading,
+  error,
+}) => {
   if (loading) {
-    return <div className="text-center py-5">Laddar...</div>;
+    return (
+      <div className="text-center py-5 text-black dark:text-sandybrown">
+        Laddar...
+      </div>
+    );
   }
 
   if (error) {
@@ -20,7 +27,6 @@ const LoadingAndErrorMatch: React.FC<LoadingAndErrorProps> = ({ loading, error }
       </div>
     );
   }
-
 };
 
 export default LoadingAndErrorMatch;
