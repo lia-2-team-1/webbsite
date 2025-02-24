@@ -21,7 +21,8 @@ export interface FutureMatches {
 }
 
 const FutureMatches = () => {
-  const [matches, setMatches] = useState<FutureMatches[]>([]);
+  const [allMatches, setAllMatches] = useState<FutureMatches[]>([]);
+  const [visibleCount, setVisibleCount] = useState(4);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -47,12 +48,12 @@ const FutureMatches = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        // Filtrera ut matcher som ligger i framtiden
+
         const futureGames = data.games.filter(
           (game: FutureMatches) =>
             new Date(game.timeAsDateTime) >= new Date(today)
         );
-        setMatches(futureGames.slice(0, 4));
+        setAllMatches(futureGames);
       } catch (err: any) {
         setError(err.message);
       } finally {
@@ -63,17 +64,22 @@ const FutureMatches = () => {
     fetchMatches();
   }, [today, fromDate, toDate]);
 
+  const visibleMatches = allMatches.slice(0, visibleCount);
+  const loadMoreMatches = () => {
+    setVisibleCount((prevCount) => prevCount + 4);
+  };
+
   return (
     <div className="bg-brandy dark:bg-mineshaft text-black dark:text-sandybrown grid grid-cols-1 gap-5">
       <SectionHeading text="Kommande matcher" />
       <LoadingAndErrorMatch loading={loading} error={error} />
       {!loading && !error && (
         <>
-          {matches.length > 0 ? (
-            matches.map((match) => (
+          {visibleMatches.length > 0 ? (
+            visibleMatches.map((match) => (
               <div
-                className="border-darkgrey border-2 m-auto rounded-lg w-4/5 lg:w-2/5 bg-wheat shadow-md hover:bg-brandy transition duration-300 dark:bg-mineshaft dark:hover:bg-gray-700"
                 key={match.gameId}
+                className="border-darkgrey border-2 m-auto rounded-lg w-4/5 lg:w-2/5 bg-wheat shadow-md hover:bg-brandy transition duration-300 dark:bg-mineshaft dark:hover:bg-gray-700"
               >
                 <div className="flex-col p-5 m-auto">
                   <div className="flex justify-between items-center">
@@ -129,7 +135,9 @@ const FutureMatches = () => {
             <p className="text-center">Säsongen är inte igång just nu</p>
           )}
           <div className="flex justify-center pb-10">
-            <Button isLink={false} text="LADDA FLER" />
+            {visibleCount < allMatches.length && (
+              <Button isLink={false} text="LADDA FLER" func={loadMoreMatches} />
+            )}
           </div>
         </>
       )}
