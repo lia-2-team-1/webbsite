@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+import FutureMatches from "../FutureMatches";
 
 export default function MatchPage() {
   return (
-    <div>MatchPage</div>
-  )
+    <div>
+      MatchPage
+      <FutureMatches />
+    </div>
+  );
 }
