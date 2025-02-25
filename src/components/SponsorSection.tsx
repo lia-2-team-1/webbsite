@@ -70,7 +70,7 @@ export default function SponsorSection() {
 
   return (
     <>
-      <div className="bg-brandy dark:bg-mineshaft">
+      <div className="bg-wheat dark:bg-codgray">
         <div
           className=" 
         mx-auto 
