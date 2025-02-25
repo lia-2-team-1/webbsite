@@ -60,7 +60,7 @@ export const News = () => {
 
   return (
     <div className="w-full bg-wheat dark:bg-codgray">
-      <div className="pt-5 pb-5 mx-auto md:w-4/5">
+      <div className="pt-5 pb-5 mx-auto md:w-4/5 w-full lg:max-w-screen-lg">
         <SectionHeading text="Senaste hos klubben" />
         <div>
           {loading ? (
