@@ -75,8 +75,8 @@ const Match = () => {
   }, []);
 
   return (
-    <div className="bg-wheat dark:bg-codgray">
-      <div className="bg-wheat text-black pt-5 pb-5 mx-auto w-4/5 lg:w-2/5 overflow-hidden dark:bg-codgray dark:text-sandybrown">
+    <div className="bg-brandy dark:bg-mineshaft">
+      <div className="text-black pt-5 pb-5 mx-auto w-4/5 lg:w-2/5 overflow-hidden dark:text-sandybrown">
         <SectionHeading text="Senaste matcherna" />
         <LoadingAndErrorMatch loading={loading} error={error} />
         {!loading && !error && (
