@@ -2,9 +2,7 @@ import { Resend } from 'resend';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
-
 dotenv.config();
-
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -16,26 +14,26 @@ app.use(
   }),
 );
 app.use(express.json());
-
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
-// Test route för att se att backend är uppe -> http://localhost:5000/api/test
-app.get('/api/test', (_, res) => {
-  res.json({ message: 'Backend is working!' });
-});
-
+/**
+*   THIS NEEDS A RESEND API KEY AND A VERIFIED DOMAIN TO GO ALONG WITH IT.
+*   I HAVE USED MY OWN DOMAIN FOR TESTING PURPOSES BUT AS THAT IS TIED TO 
+*   MY PERSONALS IT WILL NOT BE USED IN PROD.
+* */
 // Endpoint för Resend som används i <EmailTest />
-app.post('/api/send-email', async (_, res) => {
+app.post('/api/send-email/', async (req, res) => { 
+    const email = req.body;
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
-      to: ['delivered@resend.dev'], // Du kan testa skicka till din egna mail
-      subject: 'Hello World',
-      html: '<strong>It works!</strong>',
+      from: `hello <automagic@resend.lappelduvide.net>`,
+      to: [`${email.from}`, `automagic@resend.lappelduvide.net`],
+      subject: `${email.subject}`,
+      html: `${email.react}`,
     });
 
     if (error) {
@@ -63,4 +61,17 @@ app.post('/api/send-email', async (_, res) => {
       resendData: null,
     });
   }
+});
+
+
+/**
+    *
+    * test function to see if req.body works.
+    *
+    * */
+
+app.post('/api/test', async (req, res) => {
+    console.log(`API-TEST SUCCESSFUL: \n`,req.body);
+    console.log(`${req.body.to} \n${req.body.subject} \n${req.body.react}`);
+    res.send();    
 });

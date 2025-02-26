@@ -1,14 +1,92 @@
 import './ContactForm.css';
-
+import {useState} from "react";
 import { Resend } from 'resend';
 import { Mail } from './Mail.tsx';
+import { EditorProvider, Editor } from '@tiptap/react'; 
+import { StarterKit } from '@tiptap/starter-kit';          
 
 export default function ContactForm() {
     const resendKey = process.env.REACT_APP_RESEND_KEY;
     async function handleSend() {
             const resend = new Resend(resendKey);
-            send({from:"automagic@lappelduvide.net", to: "seattledraws@gmail.com", subject: "bla", react: <h1>fuck</h1>});
         }
+
+    const [emailTag, setEmailTag] = useState('');
+    const [emailFrom, setEmailFrom] = useState('');
+    const [emailSubject, setEmailSubject] = useState('');
+    const [emailReact, setEmailReact] = useState('');
+    
+    const extensions = [StarterKit ];                          
+                                                           
+    const Tiptap = () => {                    
+        const editor = new Editor({                             
+            extensions,
+            onBlur({editor}){},
+            onFocus({editor, event}){},
+            onUpdate({editor}){},
+        })                                                     
+
+        return (                                               
+                <EditorProvider                                        
+                extensions={extensions}                                
+                content={emailReact == '' ? "Write here <br/> <br/>" : emailReact}
+                editor={editor} 
+                editorContainerProps={{className: "bg-[#2b2a33]"}}
+                onBlur={({editor}) => {
+                    setEmailReact(editor.getHTML());
+                    console.log(emailReact);
+                }}>
+                </EditorProvider>
+               )                                                      
+    }                                                          
+    async function handleLog() {
+        if(handleValidation()){
+        const apiCall = await fetch('http://localhost:5000/api/send-email', {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify({
+                from: emailFrom,
+                subject: `${emailTag} ${emailSubject}`,
+                react: emailReact
+            })
+        });
+        }
+        else
+        {
+        console.log("validuation returned: " + handleValidation());
+        }
+    }
+    
+    function emailValidation(email) {
+        const regex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    } // valid if returns true
+
+    const handleValidation = () => {
+        if(emailTag.trim() == '')
+            {
+                console.log('validation Tag')
+                return false;
+            }
+        if(emailFrom == '' || !emailValidation(emailFrom)) 
+            {
+                console.log('validation From')
+                return false;
+            }
+        if(emailSubject.trim() == '')
+            {
+                console.log('validation Subject')
+                return false;
+            }
+        if(emailReact.trim() == '')
+            {
+                console.log('validation React')
+                return false;
+            }
+        return true;
+    }
     return(
         <div className="
            bg-brandy dark:bg-black
@@ -20,29 +98,38 @@ export default function ContactForm() {
         gap-y-2 mx-auto py-3
     
         ">
-            <label htmlFor="radio-group">Kontaktanledning:</label>
+            <label htmlFor="radio-group" required>Kontaktanledning:</label>
+            <h4 id="err-radio" className={`text-red-800 ${emailTag.trim() == '' ? "block" : "hidden"}`}>Please choose a reason for contact.</h4>
             <div className="flex gap-x-2">
                 <label>
-                <input name="radio-group" type="radio" value="sponsor"/>
+                <input name="radio-group" type="radio" value="[sponsor] " onChange={e => setEmailTag(e.target.value)} required/>
                 &nbsp; Sponsorfråga
                 </label>
                 <label>
-                <input name="radio-group" type="radio" value="other"/>
+                <input name="radio-group" type="radio" value="[misc] " onChange={e => setEmailTag(e.target.value)}/>
                 &nbsp; Annat/Övrigt
                 </label>
             </div>
             <label htmlFor="form-email">
             E-Mail:
             </label>
-            <input name="form-email" type="text" />
+            <h4 id="err-email" className={`text-red-800 ${emailFrom.trim() == '' || !emailValidation(emailFrom.trim()) ? "block" : "hidden"}`}>Please give a valid e-mail!</h4>
+            <input name="form-email" type="text" value={emailFrom} onChange={e => setEmailFrom(e.target.value)}/>
             <label htmlFor="form-header">
             Rubrik:
             </label>
-            <input name="form-header" type="text" />
+            <h4 id="err-subject" className={`text-red-800 ${emailSubject.trim() == '' ? "block" : "hidden" }`}>Please give a subject to the e-mail!</h4>
+            <input name="form-header" type="text" value={emailSubject} onChange={e => setEmailSubject(e.target.value)} />
             <label htmlFor="form-textarea">
             Fråga:
             </label>
-            <textarea name="form-textarea" rows="4" cols="40" />
+            <h4 id="err-react" className={`text-red-800 ${emailReact == '' ? "block" : "hidden"}`}>This needs to be filled out!</h4>
+            <Tiptap 
+            name="form-textarea" 
+            className="
+            rounded-md border-2 border-wheat dark:border-sandybrown px-1 bg-[#2b2a33]
+            
+            "></Tiptap>
             <button type="button" value="Skicka" 
                 className=" 
                     font-bold uppercase font-inter
@@ -56,11 +143,10 @@ export default function ContactForm() {
                     disabled:bg-[#888888] disabled:text-black 
 
                 "
-            onClick={handleSend}>Skicka</button>
+            onClick={handleLog}>Skicka</button>
         </form>
         </div>
     )
 }
-
 
 
