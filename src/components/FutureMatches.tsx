@@ -70,7 +70,7 @@ const FutureMatches = () => {
   };
 
   return (
-    <div className="bg-wheat dark:bg-codgray text-black dark:text-sandybrown grid grid-cols-1 gap-5">
+    <div className="bg-wheat dark:bg-codgray text-black dark:text-sandybrown grid p-5 grid-cols-1 gap-5">
       <SectionHeading text="Kommande matcher" />
       <LoadingAndErrorMatch loading={loading} error={error} />
       {!loading && !error && (
