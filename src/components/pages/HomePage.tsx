@@ -11,8 +11,8 @@ export default function HomePage() {
       <Hero />
       <AboutUs />
       <News />
-      <SponsorSection />
       <Match />
+      <SponsorSection />
     </>
   );
 }

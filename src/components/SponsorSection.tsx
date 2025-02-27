@@ -70,11 +70,13 @@ export default function SponsorSection() {
 
   return (
     <>
-      <div className="bg-brandy dark:bg-mineshaft">
+      <div className="bg-wheat dark:bg-codgray">
         <div
           className=" 
         mx-auto 
         py-5
+        w-full
+        lg:max-w-screen-lg
         "
         >
           <SectionHeading text="Med stöd av" />
@@ -133,7 +135,7 @@ export default function SponsorSection() {
               );
             })}
           </div>
-          <div className="text-center">
+          <div className="text-center pb-5">
             <Button isLink="true" text="bli sponsor" />
             <Button isLink="true" text="bli sponsor" />
           </div>
