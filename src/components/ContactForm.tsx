@@ -4,6 +4,7 @@ import { EditorProvider } from "@tiptap/react";
 import { StarterKit } from "@tiptap/starter-kit";
 
 export default function ContactForm() {
+  const send = process.env.REACT_APP_SEND;
   const [emailTag, setEmailTag] = useState("");
   const [emailFrom, setEmailFrom] = useState("");
   const [emailSubject, setEmailSubject] = useState("");
@@ -28,7 +29,7 @@ export default function ContactForm() {
   };
   async function handleLog(): Promise<void> {
     if (handleValidation()) {
-      await fetch("http://localhost:5000/api/send-email", {
+      await fetch(send!, {
         headers: {
           "Content-Type": "application/json",
         },
