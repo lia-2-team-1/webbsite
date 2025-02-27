@@ -1,12 +1,12 @@
 import React from "react";
-import Players from "../Players";
+import FutureMatches from "../FutureMatches";
 import Match from "../Match";
 
 export default function MatchPage() {
   return (
     <>
       <Match />
-      <Players />
+      <FutureMatches />
     </>
   );
 }

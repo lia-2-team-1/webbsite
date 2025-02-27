@@ -1,25 +1,35 @@
-footer
-{
-    h1,h2,h3,h4,h5,h6,p {
-        @apply dark:text-sandybrown
-    }
-    a {
-        @apply dark:text-coffee dark:hover:text-sandybrown dark:visited:text-sandybrown;
-        @apply transition-colors underline;
-    }
-    hr {
-        @apply dark:border-sandybrown
-    }
-
+footer {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply dark:text-sandybrown;
+  }
+  a {
+    @apply dark:text-coffee dark:hover:text-sandybrown dark:visited:text-sandybrown;
+    @apply transition-colors underline;
+  }
+  hr {
+    @apply dark:border-sandybrown;
+  }
 }
 footer {
-    h1,h2,h3,h4,h5,h6,p {
-        @apply text-codgray
-    }
-    a {
-        @apply text-codgray visited:text-codgray hover:text-sandybrown
-    }
-    hr {
-        @apply border-codgray
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply text-codgray;
+  }
+  a {
+    @apply text-codgray visited:text-codgray hover:text-black;
+  }
+  hr {
+    @apply border-codgray;
+  }
 }
