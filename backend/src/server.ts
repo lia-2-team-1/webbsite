@@ -26,14 +26,14 @@ app.listen(port, () => {
 *   MY PERSONALS IT WILL NOT BE USED IN PROD.
 * */
 // Endpoint för Resend som används i <EmailTest />
-app.post('/api/send-email/', async (req, res) => { 
-    const email = req.body;
+app.post('/api/send-email/', async (req, res) => {
+  const email = req.body;
   try {
     const { data, error } = await resend.emails.send({
-      from: `hello <automagic@resend.lappelduvide.net>`,
-      to: [`${email.from}`, `automagic@resend.lappelduvide.net`],
+      from: `hello <automagic@resend.lappelduvide.net>`, // THIS SHOULD BE CHANGED TO THE APPROPRIATE MAIL
+      to: [`${email.to}`, `automagic@resend.lappelduvide.net`], // SEND TO USER, AS WELL AS A CARBON COPY TO ORGS INBOX
       subject: `${email.subject}`,
-      html: `${email.react}`,
+      html: `${email.body}`,
     });
 
     if (error) {
@@ -71,7 +71,7 @@ app.post('/api/send-email/', async (req, res) => {
     * */
 
 app.post('/api/test', async (req, res) => {
-    console.log(`API-TEST SUCCESSFUL: \n`,req.body);
-    console.log(`${req.body.to} \n${req.body.subject} \n${req.body.react}`);
-    res.send();    
+  console.log(`API-TEST SUCCESSFUL: \n`, req.body);
+  console.log(`${req.body.to} \n${req.body.subject} \n${req.body.react}`);
+  res.send();
 });
