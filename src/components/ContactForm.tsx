@@ -57,7 +57,7 @@ export default function ContactForm() {
     }
   };
 
-  const inputStyles: string = "rounded-md bg-[#2a2a33] border-2 border-brandy text-springwood";
+  const inputStyles: string = "rounded-md bg-[#2a2a33] border-2 border-brandy px-2 py-[3px] dark:border-sandybrown text-springwood";
   const buttonStyles: string = `
                     font-bold uppercase font-inter
                     py-1 px-2
@@ -70,7 +70,7 @@ export default function ContactForm() {
                     disabled:bg-[#888888] disabled:text-black`
 
   return (
-    <div className="bg-brandy dark:bgcodgray">
+    <div className="bg-brandy dark:bg-codgray">
       <form
         className="w-5/6 md:w-3/5 lg:w-2/5 flex flex-col mx-auto bg-brandy dark:bg-transparent text-mineshaft dark:text-sandybrown"
         onSubmit={handleSubmit(onSubmit)}
