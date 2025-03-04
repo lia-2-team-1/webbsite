@@ -17,8 +17,13 @@ export interface Match {
   awayTeamImageUrl: string;
 }
 
-const Match = () => {
+interface MatchProps {
+  showLoadMore?: boolean;
+}
+
+const Match = ({ showLoadMore = false }: MatchProps) => {
   const [matches, setMatches] = useState<Match[]>([]);
+  const [visibleCount, setVisibleCount] = useState(4);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -44,7 +49,7 @@ const Match = () => {
         }
 
         const result = await response.json();
-        const matches: Match[] = result.games.map((match: any) => ({
+        const fetchedMatches: Match[] = result.games.map((match: any) => ({
           gameId: match.gameId,
           homeTeamName: match.homeTeamName,
           awayTeamName: match.awayTeamName,
@@ -57,11 +62,11 @@ const Match = () => {
           awayTeamImageUrl: match.awayTeamImageUrl,
         }));
 
-        const sortedMatches = matches.sort(
+        const sortedMatches = fetchedMatches.sort(
           (a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()
         );
 
-        setMatches(sortedMatches.slice(0, 4));
+        setMatches(sortedMatches);
       } catch (err) {
         setError(
           err instanceof Error ? err.message : "Ett okänt fel inträffade"
@@ -74,21 +79,39 @@ const Match = () => {
     fetchData();
   }, []);
 
+  const visibleMatches = matches.slice(0, visibleCount);
+
+  const loadMoreMatches = () => {
+    console.log("Before:", visibleCount, matches.length);
+    setVisibleCount((prevCount) => prevCount + 4);
+  };
+
   return (
     <div className="bg-brandy dark:bg-mineshaft">
       <div className="text-black pt-5 pb-5 mx-auto w-4/5 lg:w-2/5 overflow-hidden dark:text-sandybrown">
         <SectionHeading text="Senaste matcherna" />
         <LoadingAndErrorMatch loading={loading} error={error} />
         {!loading && !error && (
-          <div className="grid grid-cols-1 gap-5">
-            {matches.map((match) => (
-              <MatchCard key={match.gameId} match={match} />
-            ))}
-          </div>
+          <>
+            <div className="grid grid-cols-1 gap-5">
+              {visibleMatches.map((match) => (
+                <MatchCard key={match.gameId} match={match} />
+              ))}
+            </div>
+
+            {showLoadMore && visibleCount < matches.length && (
+              <div className="flex justify-center pb-5 pt-5 mx-auto">
+                <Button isLink={false} text={"LADDA FLER"} func={loadMoreMatches} />
+              </div>
+            )}
+
+            {!showLoadMore && (
+              <div className="flex justify-center pb-5 pt-5 mx-auto">
+                <Button isLink={true} linkTo={"/matches"} text={"SE ALLA MATCHER"} />
+              </div>
+            )}
+          </>
         )}
-        <div className="flex justify-center pb-5 pt-5 mx-auto">
-          <Button isLink={true} linkTo={"/matches"} text={"FLER MATCHER"} />
-        </div>
       </div>
     </div>
   );
