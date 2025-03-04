@@ -5,7 +5,7 @@ import Match from "../Match";
 export default function MatchPage() {
   return (
     <>
-      <Match />
+      <Match showLoadMore={true} />
       <FutureMatches />
     </>
   );
