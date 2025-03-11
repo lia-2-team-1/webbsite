@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import LoadingAndErrorMatch from "./LoadingAndErrorMatch";
+// import LoadingAndErrorMatch from "./LoadingAndErrorMatch";
 import SectionHeading from "./SectionHeading";
 import Button from "./Button";
 
