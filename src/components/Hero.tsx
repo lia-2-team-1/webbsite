@@ -1,4 +1,5 @@
-import Button from "./Button";
+import Button from './Button';
+import { EmailTest } from './EmailTest';
 
 export const Hero = () => {
   return (
@@ -8,8 +9,10 @@ export const Hero = () => {
       flex flex-col place-items-center 
       bg-cover bg-no-repeat md:bg-[url('/tif-hero.jpg')] bg-[url('/tif-hero-mobile.jpg')]"
     >
+      <EmailTest />
+
       <div
-        className="
+        className='
             flex-col
             py-5  my-auto 
             w-3/4 md:w-3/5 lg:w-2/5 
@@ -32,14 +35,14 @@ export const Hero = () => {
         </p>
       </div>
       <div
-        className="
+        className='
            flex-col
             ptlr-3 
             w-3/4 md:w-3/5
-        "
+        '
       >
         <div
-          className="
+          className='
                 flex flex-col
                 p-4
                 pb-6
@@ -47,10 +50,10 @@ export const Hero = () => {
                 bg-sandybrown dark:bg-darkgray bg-opacity-75 dark:bg-opacity-75 
                 text-nowrap
                 rounded-tr-lg rounded-tl-lg
-            "
+            '
         >
-          <Button text="Stötta Oss!" isLink={true} linkTo="/contact" />
-          <Button text="Bli Medlem!" isLink={true} linkTo="/contact" />
+          <Button text='Stötta Oss!' isLink={true} />
+          <Button text='Bli Medlem!' isLink={true} />
         </div>
       </div>
     </div>

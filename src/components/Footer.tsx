@@ -122,7 +122,7 @@ export default function Footer({}: FooterProps) {
               href="https://www.google.com"
             >
               <img
-                src="/public/Instagram_Glyph_Gradient.PNG"
+                src="/Instagram_Glyph_Gradient.PNG"
                 alt="Instagram"
                 className="w-14 h-auto pt-1 mx-auto lg:mx-0"
               />
@@ -155,7 +155,7 @@ export default function Footer({}: FooterProps) {
         <div className="mt-5 md:w-4/5 md:mx-auto">
           <div className="flex flex-row">
             <img
-              src="/public/logo.webp"
+              src="/logo.webp"
               alt="Logo"
               className="w-1/5 md:w-1/6"
             />
