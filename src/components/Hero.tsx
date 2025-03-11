@@ -20,17 +20,17 @@ export const Hero = () => {
             md:text-center
             text-nowrap
             rounded-md
-        '
+        "
       >
         <h1
-          className='text-center text-4xl lg:text-6xl text-mineshaft dark:text-sandybrown font-bold 
+          className="text-center text-4xl lg:text-6xl text-mineshaft dark:text-sandybrown font-bold 
 
-          px-1.5 lg:px-5'
+          px-1.5 lg:px-5"
         >
           Trandareds IF
         </h1>
 
-        <p className='text-mineshaft dark:text-sandybrown text-center font-medium'>
+        <p className="text-mineshaft dark:text-sandybrown text-center font-medium">
           Engagemang, gemenskap och framtid
         </p>
       </div>

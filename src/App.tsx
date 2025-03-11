@@ -7,6 +7,7 @@ import ContactPage from "./components/pages/ContactPage";
 import MatchPage from "./components/pages/MatchPage";
 import NewsPage from "./components/pages/NewsPage";
 import Footer from "./components/Footer";
+import NotFound from "./components/pages/NotFound";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/matches" element={<MatchPage />} />
             <Route path="/news" element={<NewsPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </div>
