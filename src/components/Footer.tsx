@@ -156,7 +156,7 @@ export default function Footer({}: FooterProps) {
           <div className="flex flex-row">
             <img src="/logo.webp" alt="Logo" className="w-1/5 md:w-1/6" />
             <p className="my-auto text-mineshaft dark:text-sandybrown text-xs md:text-sm lg:text-base">
-              Tillsammans bygger <br /> vi framtidens fotboll!
+              Engagemang, gemenskap och framtid
             </p>
           </div>
           <p className="text-center text-mineshaft dark:text-sandybrown pb-1 text-xs md:text-sm lg:text-base">
