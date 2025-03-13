@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import NewsInfoHeader from "../NewsInfoHeader";
 
 export default function NewsPage() {
   return (
-    <div>NewsPage</div>
-  )
+    <div>
+      <NewsInfoHeader />
+    </div>
+  );
 }
