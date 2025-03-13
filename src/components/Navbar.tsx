@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="bg-sandybrown dark:bg-darkgray dark:border-gray-200 
+      className="bg-sandybrown dark:bg-slate dark:border-gray-200 
                     sticky top-0
                     flex h-20 z-40 
                     justify-between
