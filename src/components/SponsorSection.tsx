@@ -136,8 +136,8 @@ export default function SponsorSection() {
             })}
           </div>
           <div className="text-center pb-5">
-            <Button isLink="true" text="bli sponsor" />
-            <Button isLink="true" text="bli sponsor" />
+            <Button isLink={true} linkTo={"contact"} text="bli sponsor" />
+            <Button isLink={true} linkTo={"contact"} text="bli sponsor" />
           </div>
         </div>
       </div>

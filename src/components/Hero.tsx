@@ -41,8 +41,8 @@ export const Hero = () => {
                 rounded-tr-lg rounded-tl-lg
             "
           >
-            <Button text="Stötta Oss!" isLink={true} />
-            <Button text="Bli Medlem!" isLink={true} />
+            <Button text="Stötta Oss!" isLink={true} linkTo={"contact"} />
+            <Button text="Bli Medlem!" isLink={true} linkTo={"contact"} />
           </div>
         </div>
       </div>
