@@ -10,7 +10,7 @@ export default function HomePage() {
     <>
       <Hero />
       <AboutUs />
-      <News />
+      <News variant="frontpage" />
       <Match />
       <SponsorSection />
     </>

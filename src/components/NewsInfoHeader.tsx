@@ -20,7 +20,7 @@ export default function NewsInfoHeader() {
           alt="Trandareds IF - lagbild"
         />
       </div>
-      <News />
+      <News variant="news" />
     </div>
   );
 }
