@@ -1,33 +1,40 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import PageHeading from "./PageHeading";
+
 type FormInputs = {
-  radio: string
-  email: string
-  header: string
-  body: string
-}
+  radio: string;
+  email: string;
+  header: string;
+  body: string;
+};
 
 const StatusMessage = (str: any) => {
   return (
-    <p className={`
+    <p
+      className={`
     ${str.status == "Not Sent" ? "hidden" : "block"}
     ${str.status == "Pending" ? "dark:text-yellow-400 text-blue-400" : ""}
     ${str.status == "Failed" ? "text-red-600" : ""}
     ${str.status == "Success" ? "text-green-500" : ""}
     `}
     >{`${str.status}`}</p>
-  )
-}
+  );
+};
 
 export default function ContactForm() {
   const send = process.env.REACT_APP_SEND;
   const [disabled, setDisabled] = useState(false);
   const [emailStatus, setEmailStatus] = useState("Not Sent");
-  const { handleSubmit, register, formState: { errors } } = useForm<FormInputs>();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<FormInputs>();
 
   async function onSubmit(values: any) {
     setDisabled(true);
-    setEmailStatus('Pending');
+    setEmailStatus("Pending");
     try {
       const response = await fetch(send!, {
         headers: {
@@ -43,21 +50,21 @@ export default function ContactForm() {
       switch (response.ok) {
         case false:
           setDisabled(false);
-          setEmailStatus('Failed');
+          setEmailStatus("Failed");
           throw new Error(`Response status: ${response.status}`);
         case true:
-          setEmailStatus('Success');
+          setEmailStatus("Success");
           console.log(`Response status: ${response.status}`);
       }
-    }
-    catch (e) {
-      console.error(`Error: ${e}`)
-      setEmailStatus('Failed')
+    } catch (e) {
+      console.error(`Error: ${e}`);
+      setEmailStatus("Failed");
       setDisabled(false);
     }
-  };
+  }
 
-  const inputStyles: string = "rounded-md bg-[#2a2a33] border-2 border-brandy px-2 py-[3px] dark:border-sandybrown text-springwood";
+  const inputStyles: string =
+    "rounded-md bg-[#2a2a33] border-2 border-brandy px-2 py-[3px] dark:border-sandybrown text-springwood";
   const buttonStyles: string = `
                     font-bold uppercase font-inter
                     py-1 px-2
@@ -67,10 +74,13 @@ export default function ContactForm() {
                     bg-mineshaft text-sandybrown hover:bg-codgray active:bg-[#575757] active:text-mineshaft focus:bg-codgray focus:text-sandybrown focus:outline-sandybrown visited:text-sandybrown 
                     dark:bg-sandybrown dark:text-mineshaft dark:hover:bg-coffee dark:active:bg-sepiaskin dark:active:text-brandy dark:focus:text-mineshaft dark:focus:outline-white dark:visited:text-mineshaft 
                     focus:outline-3 focus:outline-offset-0 outline-none
-                    disabled:bg-[#888888] disabled:text-black`
+                    disabled:bg-[#888888] disabled:text-black`;
 
   return (
     <div className="bg-brandy dark:bg-codgray">
+      <div className="p-5">
+        <PageHeading text="Kontakta oss" />
+      </div>
       <form
         className="w-5/6 md:w-3/5 lg:w-2/5 flex flex-col mx-auto bg-brandy dark:bg-transparent text-mineshaft dark:text-sandybrown"
         onSubmit={handleSubmit(onSubmit)}
@@ -83,32 +93,25 @@ export default function ContactForm() {
         </label>
         <div id="radio-group" className=" flex flex-row gap-x-2">
           <input
-            {...register("radio",
-              {
-                required: "* Required"
-              })}
+            {...register("radio", {
+              required: "* Required",
+            })}
             type="radio"
             value="[sponsor]"
             id="radio-sponsor"
             disabled={disabled}
           />
-          <label
-            htmlFor="radio-sponsor">
-            Sponsorfråga
-          </label>
+          <label htmlFor="radio-sponsor">Sponsorfråga</label>
           <input
             {...register("radio", {
-              required: "* Required"
+              required: "* Required",
             })}
             type="radio"
             value="[övrigt]"
             id="radio-misc"
             disabled={disabled}
           />
-          <label
-            htmlFor="radio-misc">
-            Annat/Övrigt
-          </label>
+          <label htmlFor="radio-misc">Annat/Övrigt</label>
         </div>
         <label className="block" htmlFor="form-email">
           E-mail:&nbsp;
@@ -116,12 +119,13 @@ export default function ContactForm() {
             {errors.email && errors.email.message}
           </span>
         </label>
-        <input type="email"
+        <input
+          type="email"
           {...register("email", {
             required: "* Required",
             pattern: {
               value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              message: "Invalid E-mail Address"
+              message: "Invalid E-mail Address",
             },
           })}
           placeholder="example@email.com"
@@ -135,9 +139,10 @@ export default function ContactForm() {
             {errors.header && errors.header.message}
           </span>
         </label>
-        <input {...register("header", {
-          required: "* Required"
-        })}
+        <input
+          {...register("header", {
+            required: "* Required",
+          })}
           placeholder="Rubrik"
           id="form-header"
           className={`${inputStyles}`}
@@ -150,19 +155,24 @@ export default function ContactForm() {
             {errors.body && errors.body.message}
           </span>
         </label>
-        <textarea {...register("body", {
-          required: "* Required"
-        })}
+        <textarea
+          {...register("body", {
+            required: "* Required",
+          })}
           placeholder="Skriv din fråga eller ditt meddelande här."
           id="form-body"
           className={`${inputStyles}`}
           disabled={disabled}
         ></textarea>
-        <button className={`${buttonStyles} my-2`} type="submit"
+        <button
+          className={`${buttonStyles} my-2`}
+          type="submit"
           disabled={disabled}
-        >Skicka</button>
+        >
+          Skicka
+        </button>
         <StatusMessage status={emailStatus} />
-      </form >
+      </form>
     </div>
-  )
+  );
 }
