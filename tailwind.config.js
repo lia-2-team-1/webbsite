@@ -21,7 +21,7 @@ export default {
         lightgrey: "#D9D9D9",
         gold: "#C7A46C",
         darkgray: "#333333",
-        slate: "#454545",
+        slate: "#2d2d2d",
       },
       dropShadow: {
         img: ["1px 1px 0px rgba(0,0,0,0.5)", "-1px -1px 0 rgba(0,0,0,0.5)"],
