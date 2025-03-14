@@ -20,7 +20,6 @@ import SectionHeading from "./SectionHeading.tsx";
  *  Fix text size, font, colour.
  *
  *  FUTURE TODO:
- *  breakpoints.
  *
  *  difficulties:
  *  Need button component
@@ -136,7 +135,6 @@ export default function SponsorSection() {
             })}
           </div>
           <div className="text-center pb-5">
-            <Button isLink={true} linkTo={"contact"} text="bli sponsor" />
             <Button isLink={true} linkTo={"contact"} text="bli sponsor" />
           </div>
         </div>
