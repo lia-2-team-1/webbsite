@@ -1,5 +1,4 @@
 import Button from "./Button";
-import { EmailTest } from "./EmailTest";
 import PageHeading from "./PageHeading";
 
 export const Hero = () => {
@@ -11,7 +10,6 @@ export const Hero = () => {
       flex flex-col place-items-center 
       bg-cover bg-no-repeat md:bg-[url('/tif-hero.jpg')] bg-[url('/tif-hero-mobile.jpg')]"
       >
-        <EmailTest />
 
         <div
           className="

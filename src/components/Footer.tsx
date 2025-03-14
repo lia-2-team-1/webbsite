@@ -1,7 +1,7 @@
 import "./Footer.css";
-interface FooterProps {}
+interface FooterProps { }
 
-export default function Footer({}: FooterProps) {
+export default function Footer({ }: FooterProps) {
   return (
     <>
       <footer
