@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="bg-sandybrown dark:bg-darkgray dark:border-gray-200 
+      className="bg-sandybrown dark:bg-slate dark:border-gray-200 
                     sticky top-0
                     flex h-20 z-40 
                     justify-between
@@ -36,7 +36,7 @@ const Navbar = () => {
       </a>
       <NavLinks
         className={`
-                bg-sandybrown dark:bg-darkgray
+                bg-sandybrown dark:bg-slate
                 flex flex-col space-y-2 p-2 pt-4
                 absolute right-0 z-30
                 transform ${isOpen ? "translate-y-[0%]" : "translate-y-[-100%]"}
@@ -57,7 +57,7 @@ const Navbar = () => {
       />
       <div onClick={toggleMenu}>
         <Burger
-          className="block absolute right-0 h-20 p-2 md:hidden z-50 dark:bg-mineshaft bg-sandybrown"
+          className="block absolute right-0 h-20 p-2 md:hidden z-50 dark:bg-slate bg-sandybrown"
           stroke="stroke-codgray dark:stroke-sandybrown"
         />
       </div>

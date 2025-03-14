@@ -13,10 +13,16 @@ export interface Post {
   };
 }
 
-export const News = () => {
-  const [fetchPosts, setFetchPosts] = useState<Post[]>([]);
+export interface NewsProps {
+  variant: "frontpage" | "news";
+}
+
+export const News = ({ variant }: NewsProps) => {
+  const [allPosts, setAllPosts] = useState<Post[]>([]);
+  const [displayedPosts, setDisplayedPosts] = useState<Post[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(4);
   const apiUrl = import.meta.env.VITE_API_INSTA_URL;
 
   const fallbackPosts: Post[] = Array(4).fill({
@@ -43,7 +49,8 @@ export const News = () => {
           post.media_url || post.image_versions2?.candidates?.[0]?.url || "",
       }));
 
-      setFetchPosts(posts.slice(0, 4));
+      setAllPosts(posts);
+      setDisplayedPosts(posts.slice(0, visibleCount));
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unknown error occurred"
@@ -55,8 +62,16 @@ export const News = () => {
   };
 
   useEffect(() => {
+    setDisplayedPosts(allPosts.slice(0, visibleCount));
+  }, [visibleCount, allPosts]);
+
+  useEffect(() => {
     fetchData();
   }, [apiUrl]);
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 4);
+  };
 
   return (
     <div className="w-full bg-wheat dark:bg-codgray">
@@ -76,11 +91,24 @@ export const News = () => {
               </p>
             </div>
           ) : (
-            <InstaGrid posts={fetchPosts} />
+            <InstaGrid posts={displayedPosts} />
           )}
         </div>
+        {displayedPosts.length < allPosts.length && (
+          <div className="flex justify-center pb-5 pt-5 mx-auto">
+            {variant === "news" && displayedPosts.length < allPosts.length && (
+              <Button
+                isLink={false}
+                func={handleLoadMore}
+                text={"LADDA FLER"}
+              />
+            )}
+          </div>
+        )}
         <div className="flex justify-center pb-5 pt-5 mx-auto">
-          <Button isLink={true} linkTo={"news"} text={"FLER NYHETER"} />
+          {variant === "frontpage" && (
+            <Button isLink={true} linkTo={"news"} text={"FLER NYHETER"} />
+          )}
         </div>
       </div>
     </div>

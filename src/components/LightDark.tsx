@@ -13,7 +13,7 @@ export default function LightDark({ className }) {
   return (
     <>
       <button
-        className={`h-14 w-14 md:h-16 md:w-16 lg:w-20 lg:h-20 p-2 dark:bg-mineshaft bg-sandybrown max-h-20 ${className}`}
+        className={`h-14 w-14 md:h-16 md:w-16 lg:w-20 lg:h-20 p-2 dark:bg-slate bg-sandybrown max-h-20 ${className}`}
         onClick={() => darkModeHandler()}
       >
         {dark && <Sun className="w-full" stroke="stroke-sandybrown" />}

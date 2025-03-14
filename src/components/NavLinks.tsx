@@ -32,7 +32,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ className }) => {
           isLink={false}
           className="mx-0 md:mx-3 text-nowrap"
         /> */}
-        
+
         <LightDark className="transition-[color_transform_position_display] delay-150 duration-250 ease-out lg:mr-5 hidden md:block" />
       </div>
     </div>

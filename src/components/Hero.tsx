@@ -1,5 +1,6 @@
-import Button from './Button';
-import { EmailTest } from './EmailTest';
+import Button from "./Button";
+import { EmailTest } from "./EmailTest";
+import PageHeading from "./PageHeading";
 
 export const Hero = () => {
   return (
@@ -23,20 +24,12 @@ export const Hero = () => {
             rounded-md
         "
         >
-          <h1
-            className="text-center text-4xl lg:text-6xl text-mineshaft dark:text-sandybrown font-bold 
-
-          px-1.5 lg:px-5"
-          >
-            Trandareds IF
-          </h1>
-
+          <PageHeading text="Trandareds IF" />
           <p className="text-mineshaft dark:text-sandybrown text-center font-medium">
             Engagemang, gemenskap och framtid
           </p>
         </div>
-        <div
-          className="flex-col ptlr-3 w-3/4 md:w-3/5">
+        <div className="flex-col ptlr-3 w-3/4 md:w-3/5">
           <div
             className="
                 flex flex-col
@@ -48,11 +41,11 @@ export const Hero = () => {
                 rounded-tr-lg rounded-tl-lg
             "
           >
-            <Button text='Stötta Oss!' isLink={true} />
-            <Button text='Bli Medlem!' isLink={true} />
+            <Button text="Stötta Oss!" isLink={true} linkTo={"contact"} />
+            <Button text="Bli Medlem!" isLink={true} linkTo={"contact"} />
           </div>
-        </div >
-      </div >
+        </div>
+      </div>
     </>
   );
 };
