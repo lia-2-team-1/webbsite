@@ -140,7 +140,9 @@ export default function Footer({}: FooterProps) {
         <hr className="w-4/5 mx-auto border-mineshaft dark:border-sandybrown" />
         <div className="mt-5 md:w-4/5 md:mx-auto">
           <div className="flex flex-row">
-            <img src="/logo.webp" alt="Logo" className="w-1/5 md:w-1/6" />
+            <a href="/">
+              <img src="/logo.webp" alt="Logo" className="w-1/5 md:w-1/6" />
+            </a>
             <p className="my-auto text-mineshaft dark:text-sandybrown text-xs md:text-sm lg:text-base">
               Engagemang, gemenskap och framtid
             </p>

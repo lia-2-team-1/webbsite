@@ -28,7 +28,7 @@ const Navbar = () => {
                     "
     >
       <a
-        href="#"
+        href="/"
         className="flex items-center hover:underline text-mineshaft dark:text-sandybrown"
       >
         <img src="logo.webp" className="w-20" alt="TRANDAREDS IF LOGO" />
