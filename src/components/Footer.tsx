@@ -130,7 +130,7 @@ export default function Footer({}: FooterProps) {
               target="_blank"
             >
               <img
-                src="/Instagram_Glyph_Gradient.PNG"
+                src="/Instagram_Glyph_Gradient.png"
                 alt="Instagram"
                 className="w-14 h-auto pt-1 mx-auto lg:mx-0"
               />
