@@ -7,7 +7,6 @@ const NavLinks: React.FC<NavLinksProps> = ({ className }) => {
     { path: "/", text: "Hem" },
     { path: "/news", text: "Nyheter" },
     { path: "/matches", text: "Matcher" },
-    { path: "/about", text: "Om oss" },
     { path: "/contact", text: "Kontakt" },
   ];
 
