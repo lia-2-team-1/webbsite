@@ -1,7 +1,7 @@
 import "./Footer.css";
-interface FooterProps { }
+interface FooterProps {}
 
-export default function Footer({ }: FooterProps) {
+export default function Footer({}: FooterProps) {
   return (
     <>
       <footer
@@ -45,9 +45,6 @@ export default function Footer({ }: FooterProps) {
             <p className="text-mineshaft dark:text-sandybrown text-xs md:text-sm lg:text-base">
               123 45 Sportstad
             </p>
-            <a className="text-xs md:text-sm lg:text-base" href="#">
-              Karta
-            </a>
           </div>
           <div className="flex flex-col">
             <h5
@@ -59,25 +56,19 @@ export default function Footer({ }: FooterProps) {
                             lg:text-xl
                         "
             >
-              NAVIGERA
+              GENVÄGAR
             </h5>
-            <a className="text-xs md:text-sm lg:text-base" href="">
+            <a className="text-xs md:text-sm lg:text-base" href="/">
               Hem
             </a>
-            <a className="text-xs md:text-sm lg:text-base" href="">
-              Schema
-            </a>
-            <a className="text-xs md:text-sm lg:text-base" href="">
-              Om Oss
-            </a>
-            <a className="text-xs md:text-sm lg:text-base" href="">
+            <a className="text-xs md:text-sm lg:text-base" href="/matches">
               Matcher
             </a>
-            <a className="text-xs md:text-sm lg:text-base" href="">
+            <a className="text-xs md:text-sm lg:text-base" href="/news">
               Nyheter
             </a>
-            <a className="text-xs md:text-sm lg:text-base" href="">
-              Tider
+            <a className="text-xs md:text-sm lg:text-base" href="/contact">
+              Kontakt
             </a>
           </div>
           <div className="flex flex-col">
@@ -92,16 +83,32 @@ export default function Footer({ }: FooterProps) {
             >
               SPONSORER
             </h5>
-            <a className="text-xs md:text-sm lg:text-base" href="">
+            <a
+              className="text-xs md:text-sm lg:text-base"
+              href="https://craftofscandinavia.com/"
+              target="_blank"
+            >
               Craft of Scandinavia
             </a>
-            <a className="text-xs md:text-sm lg:text-base" href="">
+            <a
+              className="text-xs md:text-sm lg:text-base"
+              href="https://bakerlogistics.se/"
+              target="_blank"
+            >
               Baker Logistics
             </a>
-            <a className="text-xs md:text-sm lg:text-base" href="">
+            <a
+              className="text-xs md:text-sm lg:text-base"
+              href="https://www.fb-cargo.se/"
+              target="_blank"
+            >
               FB Cargo
             </a>
-            <a className="text-xs md:text-sm lg:text-base" href="">
+            <a
+              className="text-xs md:text-sm lg:text-base"
+              href="https://margret.se/"
+              target="_blank"
+            >
               PLUS Margret
             </a>
           </div>
@@ -119,35 +126,14 @@ export default function Footer({ }: FooterProps) {
             </h5>
             <a
               className="text-xs md:text-sm lg:text-base"
-              href="https://www.google.com"
+              href="https://www.instagram.com/trandaredsif/"
+              target="_blank"
             >
               <img
                 src="/Instagram_Glyph_Gradient.PNG"
                 alt="Instagram"
                 className="w-14 h-auto pt-1 mx-auto lg:mx-0"
               />
-            </a>
-          </div>
-          <div className="flex flex-col">
-            <h5
-              className="
-                            text-mineshaft dark:text-sandybrown
-                            font-bold
-                            text-base
-                            md:text-lg
-                            lg:text-xl
-                            "
-            >
-              POLICIES
-            </h5>
-            <a className="text-xs md:text-sm lg:text-base" href="">
-              Kakor
-            </a>
-            <a className="text-xs md:text-sm lg:text-base" href="">
-              Integritet
-            </a>
-            <a className="text-xs md:text-sm lg:text-base" href="">
-              Vilkor
             </a>
           </div>
         </div>
