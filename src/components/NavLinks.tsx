@@ -2,7 +2,13 @@ import React from "react";
 import LightDark from "./LightDark.tsx";
 import Button from "./Button.tsx";
 import { Link } from "react-router-dom";
-const NavLinks: React.FC<NavLinksProps> = ({ className }) => {
+
+interface NavLinksProps {
+  className?: string;
+  onClick?: () => void;
+}
+
+const NavLinks: React.FC<NavLinksProps> = ({ className, onClick }) => {
   const links = [
     { path: "/", text: "Hem" },
     { path: "/news", text: "Nyheter" },
@@ -17,6 +23,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ className }) => {
         <Link
           key={index}
           to={link.path}
+          onClick={onClick}
           className="
           transition-[color] delay-150 duration-250 ease-out
           text-codgray dark:text-sandybrown active:underline md:font-semibold md:text-nowrap hover:border-r-2 dark:border-sandybrown border-codgray 

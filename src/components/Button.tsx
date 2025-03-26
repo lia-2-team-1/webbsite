@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface ButtonProps {
   text: string;
   width?: string;
@@ -17,8 +19,8 @@ export default function Button({
 }: ButtonProps) {
   if (isLink) {
     return (
-      <a
-        href={`${linkTo}`}
+      <Link
+        to={`${linkTo}`}
         className={`
                     inline-block
                     font-bold uppercase font-inter
@@ -37,7 +39,7 @@ export default function Button({
                     `}
       >
         {`${text}`}
-      </a>
+      </Link>
     );
   } else {
     return (
