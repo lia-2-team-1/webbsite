@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import PageHeading from "./PageHeading";
+import ContactSection from "./ContactSection";
 
 type FormInputs = {
   radio: string;
@@ -77,10 +78,11 @@ export default function ContactForm() {
                     disabled:bg-[#888888] disabled:text-black`;
 
   return (
-    <div className="bg-brandy dark:bg-codgray">
+    <div className="bg-brandy dark:bg-codgray pb-10">
       <div className="p-5">
         <PageHeading text="Kontakta oss" />
       </div>
+      <ContactSection />
       <form
         className="w-5/6 md:w-3/5 lg:w-2/5 flex flex-col mx-auto bg-brandy dark:bg-transparent text-mineshaft dark:text-sandybrown"
         onSubmit={handleSubmit(onSubmit)}
