@@ -1,10 +1,8 @@
 import React from "react";
-import Sun from "./Sun.tsx";
-import Moon from "./Moon.tsx";
 interface LightDarkProps {
-  className: string;
+  readonly className?: string;
 }
-export default function LightDark({ className }) {
+export default function LightDark({ className }:  Readonly<LightDarkProps>) {
   const [dark, setDark] = React.useState(false);
   const darkModeHandler = () => {
     setDark(!dark);

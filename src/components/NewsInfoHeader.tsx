@@ -1,4 +1,3 @@
-import React from "react";
 import PageHeading from "./PageHeading";
 import News from "./News";
 
