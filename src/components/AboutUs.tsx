@@ -6,7 +6,7 @@ interface AboutUsProps {
 }
 
 export default function AboutUs({ src }: AboutUsProps) {
-  const initProps: AboutUsProps[] = {
+  const initProps: AboutUsProps = {
     src: "https://placehold.co/600x400",
   };
   return (

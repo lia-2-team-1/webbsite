@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Navbar from "./components/Navbar";
@@ -9,6 +10,8 @@ import Footer from "./components/Footer";
 import NotFound from "./components/pages/NotFound";
 
 function App() {
+
+
   return (
     <>
       <Router>
@@ -27,5 +30,7 @@ function App() {
     </>
   );
 }
+
+
 
 export default App;
