@@ -16,7 +16,7 @@ export default function NewsInfoHeader() {
         </p>
         <img
           className="lg:w-[50%] md:w-auto w-auto h-auto"
-          src="./public/tif-hero.jpg"
+          src="/tif-hero.jpg"
           alt="Trandareds IF - lagbild"
         />
       </div>
