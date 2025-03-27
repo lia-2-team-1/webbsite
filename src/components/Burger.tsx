@@ -1,4 +1,3 @@
-import * as React from "react"
 interface BurgerProps {
     stroke: string;
     className: string;
