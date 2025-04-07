@@ -34,12 +34,6 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
-  const [dark, setDark] = React.useState(false);
-  const darkModeHandler = () => {
-    setDark(!dark);
-    document.body.classList.toggle("dark");
-  };
-
   return (
     <nav
       className="
@@ -55,7 +49,7 @@ const Navbar = () => {
         href="/"
         className="flex items-center hover:underline text-mineshaft dark:text-sandybrown"
       >
-        <img src="logo.webp" className="w-20" alt="TRANDAREDS IF LOGO" />
+        <img src="/logo.webp" className="w-20" alt="TRANDAREDS IF LOGO" />
         <h2 className="text-codgray dark:text-sandybrown font-bold md:font-semibold lg:whitespace-nowrap">
           TRANDAREDS IF
         </h2>
