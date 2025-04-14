@@ -6,11 +6,12 @@ export default function NewsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    return () => { }
+    return () => {};
   }, []);
   return (
     <div>
       <NewsInfoHeader />
+      <News variant="news" />
     </div>
   );
 }
