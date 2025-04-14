@@ -51,8 +51,8 @@ export default function InstaGrid({ posts }: InstaGridProps) {
                 </div>
                 <img
                   src={mediaUrl}
-                  alt={insta.caption}
-                  className="w-4/5 mx-auto"
+                  alt={shortCaption}
+                  className="w-4/5 h-[220px] mx-auto object-cover"
                 />
               </figure>
             </div>
