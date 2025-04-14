@@ -3,7 +3,7 @@ import News from "./News";
 
 export default function NewsInfoHeader() {
   return (
-    <div className="bg-wheat dark:bg-codgray p-10">
+    <div className="bg-brandy dark:bg-mineshaft p-10">
       <PageHeading text="Senaste Nytt" />
       <div className="text-mineshaft dark:text-sandybrown flex flex-col lg:flex-row pb-5 pt-5 mx-auto w-full md:w-4/5 lg:max-w-screen-lg">
         <p className="pb-5 lg:pr-2">
@@ -19,7 +19,6 @@ export default function NewsInfoHeader() {
           alt="Trandareds IF - lagbild"
         />
       </div>
-      <News variant="news" />
     </div>
   );
 }
