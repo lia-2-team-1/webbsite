@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import NavLinks from "./NavLinks.tsx";
 import Burger from "./Burger.tsx";
 
@@ -46,15 +45,15 @@ const Navbar = () => {
                     transition-all delay-150 duration-250 ease-out
                     "
     >
-      <Link
-        to="/"
-        className="flex items-center hover:underline text-mineshaft dark:text-sandybrown"
+      <a
+        href="/"
+        className="flex items-center hover:underline text-mineshaft dark:text-sandybrown cursor-pointer z-50"
       >
         <img src="/logo.webp" className="w-20" alt="TRANDAREDS IF LOGO" />
         <h2 className="text-codgray dark:text-sandybrown font-bold md:font-semibold lg:whitespace-nowrap">
           TRANDAREDS IF
         </h2>
-      </Link>
+      </a>
       <NavLinks
         onClick={closeMenu}
         className={`
