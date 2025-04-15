@@ -37,13 +37,10 @@ export default function Footer({}: FooterProps) {
                             lg:text-xl
                         "
             >
-              HITTA HIT
+              STAD
             </h5>
             <p className="text-mineshaft dark:text-sandybrown text-xs md:text-sm lg:text-base">
-              Fotbollsgatan 25
-            </p>
-            <p className="text-mineshaft dark:text-sandybrown text-xs md:text-sm lg:text-base">
-              123 45 Sportstad
+              Båros
             </p>
           </div>
           <div className="flex flex-col">
@@ -111,6 +108,24 @@ export default function Footer({}: FooterProps) {
             >
               PLUS Margret
             </a>
+          </div>
+          <div className="flex flex-col">
+            <h5
+              className="
+                            text-mineshaft dark:text-sandybrown
+                            font-bold
+                            text-base
+                            md:text-lg
+                            lg:text-xl
+                        "
+            >
+              KONTAKTA OSS
+            </h5>
+            <p className="text-mineshaft dark:text-sandybrown text-xs md:text-sm lg:text-base">
+              <a href="mailto:Trandaredsif@outlook.com">
+                Trandaredsif@outlook.com
+              </a>
+            </p>
           </div>
           <div className="flex flex-col">
             <h5
