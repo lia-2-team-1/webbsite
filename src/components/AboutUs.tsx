@@ -35,11 +35,16 @@ export default function AboutUs({ src }: AboutUsProps) {
         "
         >
           <img
-            src={`${initProps.src}`}
+            src="/tif-team.jpg"
             className="
 
-          md:w-xl md:max-w-screen  
-          mx-auto md:mx-0  
+          w-full 
+          md:w-1/2 
+          lg:w-[600px] md:h-auto
+          mx-auto 
+          md:mx-0 
+          object-cover 
+          
         "
           />
           <div
@@ -76,8 +81,7 @@ export default function AboutUs({ src }: AboutUsProps) {
         flex flex-col
         items-center
         "
-            >
-            </div>
+            ></div>
           </div>
         </div>
       </div>
